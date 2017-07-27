@@ -8,6 +8,7 @@
 
 #include "MainScene.hpp"
 #include "Array2D.hpp"
+#include "import.hpp"
 
 USING_NS_CC;
 
@@ -28,30 +29,27 @@ bool MainScene::init(){
         return false;
     }
     
+    Size visible = Director::getInstance()->getVisibleSize();
+    
     Sprite* mapBackground = Sprite::create("res/map/map.png");
     mapBackground->setAnchorPoint(Vec2(0, 0));
     this->addChild(mapBackground);
     
-    Array2D<int> array(5, 10);
+    Size backgroundSize = mapBackground->getContentSize();
     
-    CCLOG("(%d, %d)", static_cast<int>(array.getX()), static_cast<int>(array.getY()));
+    DrawNode* drawNode = DrawNode::create();
+    drawNode->setLineWidth(1);
+    drawNode->setColor(Color3B(0, 0, 0));
+//    drawNode->drawLine(Vec2(0, 0), Vec2(visible.width / 2, visible.height), Color4F(0, 0, 0, 1));
+    this->addChild(drawNode);
     
-    for (int i = 0; i < array.getX(); ++i){
-        for (int j = 0; j < array.getY(); ++j){
-            CCLOG("%d, %d: %d", i, j, i * 10 + j);
-            array[i][j] = i * 10 + j;
-        }
+    for (int i = 0; i < MapConfig::tileColumn; ++i){
+        drawNode->drawLine(Vec2(MapConfig::tileWidth * i, 0), Vec2(MapConfig::tileWidth * i, visible.height), Color4F(0, 0, 0, 1));
     }
     
-    CCLOG("");
-    
-    for (int i = 0; i < array.getX(); ++i){
-        for (int j = 0; j < array.getY(); ++j){
-            CCLOG("%d, %d: %d", i, j, array[i][j]);
-        }
+    for (int i = 0; i < MapConfig::tileRow; ++i){
+        drawNode->drawLine(Vec2(0, i * MapConfig::tileWidth), Vec2(visible.width, i * MapConfig::tileWidth), Color4F(0, 0, 0, 1));
     }
-    
-    CCLOG("%d, %d, %d, %d, %d", array[0][0], array[0][1], array[0][2], array[0][3], array[0][4]);
     
     return true;
 }

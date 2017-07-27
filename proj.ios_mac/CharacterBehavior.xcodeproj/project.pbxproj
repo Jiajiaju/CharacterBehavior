@@ -63,8 +63,7 @@
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		EEC09ECC1F27A82600DD5424 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ECA1F27A82600DD5424 /* MainScene.cpp */; };
-		EEC09ED21F28F59000DD5424 /* Array2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED01F28F59000DD5424 /* Array2D.cpp */; };
-		EEC09ED61F29D06E00DD5424 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED41F29D06E00DD5424 /* Singleton.cpp */; };
+		EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,12 +161,14 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		EEBBE7D11F2A4EA4000B49CE /* import.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = import.hpp; sourceTree = "<group>"; };
 		EEC09ECA1F27A82600DD5424 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		EEC09ECB1F27A82600DD5424 /* MainScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainScene.hpp; sourceTree = "<group>"; };
-		EEC09ED01F28F59000DD5424 /* Array2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Array2D.cpp; sourceTree = "<group>"; };
 		EEC09ED11F28F59000DD5424 /* Array2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array2D.hpp; sourceTree = "<group>"; };
-		EEC09ED41F29D06E00DD5424 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
 		EEC09ED51F29D06E00DD5424 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
+		EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		EEC09EDA1F29D2FD00DD5424 /* GameManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameManager.hpp; sourceTree = "<group>"; };
+		EEC09EE11F2A4D5400DD5424 /* MapConfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MapConfig.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,10 +303,14 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EEC09EDF1F2A4D4800DD5424 /* tools */,
+				EEC09EDD1F2A4D3700DD5424 /* config */,
+				EEC09ED81F29D2F200DD5424 /* manager */,
 				EEC09ECE1F28F54400DD5424 /* utility */,
 				EEC09EC81F27A80500DD5424 /* scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				EEBBE7D11F2A4EA4000B49CE /* import.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -370,12 +375,34 @@
 		EEC09ECE1F28F54400DD5424 /* utility */ = {
 			isa = PBXGroup;
 			children = (
-				EEC09ED01F28F59000DD5424 /* Array2D.cpp */,
 				EEC09ED11F28F59000DD5424 /* Array2D.hpp */,
-				EEC09ED41F29D06E00DD5424 /* Singleton.cpp */,
 				EEC09ED51F29D06E00DD5424 /* Singleton.hpp */,
 			);
 			path = utility;
+			sourceTree = "<group>";
+		};
+		EEC09ED81F29D2F200DD5424 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */,
+				EEC09EDA1F29D2FD00DD5424 /* GameManager.hpp */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		EEC09EDD1F2A4D3700DD5424 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				EEC09EE11F2A4D5400DD5424 /* MapConfig.hpp */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		EEC09EDF1F2A4D4800DD5424 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,10 +553,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				EEC09ED61F29D06E00DD5424 /* Singleton.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				EEC09ED21F28F59000DD5424 /* Array2D.cpp in Sources */,
+				EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				EEC09ECC1F27A82600DD5424 /* MainScene.cpp in Sources */,
 			);

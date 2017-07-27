@@ -15,7 +15,7 @@ template <typename Node>
 class Singleton{
 private:
     
-    static Node* _instancePointer = nullptr;
+    static Node* _instancePointer;
     
     Singleton(const Singleton& singleton){}
     Singleton& operator=(const Singleton& singleton){}
@@ -37,5 +37,8 @@ public:
         return _instancePointer;
     }
 };
+
+template <typename Node>
+Node* Singleton<Node>::_instancePointer = nullptr;
 
 #endif /* Singleton_hpp */
