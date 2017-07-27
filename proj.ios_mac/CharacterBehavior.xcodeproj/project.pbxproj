@@ -64,6 +64,7 @@
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		EEC09ECC1F27A82600DD5424 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ECA1F27A82600DD5424 /* MainScene.cpp */; };
 		EEC09ED21F28F59000DD5424 /* Array2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED01F28F59000DD5424 /* Array2D.cpp */; };
+		EEC09ED61F29D06E00DD5424 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED41F29D06E00DD5424 /* Singleton.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,8 @@
 		EEC09ECB1F27A82600DD5424 /* MainScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainScene.hpp; sourceTree = "<group>"; };
 		EEC09ED01F28F59000DD5424 /* Array2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Array2D.cpp; sourceTree = "<group>"; };
 		EEC09ED11F28F59000DD5424 /* Array2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array2D.hpp; sourceTree = "<group>"; };
+		EEC09ED41F29D06E00DD5424 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
+		EEC09ED51F29D06E00DD5424 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +372,8 @@
 			children = (
 				EEC09ED01F28F59000DD5424 /* Array2D.cpp */,
 				EEC09ED11F28F59000DD5424 /* Array2D.hpp */,
+				EEC09ED41F29D06E00DD5424 /* Singleton.cpp */,
+				EEC09ED51F29D06E00DD5424 /* Singleton.hpp */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				EEC09ED61F29D06E00DD5424 /* Singleton.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				EEC09ED21F28F59000DD5424 /* Array2D.cpp in Sources */,
