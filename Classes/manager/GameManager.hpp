@@ -13,9 +13,17 @@
 #include "cocos2d.h"
 #include "Singleton.hpp"
 
+#include "BattleManager.hpp"
+
 class GameManager: public Singleton<GameManager>{
 private:
 public:
+    
+    static BattleMananger* battleMananger;
+    
+    void init();
+    
+    void startGame();
 };
 
 #endif /* GameManager_hpp */

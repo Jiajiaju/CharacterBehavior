@@ -7,3 +7,15 @@
 //
 
 #include "GameManager.hpp"
+
+#include "BattleScene.hpp"
+
+BattleMananger* GameManager::battleMananger = nullptr;
+
+void GameManager::init(){
+    this->battleMananger = BattleMananger::getInstance();
+}
+
+void GameManager::startGame(){
+    this->battleMananger->enterBattle();
+}

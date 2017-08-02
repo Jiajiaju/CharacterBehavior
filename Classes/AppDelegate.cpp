@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "MainScene.hpp"
+#include "GameManager.hpp"
 
 USING_NS_CC;
 
@@ -73,12 +73,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 //    }
 
     register_all_packages();
-
-    // create a scene. it's an autorelease object
-    auto scene = MainScene::create();
-
-    // run
-    director->runWithScene(scene);
+    
+    GameManager* gameManager = GameManager::getInstance();
+    
+    gameManager->init();
+    gameManager->startGame();
 
     return true;
 }

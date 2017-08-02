@@ -22,10 +22,4 @@ public:
     static int tileWidth;
 };
 
-int MapConfig::mapWidth = 3840;
-int MapConfig::mapHeight = 1080;
-int MapConfig::tileColumn = 96;
-int MapConfig::tileRow = 27;
-int MapConfig::tileWidth = 40;
-
 #endif /* MapConfig_hpp */
