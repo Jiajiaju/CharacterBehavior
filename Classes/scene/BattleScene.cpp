@@ -31,25 +31,19 @@ bool BattleScene::init(){
     
     Size visible = Director::getInstance()->getVisibleSize();
     
-    Sprite* mapBackground = Sprite::create("res/map/map.png");
-    mapBackground->setAnchorPoint(Vec2(0, 0));
-    this->addChild(mapBackground);
-
-    Size backgroundSize = mapBackground->getContentSize();
+    this->map = Sprite::create("res/map/map.png");
+    this->map->setAnchorPoint(Vec2(0, 0));
+    this->addChild(this->map);
+    Size backgroundSize = this->map->getContentSize();
     
-    DrawNode* drawNode = DrawNode::create();
-    drawNode->setLineWidth(1);
-    drawNode->setColor(Color3B(0, 0, 0));
-    //    drawNode->drawLine(Vec2(0, 0), Vec2(visible.width / 2, visible.height), Color4F(0, 0, 0, 1));
-    this->addChild(drawNode);
+    this->groundLayer = Node::create();
+    this->map->addChild(this->groundLayer, 1);
     
-    for (int i = 0; i < MapConfig::tileColumn; ++i){
-        drawNode->drawLine(Vec2(MapConfig::tileWidth * i, 0), Vec2(MapConfig::tileWidth * i, visible.height), Color4F(0, 0, 0, 1));
-    }
-
-    for (int i = 0; i < MapConfig::tileRow; ++i){
-        drawNode->drawLine(Vec2(0, i * MapConfig::tileWidth), Vec2(visible.width, i * MapConfig::tileWidth), Color4F(0, 0, 0, 1));
-    }
+    this->skyLayer = Node::create();
+    this->map->addChild(this->skyLayer, 1);
+    
+    this->uiLayer = Node::create();
+    this->addChild(this->uiLayer);
     
     return true;
 }

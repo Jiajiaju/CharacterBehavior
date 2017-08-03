@@ -16,9 +16,15 @@ class BattleScene: public cocos2d::Scene{
 private:
 public:
     
+    cocos2d::Sprite* map = nullptr;
+    cocos2d::Node* uiLayer = nullptr;
+    cocos2d::Node* groundLayer = nullptr;
+    cocos2d::Node* skyLayer = nullptr;
+    
     static BattleScene* createScene();
     
     virtual bool init();
+    
 };
 
 #endif /* BattleScene_hpp */

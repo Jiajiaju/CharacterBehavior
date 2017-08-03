@@ -18,8 +18,10 @@
 
 class BattleMananger: public Singleton<BattleMananger>{
 private:
-    
     BattleScene* _battleScene = nullptr;
+    cocos2d::DrawNode* _battleMapDrawNode = nullptr;
+    
+    void _showMapGrid();
 public:
     
     BattleScene* getBattleScene(){ return _battleScene; }
