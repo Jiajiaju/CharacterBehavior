@@ -19,7 +19,12 @@
 class BattleMananger: public Singleton<BattleMananger>{
 private:
     BattleScene* _battleScene = nullptr;
+    cocos2d::EventListenerTouchOneByOne* _battleTouchListener = nullptr;
     cocos2d::DrawNode* _battleMapDrawNode = nullptr;
+    
+    bool _onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+    void _onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
+    void _onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
     
     void _showMapGrid();
 public:

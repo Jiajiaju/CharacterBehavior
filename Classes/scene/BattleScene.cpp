@@ -29,8 +29,6 @@ bool BattleScene::init(){
         return false;
     }
     
-    Size visible = Director::getInstance()->getVisibleSize();
-    
     this->map = Sprite::create("res/map/map.png");
     this->map->setAnchorPoint(Vec2(0, 0));
     this->addChild(this->map);
@@ -44,6 +42,10 @@ bool BattleScene::init(){
     
     this->uiLayer = Node::create();
     this->addChild(this->uiLayer);
+    
+    Sprite* tree = Sprite::create("res/map/tree.png");
+    tree->setPosition(backgroundSize.width / 2, backgroundSize.height / 2);
+    this->groundLayer->addChild(tree);
     
     return true;
 }

@@ -62,6 +62,7 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		EE1FCC131F34DB380097B539 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC111F34DB380097B539 /* Character.cpp */; };
 		EEBBE7D91F322C9E000B49CE /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */; };
 		EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7DB1F322DFE000B49CE /* BattleScene.cpp */; };
 		EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */; };
@@ -164,6 +165,8 @@
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		EE1267011F33616600518BA5 /* Vector2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
+		EE1FCC111F34DB380097B539 /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
+		EE1FCC121F34DB380097B539 /* Character.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
 		EEBBE7D11F2A4EA4000B49CE /* import.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = import.hpp; sourceTree = "<group>"; };
 		EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleManager.cpp; sourceTree = "<group>"; };
 		EEBBE7D81F322C9E000B49CE /* BattleManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleManager.hpp; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EE1FCC0F1F34DB2A0097B539 /* character */,
 				EEC09EDF1F2A4D4800DD5424 /* tools */,
 				EEC09EDD1F2A4D3700DD5424 /* config */,
 				EEC09ED81F29D2F200DD5424 /* manager */,
@@ -368,6 +372,15 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		EE1FCC0F1F34DB2A0097B539 /* character */ = {
+			isa = PBXGroup;
+			children = (
+				EE1FCC111F34DB380097B539 /* Character.cpp */,
+				EE1FCC121F34DB380097B539 /* Character.hpp */,
+			);
+			path = character;
+			sourceTree = "<group>";
 		};
 		EEC09EC81F27A80500DD5424 /* scene */ = {
 			isa = PBXGroup;
@@ -565,6 +578,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */,
+				EE1FCC131F34DB380097B539 /* Character.cpp in Sources */,
 				EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				EEBBE7D91F322C9E000B49CE /* BattleManager.cpp in Sources */,
