@@ -15,9 +15,12 @@
 #include "Singleton.hpp"
 
 #include "BattleScene.hpp"
+#include "Character.hpp"
 
 class BattleMananger: public Singleton<BattleMananger>{
 private:
+    
+#pragma mark: scene
     BattleScene* _battleScene = nullptr;
     cocos2d::EventListenerTouchOneByOne* _battleTouchListener = nullptr;
     cocos2d::DrawNode* _battleMapDrawNode = nullptr;
@@ -26,7 +29,13 @@ private:
     void _onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
     void _onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
     
+#pragma mark: character
+    
+    std::vector<Character*> _characters;
+    
+#pragma mark: debug
     void _showMapGrid();
+    void _addCharater();
 public:
     
     BattleScene* getBattleScene(){ return _battleScene; }

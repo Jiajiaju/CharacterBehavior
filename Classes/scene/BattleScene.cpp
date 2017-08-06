@@ -43,9 +43,5 @@ bool BattleScene::init(){
     this->uiLayer = Node::create();
     this->addChild(this->uiLayer);
     
-    Sprite* tree = Sprite::create("res/map/tree.png");
-    tree->setPosition(backgroundSize.width / 2, backgroundSize.height / 2);
-    this->groundLayer->addChild(tree);
-    
     return true;
 }

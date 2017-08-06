@@ -9,6 +9,9 @@
 #include "BattleManager.hpp"
 
 void BattleMananger::enterBattle(){
+    
+    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/character/soldier.plist");
+    
     _battleScene = BattleScene::createScene();
     cocos2d::Director::getInstance()->runWithScene(_battleScene);
     
@@ -23,7 +26,8 @@ void BattleMananger::enterBattle(){
     _battleMapDrawNode->setColor(cocos2d::Color3B(0, 0, 0));
     _battleScene->map->addChild(_battleMapDrawNode);
     
-//    _showMapGrid();
+    _showMapGrid();
+    _addCharater();
 }
 
 void BattleMananger::_showMapGrid(){
@@ -35,6 +39,13 @@ void BattleMananger::_showMapGrid(){
     for (int i = 0; i < MapConfig::tileRow; ++i){
         _battleMapDrawNode->drawLine(cocos2d::Vec2(0, i * MapConfig::tileWidth), cocos2d::Vec2(visibleSize.width, i * MapConfig::tileWidth), cocos2d::Color4F(0, 0, 0, 1));
     }
+}
+
+void BattleMananger::_addCharater(){
+    cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
+    Character* newCharacter = Character::createCharacter();
+    newCharacter->setPosition(visible.width / 2, visible.height / 2);
+    _battleScene->groundLayer->addChild(newCharacter->avatar);
 }
 
 bool BattleMananger::_onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event){
