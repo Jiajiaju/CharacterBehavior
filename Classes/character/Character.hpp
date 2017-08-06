@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 
 #include "import.hpp"
+#include "BattleTile.hpp"
 
 #include "CharacterAvatar.hpp"
 
@@ -27,8 +28,9 @@ public:
     
     CharacterAvatar* avatar = nullptr;
     
-    void setPosition(const cocos2d::Vec2& position){ avatar->setPosition(position); }
-    void setPosition(float x, float y){ avatar->setPosition(x, y); }
+    void setPosition(const cocos2d::Vec2& position);
+    void setPosition(float x, float y);
+    void setPosition(const BattleTile& battleTile);
     cocos2d::Vec2 getPosition(){ return avatar->getPosition(); }
     
 };

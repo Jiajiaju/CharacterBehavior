@@ -15,11 +15,15 @@
 
 #include "BattleManager.hpp"
 
+#include "BattleGridHelper.hpp"
+
 class GameManager: public Singleton<GameManager>{
 private:
 public:
     
     static BattleMananger* battleMananger;
+    
+    static BattleGridHelper* battleGridHelper;
     
     void init();
     

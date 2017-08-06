@@ -64,6 +64,9 @@
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 		EE1FCC131F34DB380097B539 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC111F34DB380097B539 /* Character.cpp */; };
 		EE1FCC171F36E3010097B539 /* CharacterAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC151F36E3010097B539 /* CharacterAvatar.cpp */; };
+		EE1FCC1B1F36FB2C0097B539 /* BattleGridHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC191F36FB2C0097B539 /* BattleGridHelper.cpp */; };
+		EE1FCC1F1F36FDB90097B539 /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC1D1F36FDB90097B539 /* Tile.cpp */; };
+		EE1FCC231F36FF8E0097B539 /* BattleTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC211F36FF8E0097B539 /* BattleTile.cpp */; };
 		EEBBE7D91F322C9E000B49CE /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */; };
 		EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7DB1F322DFE000B49CE /* BattleScene.cpp */; };
 		EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */; };
@@ -170,6 +173,12 @@
 		EE1FCC121F34DB380097B539 /* Character.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
 		EE1FCC151F36E3010097B539 /* CharacterAvatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterAvatar.cpp; sourceTree = "<group>"; };
 		EE1FCC161F36E3010097B539 /* CharacterAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterAvatar.hpp; sourceTree = "<group>"; };
+		EE1FCC191F36FB2C0097B539 /* BattleGridHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleGridHelper.cpp; sourceTree = "<group>"; };
+		EE1FCC1A1F36FB2C0097B539 /* BattleGridHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleGridHelper.hpp; sourceTree = "<group>"; };
+		EE1FCC1D1F36FDB90097B539 /* Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
+		EE1FCC1E1F36FDB90097B539 /* Tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
+		EE1FCC211F36FF8E0097B539 /* BattleTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleTile.cpp; sourceTree = "<group>"; };
+		EE1FCC221F36FF8E0097B539 /* BattleTile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleTile.hpp; sourceTree = "<group>"; };
 		EEBBE7D11F2A4EA4000B49CE /* import.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = import.hpp; sourceTree = "<group>"; };
 		EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleManager.cpp; sourceTree = "<group>"; };
 		EEBBE7D81F322C9E000B49CE /* BattleManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleManager.hpp; sourceTree = "<group>"; };
@@ -315,6 +324,9 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EE1FCC201F36FF840097B539 /* battle */,
+				EE1FCC1C1F36FDA90097B539 /* pathfinder */,
+				EE1FCC181F36FB1E0097B539 /* helper */,
 				EE1FCC0F1F34DB2A0097B539 /* character */,
 				EEC09EDF1F2A4D4800DD5424 /* tools */,
 				EEC09EDD1F2A4D3700DD5424 /* config */,
@@ -385,6 +397,33 @@
 				EE1FCC161F36E3010097B539 /* CharacterAvatar.hpp */,
 			);
 			path = character;
+			sourceTree = "<group>";
+		};
+		EE1FCC181F36FB1E0097B539 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				EE1FCC191F36FB2C0097B539 /* BattleGridHelper.cpp */,
+				EE1FCC1A1F36FB2C0097B539 /* BattleGridHelper.hpp */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		EE1FCC1C1F36FDA90097B539 /* pathfinder */ = {
+			isa = PBXGroup;
+			children = (
+				EE1FCC1D1F36FDB90097B539 /* Tile.cpp */,
+				EE1FCC1E1F36FDB90097B539 /* Tile.hpp */,
+			);
+			path = pathfinder;
+			sourceTree = "<group>";
+		};
+		EE1FCC201F36FF840097B539 /* battle */ = {
+			isa = PBXGroup;
+			children = (
+				EE1FCC211F36FF8E0097B539 /* BattleTile.cpp */,
+				EE1FCC221F36FF8E0097B539 /* BattleTile.hpp */,
+			);
+			path = battle;
 			sourceTree = "<group>";
 		};
 		EEC09EC81F27A80500DD5424 /* scene */ = {
@@ -583,11 +622,14 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */,
+				EE1FCC1F1F36FDB90097B539 /* Tile.cpp in Sources */,
 				EE1FCC131F34DB380097B539 /* Character.cpp in Sources */,
 				EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				EE1FCC171F36E3010097B539 /* CharacterAvatar.cpp in Sources */,
 				EEBBE7D91F322C9E000B49CE /* BattleManager.cpp in Sources */,
+				EE1FCC1B1F36FB2C0097B539 /* BattleGridHelper.cpp in Sources */,
+				EE1FCC231F36FF8E0097B539 /* BattleTile.cpp in Sources */,
 				EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);

@@ -8,12 +8,12 @@
 
 #include "GameManager.hpp"
 
-#include "BattleScene.hpp"
-
 BattleMananger* GameManager::battleMananger = nullptr;
+BattleGridHelper* GameManager::battleGridHelper = nullptr;
 
 void GameManager::init(){
     this->battleMananger = BattleMananger::getInstance();
+    this->battleGridHelper = BattleGridHelper::getInstance();
 }
 
 void GameManager::startGame(){
