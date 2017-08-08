@@ -9,10 +9,12 @@
 #include "GameManager.hpp"
 
 BattleMananger* GameManager::battleMananger = nullptr;
+EntityManager* GameManager::entityManager = nullptr;
 BattleGridHelper* GameManager::battleGridHelper = nullptr;
 
 void GameManager::init(){
     this->battleMananger = BattleMananger::getInstance();
+    this->entityManager  = EntityManager::getInstance();
     this->battleGridHelper = BattleGridHelper::getInstance();
 }
 

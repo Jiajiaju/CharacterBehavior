@@ -2,7 +2,7 @@
 //  Character.hpp
 //  CharacterBehavior
 //
-//  Created by weilove-jiajiaju on 2017/8/5.
+//  Created by weilove-jiajiaju on 2017/8/8.
 //
 //
 
@@ -14,20 +14,24 @@
 
 #include "import.hpp"
 #include "setting.hpp"
-#include "BattleTile.hpp"
 
+#include "BaseEntity.hpp"
 #include "CharacterAvatar.hpp"
 
-class Character{
+#include "BattleTile.hpp"
+
+class Character: public BaseEntity{
 private:
-    Character();
+    Character(int id);
     ~Character();
 public:
     
-    static Character* createCharacter();
-    void destory();
+    static Character* createCharacter(int id);
+    virtual void destory();
     
-    CharacterAvatar* avatar = nullptr;
+//    CharacterAvatar* avatar = nullptr;
+    
+    virtual void update(float dt);
     
     void setPosition(const cocos2d::Vec2& position);
     void setPosition(float x, float y);

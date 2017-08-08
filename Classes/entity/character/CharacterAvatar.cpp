@@ -2,17 +2,13 @@
 //  CharacterAvatar.cpp
 //  CharacterBehavior
 //
-//  Created by weilove-jiajiaju on 2017/8/6.
+//  Created by weilove-jiajiaju on 2017/8/8.
 //
 //
 
 #include "CharacterAvatar.hpp"
 
 USING_NS_CC;
-
-CharacterAvatar::~CharacterAvatar(){
-    this->release();
-}
 
 CharacterAvatar* CharacterAvatar::createCharacterAvatar(){
     CharacterAvatar* newCharacterAvatar = new (std::nothrow) CharacterAvatar();

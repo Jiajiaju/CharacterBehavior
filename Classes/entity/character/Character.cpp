@@ -2,7 +2,7 @@
 //  Character.cpp
 //  CharacterBehavior
 //
-//  Created by weilove-jiajiaju on 2017/8/5.
+//  Created by weilove-jiajiaju on 2017/8/8.
 //
 //
 
@@ -10,15 +10,15 @@
 
 #include "GameManager.hpp"
 
-Character::Character(){
-    this->avatar = CharacterAvatar::createCharacterAvatar();
+Character::Character(int id):BaseEntity(id){
+    avatar = CharacterAvatar::createCharacterAvatar();
 }
 
 Character::~Character(){
 }
 
-Character* Character::createCharacter(){
-    Character* newCharacter = new (std::nothrow) Character();
+Character* Character::createCharacter(int id){
+    Character* newCharacter = new (std::nothrow) Character(id);
     if (newCharacter){
         return newCharacter;
     }
@@ -47,4 +47,8 @@ void Character::setPosition(const cocos2d::Vec2 &position){
 void Character::setPosition(float x, float y){
     this->avatar->setPosition(x, y);
     this->avatar->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(this->avatar->getPosition()));
+}
+
+void Character::update(float dt){
+    
 }

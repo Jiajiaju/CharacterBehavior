@@ -14,6 +14,7 @@
 #include "Singleton.hpp"
 
 #include "BattleManager.hpp"
+#include "EntityManager.hpp"
 
 #include "BattleGridHelper.hpp"
 
@@ -22,6 +23,7 @@ private:
 public:
     
     static BattleMananger* battleMananger;
+    static EntityManager*  entityManager;
     
     static BattleGridHelper* battleGridHelper;
     
