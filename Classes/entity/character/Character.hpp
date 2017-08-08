@@ -20,6 +20,8 @@
 
 #include "BattleTile.hpp"
 
+#ifdef FSM
+
 class Character: public BaseEntity{
 private:
     Character(int id);
@@ -39,5 +41,7 @@ public:
     cocos2d::Vec2 getPosition(){ return avatar->getPosition(); }
     
 };
+
+#endif
 
 #endif /* Character_hpp */

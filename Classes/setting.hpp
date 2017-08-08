@@ -11,6 +11,10 @@
 
 #include <stdio.h>
 
+// finite state machine flag
 #define FSM 1
+
+// behavior state machine flag
+//#define BT 1
 
 #endif /* setting_hpp */
