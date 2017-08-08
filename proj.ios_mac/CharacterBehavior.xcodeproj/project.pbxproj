@@ -179,6 +179,7 @@
 		EE1FCC1E1F36FDB90097B539 /* Tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
 		EE1FCC211F36FF8E0097B539 /* BattleTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleTile.cpp; sourceTree = "<group>"; };
 		EE1FCC221F36FF8E0097B539 /* BattleTile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleTile.hpp; sourceTree = "<group>"; };
+		EE736F231F39EA0000FD4EE3 /* setting.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = setting.hpp; sourceTree = "<group>"; };
 		EEBBE7D11F2A4EA4000B49CE /* import.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = import.hpp; sourceTree = "<group>"; };
 		EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleManager.cpp; sourceTree = "<group>"; };
 		EEBBE7D81F322C9E000B49CE /* BattleManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleManager.hpp; sourceTree = "<group>"; };
@@ -336,6 +337,7 @@
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				EEBBE7D11F2A4EA4000B49CE /* import.hpp */,
+				EE736F231F39EA0000FD4EE3 /* setting.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -391,6 +393,7 @@
 		EE1FCC0F1F34DB2A0097B539 /* character */ = {
 			isa = PBXGroup;
 			children = (
+				EE736F261F39FF5800FD4EE3 /* fsm */,
 				EE1FCC111F34DB380097B539 /* Character.cpp */,
 				EE1FCC121F34DB380097B539 /* Character.hpp */,
 				EE1FCC151F36E3010097B539 /* CharacterAvatar.cpp */,
@@ -424,6 +427,13 @@
 				EE1FCC221F36FF8E0097B539 /* BattleTile.hpp */,
 			);
 			path = battle;
+			sourceTree = "<group>";
+		};
+		EE736F261F39FF5800FD4EE3 /* fsm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = fsm;
 			sourceTree = "<group>";
 		};
 		EEC09EC81F27A80500DD5424 /* scene */ = {

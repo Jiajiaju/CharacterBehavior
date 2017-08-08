@@ -74,10 +74,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
     
-    GameManager* gameManager = GameManager::getInstance();
-    
-    gameManager->init();
-    gameManager->startGame();
+    GameManagerInstance->init();
+    GameManagerInstance->startGame();
 
     return true;
 }

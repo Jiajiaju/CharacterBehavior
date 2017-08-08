@@ -32,7 +32,7 @@ bool CharacterAvatar::init(){
     }
     
     _avatar = Sprite::createWithSpriteFrameName("soldier_1.png");
-    _avatar->setAnchorPoint(Vec2(0.5, 0));
+    _avatar->setAnchorPoint(Vec2(0.5, 0.15));
     this->addChild(_avatar);
     
     

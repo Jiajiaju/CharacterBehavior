@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 
 #include "import.hpp"
+#include "setting.hpp"
 #include "BattleTile.hpp"
 
 #include "CharacterAvatar.hpp"

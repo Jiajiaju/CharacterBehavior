@@ -30,4 +30,8 @@ public:
     void startGame();
 };
 
+#ifndef GameManagerInstance
+#define GameManagerInstance (GameManager::getInstance())
+#endif
+
 #endif /* GameManager_hpp */
