@@ -30,6 +30,8 @@ public:
     void init();
     
     void startGame();
+    
+    void update(float dt);
 };
 
 #ifndef GameManagerInstance

@@ -12,12 +12,23 @@
 #include <stdio.h>
 #include "Singleton.hpp"
 
+#include "Character.hpp"
+
 class EntityManager: public Singleton<EntityManager>{
 private:
     static int _characterIDCounter;
+    
+    std::map<int, Character*> _characters;
 public:
     
     int getCharacterID();
+
+    std::map<int, Character*>& getCharacters(){ return _characters; }
+    void registerCharacter(Character* character, int id);
+    void unregisterCharacter(Character* character, int id);
+    void unregisterCharacter(Character* character);
+    void unregisterCharacter(int id);
+    Character* getCharacterByID(int id);
 };
 
 #endif /* EntityManager_hpp */

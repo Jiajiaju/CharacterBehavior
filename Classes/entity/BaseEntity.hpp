@@ -17,7 +17,7 @@ private:
 protected:
     int _id = -1;
     BaseEntity(int id):_id(id) {}
-    ~BaseEntity(){
+    virtual ~BaseEntity(){
         
     }
 public:

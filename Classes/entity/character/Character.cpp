@@ -10,8 +10,18 @@
 
 #include "GameManager.hpp"
 
+#include "CharacterStateWalk.hpp"
+
 Character::Character(int id):BaseEntity(id){
     avatar = CharacterAvatar::createCharacterAvatar();
+    stateMachine = new (std::nothrow) StateMachine<Character>(this);
+    
+    assert(avatar);
+    assert(stateMachine);
+    
+    stateMachine->setCurrentState(CharacterStateWalk::getInstance());
+    
+    GameManagerInstance->entityManager->registerCharacter(this, _id);
 }
 
 Character::~Character(){
@@ -50,5 +60,5 @@ void Character::setPosition(float x, float y){
 }
 
 void Character::update(float dt){
-    
+    stateMachine->update(dt);
 }

@@ -16,8 +16,18 @@ void GameManager::init(){
     this->battleMananger = BattleMananger::getInstance();
     this->entityManager  = EntityManager::getInstance();
     this->battleGridHelper = BattleGridHelper::getInstance();
+    
+    cocos2d::Director::getInstance()->getScheduler()->schedule(std::bind(&GameManager::update, this, std::placeholders::_1), cocos2d::Director::getInstance(), 0, false, "main_update");
+    
 }
 
 void GameManager::startGame(){
     this->battleMananger->enterBattle();
+}
+
+void GameManager::update(float dt){
+    auto characters = this->entityManager->getCharacters();
+    for (auto iter = characters.begin(); iter != characters.end(); ++iter){
+        iter->second->update(dt);
+    }
 }

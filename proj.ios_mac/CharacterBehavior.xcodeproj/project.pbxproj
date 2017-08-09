@@ -70,6 +70,9 @@
 		EE736F391F3A026800FD4EE3 /* BaseEntityAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F371F3A026800FD4EE3 /* BaseEntityAvatar.cpp */; };
 		EE736F3C1F3A111B00FD4EE3 /* CharacterAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F3A1F3A111B00FD4EE3 /* CharacterAvatar.cpp */; };
 		EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F3D1F3A13EB00FD4EE3 /* EntityManager.cpp */; };
+		EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */; };
+		EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */; };
+		EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3981F3B43C9003D6763 /* StateMachine.cpp */; };
 		EEBBE7D91F322C9E000B49CE /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */; };
 		EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7DB1F322DFE000B49CE /* BattleScene.cpp */; };
 		EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */; };
@@ -189,6 +192,12 @@
 		EE736F3B1F3A111B00FD4EE3 /* CharacterAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterAvatar.hpp; sourceTree = "<group>"; };
 		EE736F3D1F3A13EB00FD4EE3 /* EntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityManager.cpp; sourceTree = "<group>"; };
 		EE736F3E1F3A13EB00FD4EE3 /* EntityManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityManager.hpp; sourceTree = "<group>"; };
+		EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityState.cpp; sourceTree = "<group>"; };
+		EE9FF3931F3B3EC3003D6763 /* EntityState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityState.hpp; sourceTree = "<group>"; };
+		EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateWalk.cpp; sourceTree = "<group>"; };
+		EE9FF3961F3B4254003D6763 /* CharacterStateWalk.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateWalk.hpp; sourceTree = "<group>"; };
+		EE9FF3981F3B43C9003D6763 /* StateMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateMachine.cpp; sourceTree = "<group>"; };
+		EE9FF3991F3B43C9003D6763 /* StateMachine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StateMachine.hpp; sourceTree = "<group>"; };
 		EEBBE7D11F2A4EA4000B49CE /* import.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = import.hpp; sourceTree = "<group>"; };
 		EEBBE7D71F322C9E000B49CE /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleManager.cpp; sourceTree = "<group>"; };
 		EEBBE7D81F322C9E000B49CE /* BattleManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleManager.hpp; sourceTree = "<group>"; };
@@ -433,6 +442,8 @@
 				EE736F2F1F3A011200FD4EE3 /* BaseEntity.hpp */,
 				EE736F371F3A026800FD4EE3 /* BaseEntityAvatar.cpp */,
 				EE736F381F3A026800FD4EE3 /* BaseEntityAvatar.hpp */,
+				EE9FF38E1F3B3E8F003D6763 /* bt */,
+				EE9FF38B1F3B3E88003D6763 /* fsm */,
 				EE736F2B1F3A00FD00FD4EE3 /* character */,
 			);
 			path = entity;
@@ -445,24 +456,44 @@
 				EE736F321F3A015D00FD4EE3 /* Character.hpp */,
 				EE736F3A1F3A111B00FD4EE3 /* CharacterAvatar.cpp */,
 				EE736F3B1F3A111B00FD4EE3 /* CharacterAvatar.hpp */,
-				EE736F2C1F3A00FD00FD4EE3 /* bt */,
-				EE736F2D1F3A00FD00FD4EE3 /* fsm */,
 			);
 			path = character;
 			sourceTree = "<group>";
 		};
-		EE736F2C1F3A00FD00FD4EE3 /* bt */ = {
+		EE9FF38B1F3B3E88003D6763 /* fsm */ = {
+			isa = PBXGroup;
+			children = (
+				EE9FF38C1F3B3E88003D6763 /* state */,
+			);
+			path = fsm;
+			sourceTree = "<group>";
+		};
+		EE9FF38C1F3B3E88003D6763 /* state */ = {
+			isa = PBXGroup;
+			children = (
+				EE9FF38D1F3B3E88003D6763 /* character */,
+				EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */,
+				EE9FF3931F3B3EC3003D6763 /* EntityState.hpp */,
+				EE9FF3981F3B43C9003D6763 /* StateMachine.cpp */,
+				EE9FF3991F3B43C9003D6763 /* StateMachine.hpp */,
+			);
+			path = state;
+			sourceTree = "<group>";
+		};
+		EE9FF38D1F3B3E88003D6763 /* character */ = {
+			isa = PBXGroup;
+			children = (
+				EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */,
+				EE9FF3961F3B4254003D6763 /* CharacterStateWalk.hpp */,
+			);
+			path = character;
+			sourceTree = "<group>";
+		};
+		EE9FF38E1F3B3E8F003D6763 /* bt */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = bt;
-			sourceTree = "<group>";
-		};
-		EE736F2D1F3A00FD00FD4EE3 /* fsm */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = fsm;
 			sourceTree = "<group>";
 		};
 		EEC09EC81F27A80500DD5424 /* scene */ = {
@@ -662,7 +693,9 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */,
 				EE736F3C1F3A111B00FD4EE3 /* CharacterAvatar.cpp in Sources */,
+				EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */,
 				EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */,
 				EE736F331F3A015D00FD4EE3 /* Character.cpp in Sources */,
 				EE1FCC1F1F36FDB90097B539 /* Tile.cpp in Sources */,
@@ -675,6 +708,7 @@
 				EE736F391F3A026800FD4EE3 /* BaseEntityAvatar.cpp in Sources */,
 				EE1FCC231F36FF8E0097B539 /* BattleTile.cpp in Sources */,
 				EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */,
+				EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

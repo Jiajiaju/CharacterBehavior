@@ -18,6 +18,8 @@
 #include "BaseEntity.hpp"
 #include "CharacterAvatar.hpp"
 
+#include "StateMachine.hpp"
+
 #include "BattleTile.hpp"
 
 #ifdef FSM
@@ -31,7 +33,7 @@ public:
     static Character* createCharacter(int id);
     virtual void destory();
     
-//    CharacterAvatar* avatar = nullptr;
+    StateMachine<Character>* stateMachine = nullptr;
     
     virtual void update(float dt);
     
