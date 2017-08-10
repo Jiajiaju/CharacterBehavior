@@ -7,12 +7,16 @@
 //
 
 #include "GameManager.hpp"
+#include "mathtool.hpp"
 
 BattleMananger* GameManager::battleMananger = nullptr;
 EntityManager* GameManager::entityManager = nullptr;
 BattleGridHelper* GameManager::battleGridHelper = nullptr;
 
 void GameManager::init(){
+    
+    srand((unsigned)time(NULL));
+    
     this->battleMananger = BattleMananger::getInstance();
     this->entityManager  = EntityManager::getInstance();
     this->battleGridHelper = BattleGridHelper::getInstance();

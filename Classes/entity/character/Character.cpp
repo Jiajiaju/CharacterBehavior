@@ -11,6 +11,7 @@
 #include "GameManager.hpp"
 
 #include "CharacterStateWalk.hpp"
+#include "CharacterStateIdle.hpp"
 
 Character::Character(int id):BaseEntity(id){
     avatar = CharacterAvatar::createCharacterAvatar();
@@ -19,7 +20,7 @@ Character::Character(int id):BaseEntity(id){
     assert(avatar);
     assert(stateMachine);
     
-    stateMachine->setCurrentState(CharacterStateWalk::getInstance());
+    stateMachine->setCurrentState(CharacterStateIdle::getInstance());
     
     GameManagerInstance->entityManager->registerCharacter(this, _id);
 }
