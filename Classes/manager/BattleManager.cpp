@@ -45,7 +45,7 @@ void BattleMananger::_showMapGrid(){
 void BattleMananger::_addCharater(){
     cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
     Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID());
-    newCharacter->setPosition(BattleTile(0, 0));
+    newCharacter->setPosition(BattleTile(20, 10));
 //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
     _battleScene->groundLayer->addChild(newCharacter->avatar);
 }

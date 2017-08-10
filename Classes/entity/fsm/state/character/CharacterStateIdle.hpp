@@ -20,9 +20,9 @@ private:
     float _timeCounter = 0.0;
     float _turnInterval = 0.0;
 public:
-    virtual void enter(Character* charater);
-    virtual void execute(Character* charater, float dt);
-    virtual void exit(Character* charater);
+    virtual void enter(Character* character);
+    virtual void execute(Character* character, float dt);
+    virtual void exit(Character* character);
 };
 
 #endif /* CharacterStateIdle_hpp */

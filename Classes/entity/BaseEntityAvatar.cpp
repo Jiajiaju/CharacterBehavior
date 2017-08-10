@@ -24,5 +24,24 @@ bool BaseEntityAvatar::init(){
         return false;
     }
     
+    _faceDirection = "left";
+    
     return true;
+}
+
+void BaseEntityAvatar::turn(){
+    if (_faceDirection == "left"){
+        _faceDirection = "right";
+        _avatar->setFlippedX(true);
+    }else {
+        _faceDirection = "left";
+        _avatar->setFlippedX(false);
+    }
+}
+
+void BaseEntityAvatar::turn(const std::string &direction){
+    if (_faceDirection == direction){
+        return;
+    }
+    this->turn();
 }

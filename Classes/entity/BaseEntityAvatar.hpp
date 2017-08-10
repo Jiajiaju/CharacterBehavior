@@ -18,11 +18,18 @@ protected:
     BaseEntityAvatar();
     ~BaseEntityAvatar() = 0;
     cocos2d::Sprite* _avatar;
+    std::string _faceDirection = "left";
 public:
     
     virtual void destory();
     
     virtual bool init();
+    
+    void turnLeft() { _faceDirection = "left"; _avatar->setFlippedX(false); }
+    void turnRight(){ _faceDirection = "right"; _avatar->setFlippedX(true); }
+    void turn();
+    void turn(const std::string& direction);
+    
 };
 
 #endif /* BaseEntityAvatar_hpp */
