@@ -11,10 +11,11 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "Singleton.hpp"
 #include "EntityState.hpp"
 #include "Character.hpp"
 
-class CharacterStateWalk: public EntityState<Character>{
+class CharacterStateWalk: public EntityState<Character>, public Singleton<CharacterStateWalk>{
 private:
 public:
     virtual void enter(Character* character);

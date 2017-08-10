@@ -13,13 +13,13 @@
 #include "Singleton.hpp"
 
 template <typename Entity>
-class EntityState: public Singleton<EntityState<Entity>> {
+class EntityState{
 private:
     
 public:
-    virtual void enter(Entity* entity){}// = 0;
-    virtual void execute(Entity* entity, float dt){}// = 0;
-    virtual void exit(Entity* entity){}// = 0;
+    virtual void enter(Entity* entity) = 0;
+    virtual void execute(Entity* entity, float dt) = 0;
+    virtual void exit(Entity* entity) = 0;
 };
 
 #endif /* EntityState_hpp */
