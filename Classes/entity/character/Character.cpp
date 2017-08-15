@@ -10,7 +10,6 @@
 
 #include "GameManager.hpp"
 
-#include "CharacterStateWalk.hpp"
 #include "CharacterStateIdle.hpp"
 
 Character::Character(int id):BaseEntity(id){

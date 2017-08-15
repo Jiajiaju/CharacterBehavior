@@ -42,6 +42,10 @@ public:
     void setPosition(const BattleTile& battleTile);
     cocos2d::Vec2 getPosition(){ return avatar->getPosition(); }
     
+//    std::vector<BattleTile> currentPath;
+//    BattleTile currentTile;
+//    BattleTile lastTile;
+    
 };
 
 #endif

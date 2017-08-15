@@ -34,4 +34,9 @@ void GameManager::update(float dt){
     for (auto iter = characters.begin(); iter != characters.end(); ++iter){
         iter->second->update(dt);
     }
+    
+    auto buildings = this->entityManager->getBuildings();
+    for (auto iter = buildings.begin(); iter != buildings.end(); ++iter){
+        iter->second->update(dt);
+    }
 }

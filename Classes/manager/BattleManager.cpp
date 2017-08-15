@@ -12,6 +12,7 @@
 void BattleMananger::enterBattle(){
     
     cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/character/soldier.plist");
+    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/building/building.plist");
     
     _battleScene = BattleScene::createScene();
     cocos2d::Director::getInstance()->runWithScene(_battleScene);
@@ -29,6 +30,7 @@ void BattleMananger::enterBattle(){
     
     _showMapGrid();
     _addCharater();
+    _addBuilding();
 }
 
 void BattleMananger::_showMapGrid(){
@@ -38,7 +40,7 @@ void BattleMananger::_showMapGrid(){
     }
     
     for (int i = 0; i < MapConfig::tileRow; ++i){
-        _battleMapDrawNode->drawLine(cocos2d::Vec2(0, i * MapConfig::tileWidth), cocos2d::Vec2(visibleSize.width, i * MapConfig::tileWidth), cocos2d::Color4F(0, 0, 0, 1));
+        _battleMapDrawNode->drawLine(cocos2d::Vec2(0, i * MapConfig::tileWidth), cocos2d::Vec2(MapConfig::tileColumn * MapConfig::tileWidth, i * MapConfig::tileWidth), cocos2d::Color4F(0, 0, 0, 1));
     }
 }
 
@@ -48,6 +50,13 @@ void BattleMananger::_addCharater(){
     newCharacter->setPosition(BattleTile(20, 10));
 //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
     _battleScene->groundLayer->addChild(newCharacter->avatar);
+}
+
+void BattleMananger::_addBuilding(){
+    cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
+    Building* newBuilding = Building::createBuilding(GameManagerInstance->entityManager->getBuildingID());
+    newBuilding->setPosition(visible.width / 2, visible.height / 2);
+    _battleScene->groundLayer->addChild(newBuilding->avatar);
 }
 
 bool BattleMananger::_onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event){

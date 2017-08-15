@@ -8,7 +8,8 @@
 
 #include "EntityManager.hpp"
 
-int EntityManager::_characterIDCounter = 0;
+int EntityManager::_characterIDCounter = 1000;
+int EntityManager::_buildingIDCounter  = 3000;
 
 int EntityManager::getCharacterID(){
     return ++_characterIDCounter;
@@ -41,4 +42,34 @@ void EntityManager::unregisterCharacter(int id){
         return;
     }
     _characters.erase(id);
+}
+
+int EntityManager::getBuildingID(){
+    return ++_buildingIDCounter;
+}
+
+void EntityManager::registerBuilding(Building *building, int id){
+    assert(_buildings.find(id) == _buildings.end());
+    _buildings[id] = building;
+}
+
+void EntityManager::unregisterBuilding(Building *building, int id){
+    assert(_buildings.find(id)->second == building);
+    _buildings.erase(id);
+}
+
+void EntityManager::unregisterBuilding(Building *building){
+    for (auto iter = _buildings.begin(); iter != _buildings.end(); ++iter){
+        if (iter->second == building){
+            _buildings.erase(iter);
+            break;
+        }
+    }
+}
+
+void EntityManager::unregisterBuilding(int id){
+    if (_buildings.find(id) == _buildings.end()){
+        return;
+    }
+    _buildings.erase(id);
 }

@@ -10,5 +10,16 @@
 #define BuildingAvatar_hpp
 
 #include <stdio.h>
+#include "BaseEntityAvatar.hpp"
+
+class BuildingAvatar: public BaseEntityAvatar{
+private:
+    BuildingAvatar(){}
+    ~BuildingAvatar(){}
+public:
+    
+    static BuildingAvatar* createBuildingAvatar();
+    virtual bool init();
+};
 
 #endif /* BuildingAvatar_hpp */

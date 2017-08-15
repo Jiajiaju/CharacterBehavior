@@ -16,6 +16,7 @@
 
 #include "BattleScene.hpp"
 #include "Character.hpp"
+#include "Building.hpp"
 
 class BattleMananger: public Singleton<BattleMananger>{
 private:
@@ -36,6 +37,7 @@ private:
 #pragma mark: debug
     void _showMapGrid();
     void _addCharater();
+    void _addBuilding();
 public:
     
     BattleScene* getBattleScene(){ return _battleScene; }

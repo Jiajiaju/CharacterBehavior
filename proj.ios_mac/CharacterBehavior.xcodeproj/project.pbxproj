@@ -78,6 +78,9 @@
 		EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7DB1F322DFE000B49CE /* BattleScene.cpp */; };
 		EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */; };
 		EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EECF9D551F323CEA00FA1C82 /* MapConfig.cpp */; };
+		EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */; };
+		EEED869E1F43313D008CDD8B /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869C1F43313D008CDD8B /* Building.cpp */; };
+		EEED86A11F433816008CDD8B /* BuildingAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */; };
 		EEF994F61F3C919800E28856 /* mathtool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEF994F41F3C919800E28856 /* mathtool.cpp */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +216,12 @@
 		EEC09EDA1F29D2FD00DD5424 /* GameManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameManager.hpp; sourceTree = "<group>"; };
 		EEC09EE11F2A4D5400DD5424 /* MapConfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MapConfig.hpp; sourceTree = "<group>"; };
 		EECF9D551F323CEA00FA1C82 /* MapConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapConfig.cpp; sourceTree = "<group>"; };
+		EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateFindTarget.cpp; sourceTree = "<group>"; };
+		EEED86961F41F606008CDD8B /* CharacterStateFindTarget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateFindTarget.hpp; sourceTree = "<group>"; };
+		EEED869C1F43313D008CDD8B /* Building.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
+		EEED869D1F43313D008CDD8B /* Building.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Building.hpp; sourceTree = "<group>"; };
+		EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingAvatar.cpp; sourceTree = "<group>"; };
+		EEED86A01F433816008CDD8B /* BuildingAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingAvatar.hpp; sourceTree = "<group>"; };
 		EEF994F41F3C919800E28856 /* mathtool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mathtool.cpp; sourceTree = "<group>"; };
 		EEF994F51F3C919800E28856 /* mathtool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mathtool.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -448,6 +457,7 @@
 				EE736F2F1F3A011200FD4EE3 /* BaseEntity.hpp */,
 				EE736F371F3A026800FD4EE3 /* BaseEntityAvatar.cpp */,
 				EE736F381F3A026800FD4EE3 /* BaseEntityAvatar.hpp */,
+				EEED869A1F433062008CDD8B /* building */,
 				EE9FF38E1F3B3E8F003D6763 /* bt */,
 				EE9FF38B1F3B3E88003D6763 /* fsm */,
 				EE736F2B1F3A00FD00FD4EE3 /* character */,
@@ -493,6 +503,8 @@
 				EE9FF3961F3B4254003D6763 /* CharacterStateWalk.hpp */,
 				EE1E1CC91F3C8D1B007C5CD7 /* CharacterStateIdle.cpp */,
 				EE1E1CCA1F3C8D1B007C5CD7 /* CharacterStateIdle.hpp */,
+				EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */,
+				EEED86961F41F606008CDD8B /* CharacterStateFindTarget.hpp */,
 			);
 			path = character;
 			sourceTree = "<group>";
@@ -552,6 +564,17 @@
 			children = (
 			);
 			path = tools;
+			sourceTree = "<group>";
+		};
+		EEED869A1F433062008CDD8B /* building */ = {
+			isa = PBXGroup;
+			children = (
+				EEED869C1F43313D008CDD8B /* Building.cpp */,
+				EEED869D1F43313D008CDD8B /* Building.hpp */,
+				EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */,
+				EEED86A01F433816008CDD8B /* BuildingAvatar.hpp */,
+			);
+			path = building;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -714,7 +737,10 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				EEBBE7D91F322C9E000B49CE /* BattleManager.cpp in Sources */,
 				EE736F301F3A011200FD4EE3 /* BaseEntity.cpp in Sources */,
+				EEED869E1F43313D008CDD8B /* Building.cpp in Sources */,
+				EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */,
 				EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */,
+				EEED86A11F433816008CDD8B /* BuildingAvatar.cpp in Sources */,
 				EEF994F61F3C919800E28856 /* mathtool.cpp in Sources */,
 				EE1FCC1B1F36FB2C0097B539 /* BattleGridHelper.cpp in Sources */,
 				EE736F391F3A026800FD4EE3 /* BaseEntityAvatar.cpp in Sources */,

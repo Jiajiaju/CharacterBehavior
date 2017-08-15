@@ -7,3 +7,15 @@
 //
 
 #include "CharacterStateFindTarget.hpp"
+
+void CharacterStateFindTarget::enter(Character *character){
+    
+}
+
+void CharacterStateFindTarget::execute(Character *character, float dt){
+    
+}
+
+void CharacterStateFindTarget::exit(Character *character){
+    
+}
