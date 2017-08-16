@@ -4,25 +4,25 @@
             "type": "soldier_1",
             "attack": 10,
             "defence": 10,
-            "walk": [],
-            "attack": [],
-            "dead": []
+            "walk": [1, 6],
+            "attack": [7, 8, 9],
+            "dead": [10, 15]
         },
         "soldier_2": {
             "type": "soldier_2",
             "attack": 20,
             "defence": 20,
-            "walk": [],
-            "attack": [],
-            "dead": []
+            "walk": [16, 21],
+            "attack": [22, 23, 24],
+            "dead": [25, 29]
         },
         "soldier_3": {
             "type": "soldier_3",
             "attack": 30,
             "defence": 30,
-            "walk": [],
-            "attack": [],
-            "dead": []
+            "walk": [30, 35],
+            "attack": [36, 37, 38],
+            "dead": [39, 43]
         }
     },
     "enemy": {
@@ -30,25 +30,25 @@
             "type": "enemy_1",
             "attack": 10,
             "defence": 10,
-            "walk": [],
-            "attack": [],
-            "dead": []
+            "walk": [1, 19],
+            "attack": [20, 27, 36],
+            "dead": [37, 56]
         },
         "enemy_2": {
             "type": "enemy_2",
             "attack": 20,
             "defence": 20,
-            "walk": [],
-            "attack": [],
-            "dead": []
+            "walk": [57, 69],
+            "attack": [70, 71, 72],
+            "dead": [73, 78]
         },
         "enemy_3": {
             "type": "enemy_3",
             "attack": 30,
             "defence": 30,
-            "walk": [],
-            "attack": [],
-            "dead": []
+            "walk": [79, 91],
+            "attack": [92, 96, 100],
+            "dead": [101, 110]
         },
     }
 }
