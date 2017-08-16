@@ -23,6 +23,8 @@ void GameManager::init(){
     this->configManager  = ConfigManager::getInstance();
     this->battleGridHelper = BattleGridHelper::getInstance();
     
+    this->configManager->init();
+    
     cocos2d::Director::getInstance()->getScheduler()->schedule(std::bind(&GameManager::update, this, std::placeholders::_1), cocos2d::Director::getInstance(), 0, false, "main_update");
     
 }
