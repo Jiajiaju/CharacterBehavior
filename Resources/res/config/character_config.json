@@ -1,0 +1,54 @@
+{
+    "soldier": {
+        "soldier_1": {
+            "type": "soldier_1",
+            "attack": 10,
+            "defence": 10,
+            "walk": [],
+            "attack": [],
+            "dead": []
+        },
+        "soldier_2": {
+            "type": "soldier_2",
+            "attack": 20,
+            "defence": 20,
+            "walk": [],
+            "attack": [],
+            "dead": []
+        },
+        "soldier_3": {
+            "type": "soldier_3",
+            "attack": 30,
+            "defence": 30,
+            "walk": [],
+            "attack": [],
+            "dead": []
+        }
+    },
+    "enemy": {
+        "enemy_1": {
+            "type": "enemy_1",
+            "attack": 10,
+            "defence": 10,
+            "walk": [],
+            "attack": [],
+            "dead": []
+        },
+        "enemy_2": {
+            "type": "enemy_2",
+            "attack": 20,
+            "defence": 20,
+            "walk": [],
+            "attack": [],
+            "dead": []
+        },
+        "enemy_3": {
+            "type": "enemy_3",
+            "attack": 30,
+            "defence": 30,
+            "walk": [],
+            "attack": [],
+            "dead": []
+        },
+    }
+}

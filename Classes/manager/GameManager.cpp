@@ -11,6 +11,7 @@
 
 BattleMananger* GameManager::battleMananger = nullptr;
 EntityManager* GameManager::entityManager = nullptr;
+ConfigManager* GameManager::configManager = nullptr;
 BattleGridHelper* GameManager::battleGridHelper = nullptr;
 
 void GameManager::init(){
@@ -19,6 +20,7 @@ void GameManager::init(){
     
     this->battleMananger = BattleMananger::getInstance();
     this->entityManager  = EntityManager::getInstance();
+    this->configManager  = ConfigManager::getInstance();
     this->battleGridHelper = BattleGridHelper::getInstance();
     
     cocos2d::Director::getInstance()->getScheduler()->schedule(std::bind(&GameManager::update, this, std::placeholders::_1), cocos2d::Director::getInstance(), 0, false, "main_update");

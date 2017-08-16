@@ -81,6 +81,9 @@
 		EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */; };
 		EEED869E1F43313D008CDD8B /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869C1F43313D008CDD8B /* Building.cpp */; };
 		EEED86A11F433816008CDD8B /* BuildingAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */; };
+		EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */; };
+		EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */; };
+		EEED86AC1F4483EA008CDD8B /* ConfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86AA1F4483EA008CDD8B /* ConfigManager.cpp */; };
 		EEF994F61F3C919800E28856 /* mathtool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEF994F41F3C919800E28856 /* mathtool.cpp */; };
 /* End PBXBuildFile section */
 
@@ -222,6 +225,12 @@
 		EEED869D1F43313D008CDD8B /* Building.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Building.hpp; sourceTree = "<group>"; };
 		EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingAvatar.cpp; sourceTree = "<group>"; };
 		EEED86A01F433816008CDD8B /* BuildingAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingAvatar.hpp; sourceTree = "<group>"; };
+		EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingStateTrain.cpp; sourceTree = "<group>"; };
+		EEED86A41F434881008CDD8B /* BuildingStateTrain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingStateTrain.hpp; sourceTree = "<group>"; };
+		EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingStateProduce.cpp; sourceTree = "<group>"; };
+		EEED86A71F434897008CDD8B /* BuildingStateProduce.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingStateProduce.hpp; sourceTree = "<group>"; };
+		EEED86AA1F4483EA008CDD8B /* ConfigManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigManager.cpp; sourceTree = "<group>"; };
+		EEED86AB1F4483EA008CDD8B /* ConfigManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ConfigManager.hpp; sourceTree = "<group>"; };
 		EEF994F41F3C919800E28856 /* mathtool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mathtool.cpp; sourceTree = "<group>"; };
 		EEF994F51F3C919800E28856 /* mathtool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mathtool.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,6 +496,7 @@
 		EE9FF38C1F3B3E88003D6763 /* state */ = {
 			isa = PBXGroup;
 			children = (
+				EEED86A21F434866008CDD8B /* building */,
 				EE9FF38D1F3B3E88003D6763 /* character */,
 				EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */,
 				EE9FF3931F3B3EC3003D6763 /* EntityState.hpp */,
@@ -546,6 +556,8 @@
 				EEBBE7D81F322C9E000B49CE /* BattleManager.hpp */,
 				EE736F3D1F3A13EB00FD4EE3 /* EntityManager.cpp */,
 				EE736F3E1F3A13EB00FD4EE3 /* EntityManager.hpp */,
+				EEED86AA1F4483EA008CDD8B /* ConfigManager.cpp */,
+				EEED86AB1F4483EA008CDD8B /* ConfigManager.hpp */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -573,6 +585,17 @@
 				EEED869D1F43313D008CDD8B /* Building.hpp */,
 				EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */,
 				EEED86A01F433816008CDD8B /* BuildingAvatar.hpp */,
+			);
+			path = building;
+			sourceTree = "<group>";
+		};
+		EEED86A21F434866008CDD8B /* building */ = {
+			isa = PBXGroup;
+			children = (
+				EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */,
+				EEED86A41F434881008CDD8B /* BuildingStateTrain.hpp */,
+				EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */,
+				EEED86A71F434897008CDD8B /* BuildingStateProduce.hpp */,
 			);
 			path = building;
 			sourceTree = "<group>";
@@ -725,12 +748,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */,
 				EE736F3C1F3A111B00FD4EE3 /* CharacterAvatar.cpp in Sources */,
 				EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */,
 				EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */,
 				EE736F331F3A015D00FD4EE3 /* Character.cpp in Sources */,
+				EEED86AC1F4483EA008CDD8B /* ConfigManager.cpp in Sources */,
 				EE1E1CCB1F3C8D1B007C5CD7 /* CharacterStateIdle.cpp in Sources */,
 				EE1FCC1F1F36FDB90097B539 /* Tile.cpp in Sources */,
 				EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */,
@@ -739,6 +764,7 @@
 				EE736F301F3A011200FD4EE3 /* BaseEntity.cpp in Sources */,
 				EEED869E1F43313D008CDD8B /* Building.cpp in Sources */,
 				EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */,
+				EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */,
 				EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */,
 				EEED86A11F433816008CDD8B /* BuildingAvatar.cpp in Sources */,
 				EEF994F61F3C919800E28856 /* mathtool.cpp in Sources */,

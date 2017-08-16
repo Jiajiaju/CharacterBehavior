@@ -12,8 +12,10 @@
 
 Building::Building(int id):BaseEntity(id){
     avatar = BuildingAvatar::createBuildingAvatar();
+    stateMachine = new (std::nothrow) StateMachine<Building>(this);
     
     assert(avatar);
+    assert(stateMachine);
     
     GameManagerInstance->entityManager->registerBuilding(this, _id);
 }
@@ -35,11 +37,12 @@ Building* Building::createBuilding(int id){
 
 void Building::destory(){
     this->avatar->destory();
+    delete stateMachine;
     delete this;
 }
 
 void Building::update(float dt){
-    
+    stateMachine->update(dt);
 }
 
 void Building::setPosition(const cocos2d::Vec2 &position){

@@ -15,6 +15,7 @@
 
 #include "BattleManager.hpp"
 #include "EntityManager.hpp"
+#include "ConfigManager.hpp"
 
 #include "BattleGridHelper.hpp"
 
@@ -24,6 +25,7 @@ public:
     
     static BattleMananger* battleMananger;
     static EntityManager*  entityManager;
+    static ConfigManager*  configManager;
     
     static BattleGridHelper* battleGridHelper;
     

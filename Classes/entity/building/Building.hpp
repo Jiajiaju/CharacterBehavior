@@ -19,6 +19,8 @@
 
 #include "BuildingAvatar.hpp"
 
+#include "StateMachine.hpp"
+
 #ifdef FSM
 
 class Building: public BaseEntity{
@@ -27,10 +29,13 @@ private:
     ~Building();
 public:
     
+    StateMachine<Building> *stateMachine;
+    
     static Building* createBuilding(int id);
     
     virtual void destory();
     virtual void update(float dt);
+    
     
     void setPosition(const cocos2d::Vec2& position);
     void setPosition(float x, float y);

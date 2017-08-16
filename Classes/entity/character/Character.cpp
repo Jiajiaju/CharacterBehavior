@@ -40,6 +40,7 @@ Character* Character::createCharacter(int id){
 
 void Character::destory(){
     this->avatar->destory();
+    delete stateMachine;
     delete this;
 }
 
