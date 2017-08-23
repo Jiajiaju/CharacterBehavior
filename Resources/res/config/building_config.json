@@ -3,12 +3,12 @@
         "appereance": "building_1",
         "defence": 50,
         "train": [],
-        "size": []
+        "size": [1, 1]
     },
     "building_2":{
         "appereance": "building_2",
         "defence": 50,
         "train": [],
-        "size": []
-    },
+        "size": [1, 1]
+    }
 }
