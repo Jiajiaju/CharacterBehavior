@@ -78,6 +78,9 @@ void ConfigManager::_loadBuildingConfig(){
         buildingConfigValue.size[0] = buildingConfigItem["size"][0].GetInt();
         buildingConfigValue.size[1] = buildingConfigItem["size"][0].GetInt();
         
+        buildingConfigValue.animation_produce[0] = buildingConfigItem["animation_produce"][0].GetInt();
+        buildingConfigValue.animation_produce[1] = buildingConfigItem["animation_produce"][1].GetInt();
+        
         rapidjson::Value& trainConfigArray = buildingConfigItem["train"];
         for (int i = 0; i < trainConfigArray.Capacity(); ++i){
             buildingConfigValue.train.push_back(trainConfigArray[i].GetString());

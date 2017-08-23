@@ -16,6 +16,7 @@ struct BuildingConfig{
     int defence = 0;
     std::vector<std::string> train;
     int size[2] = {0, 0};
+    int animation_produce[2] = {0, 0};
 };
 
 #endif /* BuildingConfig_hpp */

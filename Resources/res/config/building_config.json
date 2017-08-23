@@ -3,12 +3,14 @@
         "appereance": "building_1",
         "defence": 50,
         "train": [],
-        "size": [1, 1]
+        "size": [1, 1],
+        "animation_produce": [1, 4]
     },
     "building_2":{
         "appereance": "building_2",
         "defence": 50,
         "train": [],
-        "size": [1, 1]
+        "size": [1, 1],
+        "animation_produce": [5, 8]
     }
 }
