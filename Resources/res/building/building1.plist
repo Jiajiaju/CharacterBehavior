@@ -114,13 +114,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>building.png</string>
+            <string>building1.png</string>
             <key>size</key>
             <string>{378,810}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b7e0533f5373b3ad1710221234edf0d7:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:bb51755a7d8605840910faf8552bf681:1/1$</string>
             <key>textureFileName</key>
-            <string>building.png</string>
+            <string>building1.png</string>
         </dict>
     </dict>
 </plist>

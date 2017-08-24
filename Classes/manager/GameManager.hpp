@@ -16,6 +16,7 @@
 #include "BattleManager.hpp"
 #include "EntityManager.hpp"
 #include "ConfigManager.hpp"
+#include "ResourceManager.hpp"
 
 #include "BattleGridHelper.hpp"
 #include "CharacterHelper.hpp"
@@ -24,9 +25,10 @@ class GameManager: public Singleton<GameManager>{
 private:
 public:
     
-    static BattleMananger* battleMananger;
-    static EntityManager*  entityManager;
-    static ConfigManager*  configManager;
+    static BattleMananger*  battleMananger;
+    static EntityManager*   entityManager;
+    static ConfigManager*   configManager;
+    static ResourceManager* resourceManager;
     
     static BattleGridHelper* battleGridHelper;
     static CharacterHelper*  characterHelper;

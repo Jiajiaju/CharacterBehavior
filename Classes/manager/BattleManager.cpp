@@ -11,8 +11,8 @@
 
 void BattleMananger::enterBattle(){
     
-    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/character/character1.plist");
-    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/building/building.plist");
+    GameManagerInstance->resourceManager->loadAllCharacterFrameSheets();
+    GameManagerInstance->resourceManager->loadAllBuildingFrameSheets();
     
     _battleScene = BattleScene::createScene();
     cocos2d::Director::getInstance()->runWithScene(_battleScene);

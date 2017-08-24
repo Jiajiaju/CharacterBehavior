@@ -73,6 +73,7 @@
 		EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F3D1F3A13EB00FD4EE3 /* EntityManager.cpp */; };
 		EE9088721F4DE7BB007C2A06 /* CharacterHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088701F4DE7BB007C2A06 /* CharacterHelper.cpp */; };
 		EE9088771F4F0CBC007C2A06 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088751F4F0CBC007C2A06 /* utility.cpp */; };
+		EE90887B1F4F2100007C2A06 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088791F4F2100007C2A06 /* ResourceManager.cpp */; };
 		EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */; };
 		EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */; };
 		EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3981F3B43C9003D6763 /* StateMachine.cpp */; };
@@ -211,6 +212,8 @@
 		EE9088711F4DE7BB007C2A06 /* CharacterHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterHelper.hpp; sourceTree = "<group>"; };
 		EE9088751F4F0CBC007C2A06 /* utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		EE9088761F4F0CBC007C2A06 /* utility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
+		EE9088791F4F2100007C2A06 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		EE90887A1F4F2100007C2A06 /* ResourceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager.hpp; sourceTree = "<group>"; };
 		EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityState.cpp; sourceTree = "<group>"; };
 		EE9FF3931F3B3EC3003D6763 /* EntityState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityState.hpp; sourceTree = "<group>"; };
 		EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateWalk.cpp; sourceTree = "<group>"; };
@@ -578,6 +581,8 @@
 				EE736F3E1F3A13EB00FD4EE3 /* EntityManager.hpp */,
 				EEED86AA1F4483EA008CDD8B /* ConfigManager.cpp */,
 				EEED86AB1F4483EA008CDD8B /* ConfigManager.hpp */,
+				EE9088791F4F2100007C2A06 /* ResourceManager.cpp */,
+				EE90887A1F4F2100007C2A06 /* ResourceManager.hpp */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -785,6 +790,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */,
 				EE736F3C1F3A111B00FD4EE3 /* CharacterAvatar.cpp in Sources */,
+				EE90887B1F4F2100007C2A06 /* ResourceManager.cpp in Sources */,
 				EEED86C41F44B15F008CDD8B /* AllModel.cpp in Sources */,
 				EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */,
 				EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */,

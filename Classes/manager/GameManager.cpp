@@ -12,6 +12,7 @@
 BattleMananger* GameManager::battleMananger = nullptr;
 EntityManager* GameManager::entityManager = nullptr;
 ConfigManager* GameManager::configManager = nullptr;
+ResourceManager* GameManager::resourceManager = nullptr;
 BattleGridHelper* GameManager::battleGridHelper = nullptr;
 CharacterHelper* GameManager::characterHelper = nullptr;
 
@@ -22,6 +23,7 @@ void GameManager::init(){
     this->battleMananger = BattleMananger::getInstance();
     this->entityManager  = EntityManager::getInstance();
     this->configManager  = ConfigManager::getInstance();
+    this->resourceManager = ResourceManager::getInstance();
     this->battleGridHelper = BattleGridHelper::getInstance();
     this->characterHelper = CharacterHelper::getInstance();
     
