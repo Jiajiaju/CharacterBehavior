@@ -11,7 +11,7 @@
 
 void BattleMananger::enterBattle(){
     
-    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/character/soldier.plist");
+    cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/character/character1.plist");
     cocos2d::SpriteFrameCache::getInstance()->addSpriteFramesWithFile("res/building/building.plist");
     
     _battleScene = BattleScene::createScene();
@@ -46,10 +46,20 @@ void BattleMananger::_showMapGrid(){
 
 void BattleMananger::_addCharater(){
     cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
-    Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID());
+    Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "soldier_2");
     newCharacter->setPosition(BattleTile(20, 10));
 //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
     _battleScene->groundLayer->addChild(newCharacter->avatar);
+    
+    Character* newCharacter1 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_2");
+    newCharacter1->setPosition(BattleTile(28, 10));
+    //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
+    _battleScene->groundLayer->addChild(newCharacter1->avatar);
+    
+    Character* newCharacter2 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_3");
+    newCharacter2->setPosition(BattleTile(35, 10));
+    //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
+    _battleScene->groundLayer->addChild(newCharacter2->avatar);
 }
 
 void BattleMananger::_addBuilding(){

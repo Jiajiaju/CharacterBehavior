@@ -18,6 +18,7 @@
 #include "ConfigManager.hpp"
 
 #include "BattleGridHelper.hpp"
+#include "CharacterHelper.hpp"
 
 class GameManager: public Singleton<GameManager>{
 private:
@@ -28,6 +29,7 @@ public:
     static ConfigManager*  configManager;
     
     static BattleGridHelper* battleGridHelper;
+    static CharacterHelper*  characterHelper;
     
     void init();
     

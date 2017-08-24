@@ -11,14 +11,18 @@
 
 #include <stdio.h>
 #include "BaseEntityAvatar.hpp"
+#include "CharacterConfig.hpp"
+#include "utility.hpp"
 
 class CharacterAvatar: public BaseEntityAvatar{
 private:
-    CharacterAvatar(){}
+    CharacterAvatar(const CharacterConfig& config):characterConfig(config){}
     ~CharacterAvatar(){}
 public:
     
-    static CharacterAvatar* createCharacterAvatar();
+    CharacterConfig characterConfig;
+    
+    static CharacterAvatar* createCharacterAvatar(const CharacterConfig& config);
     virtual bool init();
 };
 

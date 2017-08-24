@@ -12,8 +12,8 @@
 
 #include "CharacterStateIdle.hpp"
 
-Character::Character(int id):BaseEntity(id){
-    avatar = CharacterAvatar::createCharacterAvatar();
+Character::Character(int id, const CharacterConfig& config): BaseEntity(id), characterConfig(config){
+    avatar = CharacterAvatar::createCharacterAvatar(characterConfig);
     stateMachine = new (std::nothrow) StateMachine<Character>(this);
     
     assert(avatar);
@@ -27,8 +27,19 @@ Character::Character(int id):BaseEntity(id){
 Character::~Character(){
 }
 
-Character* Character::createCharacter(int id){
-    Character* newCharacter = new (std::nothrow) Character(id);
+Character* Character::createCharacter(int id, const CharacterConfig &config){
+    Character* newCharacter = new (std::nothrow) Character(id, config);
+    if (newCharacter){
+        return newCharacter;
+    }
+    
+    delete newCharacter;
+    newCharacter = nullptr;
+    return nullptr;
+}
+
+Character* Character::createCharacter(int id, const std::string &typeName){
+    Character* newCharacter = new (std::nothrow) Character(id, GameManagerInstance->configManager->getCharacterConfig(typeName));
     if (newCharacter){
         return newCharacter;
     }

@@ -22,15 +22,20 @@
 
 #include "BattleTile.hpp"
 
+#include "AllModel.hpp"
+
 #ifdef FSM
 
 class Character: public BaseEntity{
 private:
-    Character(int id);
+    Character(int id, const CharacterConfig& config);
     ~Character();
 public:
     
-    static Character* createCharacter(int id);
+    CharacterConfig characterConfig;
+    
+    static Character* createCharacter(int id, const CharacterConfig& config);
+    static Character* createCharacter(int id, const std::string& typeName);
     virtual void destory();
     
     StateMachine<Character>* stateMachine = nullptr;

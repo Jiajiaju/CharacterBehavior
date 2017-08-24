@@ -8,10 +8,12 @@
 
 #include "CharacterAvatar.hpp"
 
+#include "GameManager.hpp"
+
 USING_NS_CC;
 
-CharacterAvatar* CharacterAvatar::createCharacterAvatar(){
-    CharacterAvatar* newCharacterAvatar = new (std::nothrow) CharacterAvatar();
+CharacterAvatar* CharacterAvatar::createCharacterAvatar(const CharacterConfig &config){
+    CharacterAvatar* newCharacterAvatar = new (std::nothrow) CharacterAvatar(config);
     if (newCharacterAvatar && newCharacterAvatar->init()){
         newCharacterAvatar->retain();
         return newCharacterAvatar;
@@ -27,10 +29,11 @@ bool CharacterAvatar::init(){
         return false;
     }
     
-    _avatar = Sprite::createWithSpriteFrameName("soldier_1.png");
+    CCLOG("%s", GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig).c_str());
+    
+    _avatar = Sprite::createWithSpriteFrameName(GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig));
     _avatar->setAnchorPoint(Vec2(0.5, 0.15));
     this->addChild(_avatar);
-    
     
     return true;
 }

@@ -4,25 +4,25 @@
             "type": "soldier_1",
             "attack": 10,
             "defence": 10,
-            "animation_walk": [1, 6],
-            "animation_attack": [7, 8, 9],
-            "animation_dead": [10, 15]
+            "animation_walk": [79, 84],
+            "animation_attack": [85, 86, 88],
+            "animation_dead": [89, 93]
         },
         "soldier_2": {
             "type": "soldier_2",
             "attack": 20,
             "defence": 20,
-            "animation_walk": [16, 21],
-            "animation_attack": [22, 23, 24],
-            "animation_dead": [25, 29]
+            "animation_walk": [94, 99],
+            "animation_attack": [100, 101, 102],
+            "animation_dead": [103, 107]
         },
         "soldier_3": {
             "type": "soldier_3",
             "attack": 30,
             "defence": 30,
-            "animation_walk": [30, 35],
-            "animation_attack": [36, 37, 38],
-            "animation_dead": [39, 43]
+            "animation_walk": [108, 113],
+            "animation_attack": [114, 115, 116],
+            "animation_dead": [117, 121]
         }
     },
     "enemy":{
@@ -30,25 +30,25 @@
             "type": "enemy_1",
             "attack": 10,
             "defence": 10,
-            "animation_walk": [1, 19],
-            "animation_attack": [20, 27, 36],
-            "animation_dead": [37, 56]
+            "animation_walk": [57, 69],
+            "animation_attack": [70, 71, 72],
+            "animation_dead": [73, 78]
         },
         "enemy_2": {
             "type": "enemy_2",
             "attack": 20,
             "defence": 20,
-            "animation_walk": [57, 69],
-            "animation_attack": [70, 71, 72],
-            "animation_dead": [73, 78]
+            "animation_walk": [122, 134],
+            "animation_attack": [135, 139,142],
+            "animation_dead": [143, 153]
         },
         "enemy_3": {
             "type": "enemy_3",
             "attack": 30,
             "defence": 30,
-            "animation_walk": [79, 91],
-            "animation_attack": [92, 96, 100],
-            "animation_dead": [101, 110]
+            "animation_walk": [1, 19],
+            "animation_attack": [20, 27, 36],
+            "animation_dead": [37, 56]
         }
     }
 }
