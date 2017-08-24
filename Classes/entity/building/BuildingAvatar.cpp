@@ -8,9 +8,11 @@
 
 #include "BuildingAvatar.hpp"
 
+#include "GameManager.hpp"
 
-BuildingAvatar* BuildingAvatar::createBuildingAvatar(){
-    BuildingAvatar* buildingAvatar = new (std::nothrow) BuildingAvatar();
+
+BuildingAvatar* BuildingAvatar::createBuildingAvatar(const BuildingConfig& config){
+    BuildingAvatar* buildingAvatar = new (std::nothrow) BuildingAvatar(config);
     if (buildingAvatar && buildingAvatar->init()){
         buildingAvatar->retain();
         return buildingAvatar;
@@ -26,7 +28,7 @@ bool BuildingAvatar::init(){
         return false;
     }
     
-    _avatar = cocos2d::Sprite::createWithSpriteFrameName("building_1.png");
+    _avatar = cocos2d::Sprite::createWithSpriteFrameName(GameManagerInstance->buildingHelper->getBuildingNormalFrameName(buildingConfig));
     _avatar->setAnchorPoint(cocos2d::Vec2(0.5, 0));
     this->addChild(_avatar);
     

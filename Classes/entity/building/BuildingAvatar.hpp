@@ -12,13 +12,17 @@
 #include <stdio.h>
 #include "BaseEntityAvatar.hpp"
 
+#include "BuildingConfig.hpp"
+
 class BuildingAvatar: public BaseEntityAvatar{
 private:
-    BuildingAvatar(){}
+    BuildingAvatar(const BuildingConfig& config):buildingConfig(config){}
     ~BuildingAvatar(){}
 public:
     
-    static BuildingAvatar* createBuildingAvatar();
+    BuildingConfig buildingConfig;
+    
+    static BuildingAvatar* createBuildingAvatar(const BuildingConfig& config);
     virtual bool init();
 };
 

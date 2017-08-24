@@ -10,8 +10,8 @@
 
 #include "GameManager.hpp"
 
-Building::Building(int id):BaseEntity(id){
-    avatar = BuildingAvatar::createBuildingAvatar();
+Building::Building(int id, const BuildingConfig& config): BaseEntity(id), buildingConfig(config){
+    avatar = BuildingAvatar::createBuildingAvatar(buildingConfig);
     stateMachine = new (std::nothrow) StateMachine<Building>(this);
     
     assert(avatar);
@@ -24,8 +24,18 @@ Building::~Building(){
     
 }
 
-Building* Building::createBuilding(int id){
-    Building* building = new (std::nothrow) Building(id);
+Building* Building::createBuilding(int id, const BuildingConfig& config){
+    Building* building = new (std::nothrow) Building(id, config);
+    if (building){
+        return building;
+    }
+    
+    delete building;
+    building = nullptr;
+    return nullptr;
+}
+Building* Building::createBuilding(int id, const std::string& buildingTypeName){
+    Building* building = new (std::nothrow) Building(id, GameManagerInstance->configManager->getBuildingConfig(buildingTypeName));
     if (building){
         return building;
     }

@@ -64,7 +64,7 @@ void BattleMananger::_addCharater(){
 
 void BattleMananger::_addBuilding(){
     cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
-    Building* newBuilding = Building::createBuilding(GameManagerInstance->entityManager->getBuildingID());
+    Building* newBuilding = Building::createBuilding(GameManagerInstance->entityManager->getBuildingID(), "building_1");
     newBuilding->setPosition(visible.width / 2, visible.height / 2);
     _battleScene->groundLayer->addChild(newBuilding->avatar);
 }

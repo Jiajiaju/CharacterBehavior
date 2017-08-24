@@ -24,6 +24,5 @@ std::string CharacterHelper::getCharacterFrameName(const CharacterConfig &charac
 }
 
 std::string CharacterHelper::getCharacterFrameName(const std::string &characterTypeName, int frameNumber){
-    const CharacterConfig characterConfig = GameManagerInstance->configManager->getCharacterConfig(characterTypeName);
     return std::string("character_") + intToString(frameNumber) + ".png";
 }

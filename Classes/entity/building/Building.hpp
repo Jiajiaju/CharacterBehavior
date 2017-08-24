@@ -21,17 +21,22 @@
 
 #include "StateMachine.hpp"
 
+#include "BuildingConfig.hpp"
+
 #ifdef FSM
 
 class Building: public BaseEntity{
 private:
-    Building(int id);
+    Building(int id, const BuildingConfig& config);
     ~Building();
 public:
     
+    BuildingConfig buildingConfig;
+    
     StateMachine<Building> *stateMachine;
     
-    static Building* createBuilding(int id);
+    static Building* createBuilding(int id, const BuildingConfig& config);
+    static Building* createBuilding(int id, const std::string& buildingTypeName);
     
     virtual void destory();
     virtual void update(float dt);
