@@ -50,3 +50,7 @@ void GameManager::update(float dt){
         iter->second->update(dt);
     }
 }
+
+void GameManager::scheduleOnce(const std::function<void ()> &callback, float delayTime){
+    cocos2d::Director::getInstance()->getScheduler()->schedule([callback](float dt){ callback(); }, cocos2d::Director::getInstance(), delayTime, 0, 0, false, "normal_delay");
+}

@@ -38,12 +38,16 @@ enum class BattleTileFocus{
 
 class BattleTile{
 public:
+    BattleTile():row(-1), column(-1) {}
     BattleTile(int paramColumn, int paramRow):column(paramColumn), row(paramRow) {}
     BattleTileFocus focus = BattleTileFocus::CentreMiddle;
     int column = 0;
     int row = 0;
     
     int cost = 0;
+    
+    bool operator==(const BattleTile& rhs){ return (row == rhs.row && column == rhs.column); }
+    bool operator!=(const BattleTile& rhs){ return (row != rhs.row || column != rhs.column); }
 };
 
 #endif /* BattleTile_hpp */

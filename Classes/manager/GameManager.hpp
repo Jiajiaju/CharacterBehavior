@@ -40,6 +40,8 @@ public:
     void startGame();
     
     void update(float dt);
+    
+    void scheduleOnce(const std::function<void()>& callback, float delayTime);
 };
 
 #ifndef GameManagerInstance

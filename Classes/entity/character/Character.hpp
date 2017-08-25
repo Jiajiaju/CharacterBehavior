@@ -48,8 +48,11 @@ public:
     cocos2d::Vec2 getPosition(){ return avatar->getPosition(); }
     
 //    std::vector<BattleTile> currentPath;
-//    BattleTile currentTile;
 //    BattleTile lastTile;
+    
+    BattleTile currentTile;
+    BattleTile targetTile;
+    Character* attackTarget;
     
 };
 

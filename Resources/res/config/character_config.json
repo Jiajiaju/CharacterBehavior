@@ -4,6 +4,7 @@
             "type": "soldier_1",
             "attack": 10,
             "defence": 10,
+            "speed": 10,
             "animation_walk": [79, 84],
             "animation_attack": [85, 86, 88],
             "animation_dead": [89, 93]
@@ -12,6 +13,7 @@
             "type": "soldier_2",
             "attack": 20,
             "defence": 20,
+            "speed": 10,
             "animation_walk": [94, 99],
             "animation_attack": [100, 101, 102],
             "animation_dead": [103, 107]
@@ -20,6 +22,7 @@
             "type": "soldier_3",
             "attack": 30,
             "defence": 30,
+            "speed": 10,
             "animation_walk": [108, 113],
             "animation_attack": [114, 115, 116],
             "animation_dead": [117, 121]
@@ -30,6 +33,7 @@
             "type": "enemy_1",
             "attack": 10,
             "defence": 10,
+            "speed": 10,
             "animation_walk": [57, 69],
             "animation_attack": [70, 71, 72],
             "animation_dead": [73, 78]
@@ -38,6 +42,7 @@
             "type": "enemy_2",
             "attack": 20,
             "defence": 20,
+            "speed": 10,
             "animation_walk": [122, 134],
             "animation_attack": [135, 139,142],
             "animation_dead": [143, 153]
@@ -46,6 +51,7 @@
             "type": "enemy_3",
             "attack": 30,
             "defence": 30,
+            "speed": 10,
             "animation_walk": [1, 19],
             "animation_attack": [20, 27, 36],
             "animation_dead": [37, 56]
