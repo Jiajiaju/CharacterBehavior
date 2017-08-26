@@ -49,12 +49,12 @@ void BattleMananger::_addCharater(){
     Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "soldier_2");
     newCharacter->setPosition(BattleTile(1, 1));
 //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
-    _battleScene->groundLayer->addChild(newCharacter->avatar);
+    newCharacter->addTo(_battleScene->groundLayer);
     
-    GameManagerInstance->scheduleOnce([newCharacter](){
-        CCLOG("Hello!");
-        newCharacter->targetTile = BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2);
-    }, 3);
+//    GameManagerInstance->scheduleOnce([newCharacter](){
+//        CCLOG("Hello!");
+//        newCharacter->targetTile = BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2);
+//    }, 3);
     
 //    Character* newCharacter1 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_2");
 //    newCharacter1->setPosition(BattleTile(28, 10));

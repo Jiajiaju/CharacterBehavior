@@ -17,8 +17,6 @@
 
 #include "BaseEntity.hpp"
 
-#include "BuildingAvatar.hpp"
-
 #include "StateMachine.hpp"
 
 #include "BuildingConfig.hpp"

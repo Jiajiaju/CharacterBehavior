@@ -12,8 +12,12 @@
 
 #include "CharacterStateIdle.hpp"
 
+USING_NS_CC;
+
 Character::Character(int id, const CharacterConfig& config): BaseEntity(id), characterConfig(config){
-    avatar = CharacterAvatar::createCharacterAvatar(characterConfig);
+    
+    this->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig));
+    
     stateMachine = new (std::nothrow) StateMachine<Character>(this);
     
     assert(avatar);
@@ -50,27 +54,26 @@ Character* Character::createCharacter(int id, const std::string &typeName){
 }
 
 void Character::destory(){
-    this->avatar->destory();
     delete stateMachine;
     delete this;
 }
 
 void Character::setPosition(const BattleTile &battleTile){
     cocos2d::Vec2 position = BattleGridHelper::getPositionByBattleTile(battleTile);
-    this->avatar->setPosition(position);
-    this->avatar->setLocalZOrder(BattleGridHelper::getGroundZOrderByBattleTile(battleTile));
+    this->avatarNode->setPosition(position);
+    this->avatarNode->setLocalZOrder(BattleGridHelper::getGroundZOrderByBattleTile(battleTile));
     this->currentTile = battleTile;
 }
 
 void Character::setPosition(const cocos2d::Vec2 &position){
-    this->avatar->setPosition(position);
-    this->avatar->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(position));
+    this->avatarNode->setPosition(position);
+    this->avatarNode->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(position));
     this->currentTile = GameManagerInstance->battleGridHelper->getBattleTileByPosition(position);
 }
 
 void Character::setPosition(float x, float y){
-    this->avatar->setPosition(x, y);
-    this->avatar->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(this->avatar->getPosition()));
+    this->avatarNode->setPosition(x, y);
+    this->avatarNode->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(this->avatar->getPosition()));
     this->currentTile = GameManagerInstance->battleGridHelper->getBattleTileByPosition(cocos2d::Vec2(x, y));
 }
 

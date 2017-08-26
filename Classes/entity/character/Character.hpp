@@ -16,7 +16,6 @@
 #include "setting.hpp"
 
 #include "BaseEntity.hpp"
-#include "CharacterAvatar.hpp"
 
 #include "StateMachine.hpp"
 
@@ -45,7 +44,9 @@ public:
     void setPosition(const cocos2d::Vec2& position);
     void setPosition(float x, float y);
     void setPosition(const BattleTile& battleTile);
-    cocos2d::Vec2 getPosition(){ return avatar->getPosition(); }
+    cocos2d::Vec2 getPosition(){ return this->avatarNode->getPosition(); }
+    void addTo(cocos2d::Node* parent){ parent->addChild(this->avatarNode); }
+    void addTo(cocos2d::Node* parent, int zOrder){ parent->addChild(this->avatarNode, zOrder); }
     
 //    std::vector<BattleTile> currentPath;
 //    BattleTile lastTile;

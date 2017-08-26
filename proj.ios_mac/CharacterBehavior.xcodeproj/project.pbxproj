@@ -68,13 +68,12 @@
 		EE1FCC231F36FF8E0097B539 /* BattleTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC211F36FF8E0097B539 /* BattleTile.cpp */; };
 		EE736F301F3A011200FD4EE3 /* BaseEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F2E1F3A011200FD4EE3 /* BaseEntity.cpp */; };
 		EE736F331F3A015D00FD4EE3 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F311F3A015D00FD4EE3 /* Character.cpp */; };
-		EE736F391F3A026800FD4EE3 /* BaseEntityAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F371F3A026800FD4EE3 /* BaseEntityAvatar.cpp */; };
-		EE736F3C1F3A111B00FD4EE3 /* CharacterAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F3A1F3A111B00FD4EE3 /* CharacterAvatar.cpp */; };
 		EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE736F3D1F3A13EB00FD4EE3 /* EntityManager.cpp */; };
 		EE9088721F4DE7BB007C2A06 /* CharacterHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088701F4DE7BB007C2A06 /* CharacterHelper.cpp */; };
 		EE9088771F4F0CBC007C2A06 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088751F4F0CBC007C2A06 /* utility.cpp */; };
 		EE90887B1F4F2100007C2A06 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088791F4F2100007C2A06 /* ResourceManager.cpp */; };
 		EE90887E1F4F2AE0007C2A06 /* BuildingHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE90887C1F4F2AE0007C2A06 /* BuildingHelper.cpp */; };
+		EE9088821F51C47F007C2A06 /* EntityAnimationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088801F51C47F007C2A06 /* EntityAnimationManager.cpp */; };
 		EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */; };
 		EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */; };
 		EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3981F3B43C9003D6763 /* StateMachine.cpp */; };
@@ -84,7 +83,6 @@
 		EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EECF9D551F323CEA00FA1C82 /* MapConfig.cpp */; };
 		EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */; };
 		EEED869E1F43313D008CDD8B /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869C1F43313D008CDD8B /* Building.cpp */; };
-		EEED86A11F433816008CDD8B /* BuildingAvatar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */; };
 		EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */; };
 		EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */; };
 		EEED86AC1F4483EA008CDD8B /* ConfigManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86AA1F4483EA008CDD8B /* ConfigManager.cpp */; };
@@ -203,10 +201,6 @@
 		EE736F2F1F3A011200FD4EE3 /* BaseEntity.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BaseEntity.hpp; sourceTree = "<group>"; };
 		EE736F311F3A015D00FD4EE3 /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
 		EE736F321F3A015D00FD4EE3 /* Character.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
-		EE736F371F3A026800FD4EE3 /* BaseEntityAvatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseEntityAvatar.cpp; sourceTree = "<group>"; };
-		EE736F381F3A026800FD4EE3 /* BaseEntityAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BaseEntityAvatar.hpp; sourceTree = "<group>"; };
-		EE736F3A1F3A111B00FD4EE3 /* CharacterAvatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterAvatar.cpp; sourceTree = "<group>"; };
-		EE736F3B1F3A111B00FD4EE3 /* CharacterAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterAvatar.hpp; sourceTree = "<group>"; };
 		EE736F3D1F3A13EB00FD4EE3 /* EntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityManager.cpp; sourceTree = "<group>"; };
 		EE736F3E1F3A13EB00FD4EE3 /* EntityManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityManager.hpp; sourceTree = "<group>"; };
 		EE9088701F4DE7BB007C2A06 /* CharacterHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterHelper.cpp; sourceTree = "<group>"; };
@@ -217,6 +211,8 @@
 		EE90887A1F4F2100007C2A06 /* ResourceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager.hpp; sourceTree = "<group>"; };
 		EE90887C1F4F2AE0007C2A06 /* BuildingHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingHelper.cpp; sourceTree = "<group>"; };
 		EE90887D1F4F2AE0007C2A06 /* BuildingHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingHelper.hpp; sourceTree = "<group>"; };
+		EE9088801F51C47F007C2A06 /* EntityAnimationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityAnimationManager.cpp; sourceTree = "<group>"; };
+		EE9088811F51C47F007C2A06 /* EntityAnimationManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityAnimationManager.hpp; sourceTree = "<group>"; };
 		EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityState.cpp; sourceTree = "<group>"; };
 		EE9FF3931F3B3EC3003D6763 /* EntityState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityState.hpp; sourceTree = "<group>"; };
 		EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateWalk.cpp; sourceTree = "<group>"; };
@@ -238,8 +234,6 @@
 		EEED86961F41F606008CDD8B /* CharacterStateFindTarget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateFindTarget.hpp; sourceTree = "<group>"; };
 		EEED869C1F43313D008CDD8B /* Building.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
 		EEED869D1F43313D008CDD8B /* Building.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Building.hpp; sourceTree = "<group>"; };
-		EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingAvatar.cpp; sourceTree = "<group>"; };
-		EEED86A01F433816008CDD8B /* BuildingAvatar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingAvatar.hpp; sourceTree = "<group>"; };
 		EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingStateTrain.cpp; sourceTree = "<group>"; };
 		EEED86A41F434881008CDD8B /* BuildingStateTrain.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingStateTrain.hpp; sourceTree = "<group>"; };
 		EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingStateProduce.cpp; sourceTree = "<group>"; };
@@ -490,8 +484,6 @@
 			children = (
 				EE736F2E1F3A011200FD4EE3 /* BaseEntity.cpp */,
 				EE736F2F1F3A011200FD4EE3 /* BaseEntity.hpp */,
-				EE736F371F3A026800FD4EE3 /* BaseEntityAvatar.cpp */,
-				EE736F381F3A026800FD4EE3 /* BaseEntityAvatar.hpp */,
 				EEED869A1F433062008CDD8B /* building */,
 				EE9FF38E1F3B3E8F003D6763 /* bt */,
 				EE9FF38B1F3B3E88003D6763 /* fsm */,
@@ -505,8 +497,6 @@
 			children = (
 				EE736F311F3A015D00FD4EE3 /* Character.cpp */,
 				EE736F321F3A015D00FD4EE3 /* Character.hpp */,
-				EE736F3A1F3A111B00FD4EE3 /* CharacterAvatar.cpp */,
-				EE736F3B1F3A111B00FD4EE3 /* CharacterAvatar.hpp */,
 			);
 			path = character;
 			sourceTree = "<group>";
@@ -588,6 +578,8 @@
 				EEED86AB1F4483EA008CDD8B /* ConfigManager.hpp */,
 				EE9088791F4F2100007C2A06 /* ResourceManager.cpp */,
 				EE90887A1F4F2100007C2A06 /* ResourceManager.hpp */,
+				EE9088801F51C47F007C2A06 /* EntityAnimationManager.cpp */,
+				EE9088811F51C47F007C2A06 /* EntityAnimationManager.hpp */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -613,8 +605,6 @@
 			children = (
 				EEED869C1F43313D008CDD8B /* Building.cpp */,
 				EEED869D1F43313D008CDD8B /* Building.hpp */,
-				EEED869F1F433816008CDD8B /* BuildingAvatar.cpp */,
-				EEED86A01F433816008CDD8B /* BuildingAvatar.hpp */,
 			);
 			path = building;
 			sourceTree = "<group>";
@@ -794,7 +784,6 @@
 				EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */,
-				EE736F3C1F3A111B00FD4EE3 /* CharacterAvatar.cpp in Sources */,
 				EE90887B1F4F2100007C2A06 /* ResourceManager.cpp in Sources */,
 				EEED86C41F44B15F008CDD8B /* AllModel.cpp in Sources */,
 				EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */,
@@ -815,11 +804,10 @@
 				EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */,
 				EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */,
 				EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */,
-				EEED86A11F433816008CDD8B /* BuildingAvatar.cpp in Sources */,
+				EE9088821F51C47F007C2A06 /* EntityAnimationManager.cpp in Sources */,
 				EEF994F61F3C919800E28856 /* mathtool.cpp in Sources */,
 				EEED86BE1F44B0CF008CDD8B /* BuildingConfig.cpp in Sources */,
 				EE1FCC1B1F36FB2C0097B539 /* BattleGridHelper.cpp in Sources */,
-				EE736F391F3A026800FD4EE3 /* BaseEntityAvatar.cpp in Sources */,
 				EE1FCC231F36FF8E0097B539 /* BattleTile.cpp in Sources */,
 				EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */,
 				EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */,

@@ -26,7 +26,7 @@ void CharacterStateIdle::execute(Character *character, float dt){
     if (_timeCounter > _turnInterval){
         _timeCounter = _timeCounter - _turnInterval;
         _turnInterval = randomFloatRange(5, 10);
-        character->avatar->turn();
+        character->turn();
     }
 }
 

@@ -26,10 +26,10 @@ class GameManager: public Singleton<GameManager>{
 private:
 public:
     
-    static BattleMananger*  battleMananger;
-    static EntityManager*   entityManager;
-    static ConfigManager*   configManager;
-    static ResourceManager* resourceManager;
+    static BattleMananger*         battleMananger;
+    static EntityManager*          entityManager;
+    static ConfigManager*          configManager;
+    static ResourceManager*        resourceManager;
     
     static BattleGridHelper* battleGridHelper;
     static CharacterHelper*  characterHelper;

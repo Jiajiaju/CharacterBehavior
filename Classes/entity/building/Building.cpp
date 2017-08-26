@@ -11,7 +11,7 @@
 #include "GameManager.hpp"
 
 Building::Building(int id, const BuildingConfig& config): BaseEntity(id), buildingConfig(config){
-    avatar = BuildingAvatar::createBuildingAvatar(buildingConfig);
+    
     stateMachine = new (std::nothrow) StateMachine<Building>(this);
     
     assert(avatar);
@@ -46,7 +46,7 @@ Building* Building::createBuilding(int id, const std::string& buildingTypeName){
 }
 
 void Building::destory(){
-    this->avatar->destory();
+//    this->avatar->destory();
     delete stateMachine;
     delete this;
 }
@@ -56,11 +56,11 @@ void Building::update(float dt){
 }
 
 void Building::setPosition(const cocos2d::Vec2 &position){
-    avatar->setPosition(position);
+    this->avatarNode->setPosition(position);
 }
 
 void Building::setPosition(float x, float y){
-    avatar->setPosition(x, y);
+    this->avatarNode->setPosition(x, y);
 }
 
 

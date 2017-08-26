@@ -11,3 +11,20 @@
 void BaseEntity::destory(){
     delete this;
 }
+
+void BaseEntity::turn(){
+    if (_faceDirection == "left"){
+        _faceDirection = "right";
+        this->avatar->setFlippedX(true);
+    }else {
+        _faceDirection = "left";
+        this->avatar->setFlippedX(false);
+    }
+}
+
+void BaseEntity::turn(const std::string &direction){
+    if (_faceDirection == direction){
+        return;
+    }
+    this->turn();
+}
