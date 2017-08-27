@@ -77,6 +77,17 @@ BattleTile BattleGridHelper::getBattleTileByPosition(const cocos2d::Vec2 &positi
     return BattleTile(column, row);
 }
 
+Vector2D BattleGridHelper::getVector2DByBattleTile(const BattleTile &battleTile){
+    cocos2d::Vec2 position = BattleGridHelper::getPositionByBattleTile(battleTile);
+    return Vector2D(position.x, position.y);
+}
+
+BattleTile BattleGridHelper::getBattleTileByVector2D(const Vector2D &vector2D){
+    int column = static_cast<int>(floorf(vector2D.x / MapConfig::tileWidth));
+    int row    = static_cast<int>(floorf(vector2D.y / MapConfig::tileWidth));
+    return BattleTile(column, row);
+}
+
 int BattleGridHelper::getGronudZOrderByPosition(const cocos2d::Vec2 &position){
     float tileWidth = static_cast<float>(MapConfig::tileWidth);
     int offset = static_cast<int>(floorf(position.y / (tileWidth / 2)));

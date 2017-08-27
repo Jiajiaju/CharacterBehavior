@@ -18,8 +18,8 @@ void CharacterStateIdle::enter(Character *character){
 
 void CharacterStateIdle::execute(Character *character, float dt){
     _timeCounter += dt;
-    if (character->targetTile.row != -1 && character->targetTile.column != -1 &&
-        character->targetTile != character->currentTile){
+    if (character->getTargetTile().row != -1 && character->getTargetTile().column != -1 &&
+        character->getTargetTile() != character->currentTile){
         character->stateMachine->setCurrentState(CharacterStateWalk::getInstance());
         return;
     }

@@ -69,13 +69,18 @@ void Character::setPosition(const BattleTile &battleTile){
 void Character::setPosition(const cocos2d::Vec2 &position){
     this->avatarNode->setPosition(position);
     this->avatarNode->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(position));
-    this->currentTile = GameManagerInstance->battleGridHelper->getBattleTileByPosition(position);
+    this->currentTile = BattleGridHelper::getBattleTileByPosition(position);
 }
 
 void Character::setPosition(float x, float y){
     this->avatarNode->setPosition(x, y);
     this->avatarNode->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(this->avatar->getPosition()));
-    this->currentTile = GameManagerInstance->battleGridHelper->getBattleTileByPosition(cocos2d::Vec2(x, y));
+    this->currentTile = BattleGridHelper::getBattleTileByPosition(cocos2d::Vec2(x, y));
+}
+
+void Character::setTargetTile(const BattleTile &tile){
+    _targetTile = tile;
+    _targetVector2D = GameManagerInstance->battleGridHelper->getVector2DByBattleTile(_targetTile);
 }
 
 void Character::update(float dt){

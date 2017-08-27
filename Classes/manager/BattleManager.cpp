@@ -45,26 +45,14 @@ void BattleMananger::_showMapGrid(){
 }
 
 void BattleMananger::_addCharater(){
-    cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
     Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_1");
     newCharacter->setPosition(BattleTile(1, 1));
-//    newCharacter->setPosition(visible.width / 2, visible.height / 2);
     newCharacter->addTo(_battleScene->groundLayer);
     
     GameManagerInstance->scheduleOnce([newCharacter](){
-        CCLOG("Hello!");
-        newCharacter->targetTile = BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2);
+        newCharacter->setTargetTile(BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2));
     }, 3);
     
-//    Character* newCharacter1 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_2");
-//    newCharacter1->setPosition(BattleTile(28, 10));
-//    //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
-//    _battleScene->groundLayer->addChild(newCharacter1->avatar);
-//    
-//    Character* newCharacter2 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_3");
-//    newCharacter2->setPosition(BattleTile(35, 10));
-//    //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
-//    _battleScene->groundLayer->addChild(newCharacter2->avatar);
 }
 
 void BattleMananger::_addBuilding(){
@@ -72,11 +60,6 @@ void BattleMananger::_addBuilding(){
 //    Building* newBuilding = Building::createBuilding(GameManagerInstance->entityManager->getBuildingID(), "building_1");
 //    newBuilding->setPosition(visible.width / 2, visible.height / 2);
 //    _battleScene->groundLayer->addChild(newBuilding->avatar);
-//    
-//    Building* newBuilding1 = Building::createBuilding(GameManagerInstance->entityManager->getBuildingID(), "building_2");
-//    newBuilding1->setPosition(visible.width, visible.height / 2);
-//    _battleScene->groundLayer->addChild(newBuilding1->avatar);
-    
 }
 
 bool BattleMananger::_onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event){

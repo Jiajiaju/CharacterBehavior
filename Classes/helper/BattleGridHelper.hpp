@@ -27,6 +27,10 @@ private:
 public:
     static cocos2d::Vec2 getPositionByBattleTile(const BattleTile& battleTile);
     static BattleTile getBattleTileByPosition(const cocos2d::Vec2& position);
+    
+    static Vector2D getVector2DByBattleTile(const BattleTile& battleTile);
+    static BattleTile getBattleTileByVector2D(const Vector2D& vector2D);
+    
     static cocos2d::Vec2 dealPositionOffsetInTile(BattleTileFocus focus, const cocos2d::Vec2& positionLeftBottom);
     
     static int getGroundZOrderByBattleTile(const BattleTile& battleTile);

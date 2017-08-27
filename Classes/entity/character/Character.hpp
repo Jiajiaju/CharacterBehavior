@@ -14,6 +14,7 @@
 
 #include "import.hpp"
 #include "setting.hpp"
+#include "Vector2D.hpp"
 
 #include "BaseEntity.hpp"
 
@@ -29,6 +30,9 @@ class Character: public BaseEntity{
 private:
     Character(int id, const CharacterConfig& config);
     ~Character();
+    
+    BattleTile _targetTile;
+    Vector2D _targetVector2D;
 public:
     
     CharacterConfig characterConfig;
@@ -56,8 +60,10 @@ public:
     int aniamtionSpeedCounter = 0;
     
     BattleTile currentTile;
-    BattleTile targetTile;
     Character* attackTarget;
+    void setTargetTile(const BattleTile& tile);
+    BattleTile& getTargetTile(){ return _targetTile; }
+    Vector2D& getTargetVector2D(){ return _targetVector2D; }
     
 };
 
