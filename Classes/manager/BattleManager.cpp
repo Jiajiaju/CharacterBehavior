@@ -46,15 +46,15 @@ void BattleMananger::_showMapGrid(){
 
 void BattleMananger::_addCharater(){
     cocos2d::Size visible = cocos2d::Director::getInstance()->getVisibleSize();
-    Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "soldier_2");
+    Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_1");
     newCharacter->setPosition(BattleTile(1, 1));
 //    newCharacter->setPosition(visible.width / 2, visible.height / 2);
     newCharacter->addTo(_battleScene->groundLayer);
     
-//    GameManagerInstance->scheduleOnce([newCharacter](){
-//        CCLOG("Hello!");
-//        newCharacter->targetTile = BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2);
-//    }, 3);
+    GameManagerInstance->scheduleOnce([newCharacter](){
+        CCLOG("Hello!");
+        newCharacter->targetTile = BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2);
+    }, 3);
     
 //    Character* newCharacter1 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_2");
 //    newCharacter1->setPosition(BattleTile(28, 10));

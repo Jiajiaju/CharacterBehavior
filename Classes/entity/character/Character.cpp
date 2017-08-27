@@ -16,6 +16,7 @@ USING_NS_CC;
 
 Character::Character(int id, const CharacterConfig& config): BaseEntity(id), characterConfig(config){
     
+    this->animationFrameCounter = characterConfig.animation_walk[0];
     this->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig));
     
     stateMachine = new (std::nothrow) StateMachine<Character>(this);

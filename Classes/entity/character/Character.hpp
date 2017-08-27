@@ -51,6 +51,10 @@ public:
 //    std::vector<BattleTile> currentPath;
 //    BattleTile lastTile;
     
+    int animationFrameCounter = 0;
+    int animationSpeed = 5;
+    int aniamtionSpeedCounter = 0;
+    
     BattleTile currentTile;
     BattleTile targetTile;
     Character* attackTarget;
