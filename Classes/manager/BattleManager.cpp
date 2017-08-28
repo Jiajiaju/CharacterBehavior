@@ -50,7 +50,7 @@ void BattleMananger::_addCharater(){
     newCharacter->addTo(_battleScene->groundLayer);
     
     GameManagerInstance->scheduleOnce([newCharacter](){
-        newCharacter->setTargetTile(BattleTile(MapConfig::mapWidth - 1, MapConfig::mapHeight / 2));
+        newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn - 1, MapConfig::tileRow / 2));
     }, 3);
     
 }

@@ -52,18 +52,18 @@ public:
     }
     
     void normalize(){
-        float distance = std::sqrt((this->x * this->x) * (this->y * this->y));
+        double distance = std::sqrt((this->x * this->x) + (this->y * this->y));
         this->x = this->x / distance;
         this->y = this->y / distance;
     }
     Vector2D getNormalize(){
-        float distance = std::sqrt((this->x * this->x) * (this->y * this->y));
+        float distance = std::sqrt((this->x * this->x) + (this->y * this->y));
         Vector2D newVector2D(this->x / distance, this->y / distance);
         return newVector2D;
     }
     
     float getLength(){
-        return std::sqrt((this->x * this->x) * (this->y * this->y));
+        return std::sqrt((this->x * this->x) + (this->y * this->y));
     }
     float getLengthSquare(){
         return ((this->x * this->x) * (this->y * this->y));
@@ -79,7 +79,7 @@ public:
         return (xBool && yBool);
     }
     float getDistance(const Vector2D& vector2D){
-        return std::sqrt((x - vector2D.x)*(x - vector2D.x) * (y - vector2D.y)*(y - vector2D.y));
+        return std::sqrt((x - vector2D.x)*(x - vector2D.x) + (y - vector2D.y)*(y - vector2D.y));
     }
     float getDistanceSquare(const Vector2D& vector2D){
         return ((x - vector2D.x)*(x - vector2D.x) * (y - vector2D.y)*(y - vector2D.y));
