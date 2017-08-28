@@ -62,20 +62,21 @@ void Character::destory(){
 void Character::setPosition(const BattleTile &battleTile){
     cocos2d::Vec2 position = BattleGridHelper::getPositionByBattleTile(battleTile);
     this->avatarNode->setPosition(position);
-    this->avatarNode->setLocalZOrder(BattleGridHelper::getGroundZOrderByBattleTile(battleTile));
+    this->avatarNode->setLocalZOrder(BattleGridHelper::getGroundZOrder(battleTile));
     this->currentTile = battleTile;
-}
-
-void Character::setPosition(const cocos2d::Vec2 &position){
-    this->avatarNode->setPosition(position);
-    this->avatarNode->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(position));
-    this->currentTile = BattleGridHelper::getBattleTileByPosition(position);
 }
 
 void Character::setPosition(float x, float y){
     this->avatarNode->setPosition(x, y);
-    this->avatarNode->setLocalZOrder(BattleGridHelper::getGronudZOrderByPosition(this->avatar->getPosition()));
-    this->currentTile = BattleGridHelper::getBattleTileByPosition(cocos2d::Vec2(x, y));
+    Vector2D position(x, y);
+    this->avatarNode->setLocalZOrder(BattleGridHelper::getGroundZOrder(position));
+    this->currentTile = BattleGridHelper::getBattleTileByVector2D(position);
+}
+
+void Character::setPosition(const Vector2D &vector2D){
+    this->avatarNode->setPosition(vector2D.x, vector2D.y);
+    this->avatarNode->setLocalZOrder(BattleGridHelper::getGroundZOrder(vector2D));
+    this->currentTile = BattleGridHelper::getBattleTileByVector2D(vector2D);
 }
 
 void Character::setTargetTile(const BattleTile &tile){

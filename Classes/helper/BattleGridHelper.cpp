@@ -88,24 +88,24 @@ BattleTile BattleGridHelper::getBattleTileByVector2D(const Vector2D &vector2D){
     return BattleTile(column, row);
 }
 
-int BattleGridHelper::getGronudZOrderByPosition(const cocos2d::Vec2 &position){
+int BattleGridHelper::getGroundZOrder(const Vector2D &vector2D){
     float tileWidth = static_cast<float>(MapConfig::tileWidth);
-    int offset = static_cast<int>(floorf(position.y / (tileWidth / 2)));
+    int offset = static_cast<int>(floorf(vector2D.y / (tileWidth / 2)));
     return _groundBaseZOrder + offset;
 }
 
-int BattleGridHelper::getGroundZOrderByBattleTile(const BattleTile &battleTile){
+int BattleGridHelper::getGroundZOrder(const BattleTile &battleTile){
     int offset = battleTile.row * 2;
     return _groundBaseZOrder + offset;
 }
 
-int BattleGridHelper::getSkyZOrderByPosition(const cocos2d::Vec2 &position){
+int BattleGridHelper::getSkyZOrder(const Vector2D &vector2D){
     float tileWidth = static_cast<float>(MapConfig::tileWidth);
-    int offset = static_cast<int>(floorf(position.y / (tileWidth / 2)));
+    int offset = static_cast<int>(floorf(vector2D.y / (tileWidth / 2)));
     return _skyBaseZOReder + offset;
 }
 
-int BattleGridHelper::getSkyZOrderByBattleTile(const BattleTile &battleTile){
+int BattleGridHelper::getSkyZOrder(const BattleTile &battleTile){
     int offset = battleTile.row * 2;
     return _skyBaseZOReder + offset;
 }

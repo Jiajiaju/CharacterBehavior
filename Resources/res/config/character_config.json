@@ -33,7 +33,7 @@
             "type": "enemy_1",
             "attack": 10,
             "defence": 10,
-            "speed": 50,
+            "speed": 30,
             "animation_walk": [57, 69],
             "animation_attack": [70, 71, 72],
             "animation_dead": [73, 78]

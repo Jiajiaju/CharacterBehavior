@@ -45,10 +45,10 @@ public:
     
     virtual void update(float dt);
     
-    void setPosition(const cocos2d::Vec2& position);
     void setPosition(float x, float y);
     void setPosition(const BattleTile& battleTile);
-    cocos2d::Vec2 getPosition(){ return this->avatarNode->getPosition(); }
+    void setPosition(const Vector2D& vector2D);
+    Vector2D getPosition(){ return Vector2D(this->avatarNode->getPositionX(), this->avatarNode->getPositionY()); }
     void addTo(cocos2d::Node* parent){ parent->addChild(this->avatarNode); }
     void addTo(cocos2d::Node* parent, int zOrder){ parent->addChild(this->avatarNode, zOrder); }
     

@@ -31,13 +31,15 @@ public:
     static Vector2D getVector2DByBattleTile(const BattleTile& battleTile);
     static BattleTile getBattleTileByVector2D(const Vector2D& vector2D);
     
+    
     static cocos2d::Vec2 dealPositionOffsetInTile(BattleTileFocus focus, const cocos2d::Vec2& positionLeftBottom);
     
-    static int getGroundZOrderByBattleTile(const BattleTile& battleTile);
-    static int getGronudZOrderByPosition(const cocos2d::Vec2& position);
+    static int getGroundZOrder(const BattleTile& battleTile);
+    static int getGroundZOrder(const Vector2D& vector2D);
     
-    static int getSkyZOrderByBattleTile(const BattleTile& battleTile);
-    static int getSkyZOrderByPosition(const cocos2d::Vec2& position);
+    static int getSkyZOrder(const BattleTile& battleTile);
+    static int getSkyZOrder(const Vector2D& vector2D);
+    
 };
 
 #endif /* BattleGridHelper_hpp */

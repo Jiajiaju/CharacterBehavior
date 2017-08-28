@@ -31,8 +31,6 @@ protected:
     }
 public:
     
-//    BaseEntityAvatar* avatar = nllptr;
-    
     cocos2d::Node* avatarNode = nullptr;
     cocos2d::Sprite* avatar = nullptr;
     

@@ -46,9 +46,10 @@ void CharacterStateWalk::execute(Character *character, float dt){
         Vector2D targetVector = character->getTargetVector2D();
         Vector2D direction = targetVector - currentVector;
         direction.normalize();
-        Vector2D deltaPosition = Vector2D(direction.x * character->characterConfig.speed * dt, direction.y * character->characterConfig.speed * dt);
-        cocos2d::Vec2 currentPosition = character->avatarNode->getPosition();
-        character->setPosition(currentPosition.x + deltaPosition.x, currentPosition.y + deltaPosition.y);
+//        Vector2D deltaPosition = Vector2D(direction.x * character->characterConfig.speed * dt, direction.y * character->characterConfig.speed * dt);
+        Vector2D deltaPosition = direction * character->characterConfig.speed * dt;
+        Vector2D currentPosition = character->getPosition();
+        character->setPosition(currentPosition + deltaPosition);
         
         CCLOG("delta: (%f, %f)", deltaPosition.x, deltaPosition.y);
         
