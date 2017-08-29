@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
+#include "cocos2d.h"
 
 inline int randomIntRange(int rhs){
     return rand() % rhs;
@@ -36,6 +37,14 @@ inline float randomFloatRange(int lhs, int rhs){
 inline float randomFloatRange(int rhs){
     float base = rand() / (float)RAND_MAX;
     return rhs * base;
+}
+
+inline float getDistance(const cocos2d::Vec2& lhs, const cocos2d::Vec2& rhs){
+    return std::sqrt(((lhs.x - rhs.x)*(lhs.x - rhs.x)) + ((lhs.y - rhs.y)*(lhs.y - rhs.y)));
+}
+
+inline float getDistanceSquare(const cocos2d::Vec2& lhs, const cocos2d::Vec2& rhs){
+    return (((lhs.x - rhs.x)*(lhs.x - rhs.x)) + ((lhs.y - rhs.y)*(lhs.y - rhs.y)));
 }
 
 #endif /* mathtool_hpp */

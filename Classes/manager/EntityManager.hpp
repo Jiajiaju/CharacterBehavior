@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include "Singleton.hpp"
 
+#include "mathtool.hpp"
+
 #include "Character.hpp"
 #include "Building.hpp"
 
@@ -23,6 +25,9 @@ private:
     std::map<int, Character*> _characters;
     std::map<int, Building*> _buildings;
 public:
+    
+    static float getEntityDistanceSquare(BaseEntity* lhs, BaseEntity* rhs);
+    static float getEntityDistance(BaseEntity* lhs, BaseEntity* rhs);
     
     int getCharacterID();
     std::map<int, Character*>& getCharacters(){ return _characters; }
@@ -39,6 +44,7 @@ public:
     void unregisterBuilding(Building* building);
     void unregisterBuilding(int id);
     Building* getBuildingByID(int id);
+    
 };
 
 #endif /* EntityManager_hpp */

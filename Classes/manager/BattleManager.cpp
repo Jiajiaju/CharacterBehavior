@@ -50,7 +50,16 @@ void BattleMananger::_addCharater(){
     newCharacter->addTo(_battleScene->groundLayer);
     
     GameManagerInstance->scheduleOnce([newCharacter](){
+        CCLOG("change1");
         newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn - 1, MapConfig::tileRow / 2));
+        GameManagerInstance->scheduleOnce([newCharacter](){
+            CCLOG("change2");
+            newCharacter->setTargetTile(BattleTile(3, MapConfig::tileRow - 5));
+            GameManagerInstance->scheduleOnce([newCharacter](){
+                CCLOG("change3");
+                newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn / 2, MapConfig::tileRow / 2));
+            }, 10);
+        }, 10);
     }, 3);
     
 }

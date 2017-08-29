@@ -73,6 +73,7 @@
 		EE9088771F4F0CBC007C2A06 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088751F4F0CBC007C2A06 /* utility.cpp */; };
 		EE90887B1F4F2100007C2A06 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088791F4F2100007C2A06 /* ResourceManager.cpp */; };
 		EE90887E1F4F2AE0007C2A06 /* BuildingHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE90887C1F4F2AE0007C2A06 /* BuildingHelper.cpp */; };
+		EE9088DC1F55CB62007C2A06 /* CharacterFindAttackTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9088DA1F55CB62007C2A06 /* CharacterFindAttackTarget.cpp */; };
 		EE9FF3941F3B3EC3003D6763 /* EntityState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */; };
 		EE9FF3971F3B4254003D6763 /* CharacterStateWalk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */; };
 		EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9FF3981F3B43C9003D6763 /* StateMachine.cpp */; };
@@ -80,7 +81,6 @@
 		EEBBE7DD1F322DFE000B49CE /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBBE7DB1F322DFE000B49CE /* BattleScene.cpp */; };
 		EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEC09ED91F29D2FD00DD5424 /* GameManager.cpp */; };
 		EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EECF9D551F323CEA00FA1C82 /* MapConfig.cpp */; };
-		EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */; };
 		EEED869E1F43313D008CDD8B /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869C1F43313D008CDD8B /* Building.cpp */; };
 		EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */; };
 		EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */; };
@@ -210,6 +210,8 @@
 		EE90887A1F4F2100007C2A06 /* ResourceManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceManager.hpp; sourceTree = "<group>"; };
 		EE90887C1F4F2AE0007C2A06 /* BuildingHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingHelper.cpp; sourceTree = "<group>"; };
 		EE90887D1F4F2AE0007C2A06 /* BuildingHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingHelper.hpp; sourceTree = "<group>"; };
+		EE9088DA1F55CB62007C2A06 /* CharacterFindAttackTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterFindAttackTarget.cpp; sourceTree = "<group>"; };
+		EE9088DB1F55CB62007C2A06 /* CharacterFindAttackTarget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterFindAttackTarget.hpp; sourceTree = "<group>"; };
 		EE9FF3921F3B3EC3003D6763 /* EntityState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityState.cpp; sourceTree = "<group>"; };
 		EE9FF3931F3B3EC3003D6763 /* EntityState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EntityState.hpp; sourceTree = "<group>"; };
 		EE9FF3951F3B4254003D6763 /* CharacterStateWalk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateWalk.cpp; sourceTree = "<group>"; };
@@ -227,8 +229,6 @@
 		EEC09EDA1F29D2FD00DD5424 /* GameManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameManager.hpp; sourceTree = "<group>"; };
 		EEC09EE11F2A4D5400DD5424 /* MapConfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MapConfig.hpp; sourceTree = "<group>"; };
 		EECF9D551F323CEA00FA1C82 /* MapConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapConfig.cpp; sourceTree = "<group>"; };
-		EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateFindTarget.cpp; sourceTree = "<group>"; };
-		EEED86961F41F606008CDD8B /* CharacterStateFindTarget.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateFindTarget.hpp; sourceTree = "<group>"; };
 		EEED869C1F43313D008CDD8B /* Building.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
 		EEED869D1F43313D008CDD8B /* Building.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Building.hpp; sourceTree = "<group>"; };
 		EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingStateTrain.cpp; sourceTree = "<group>"; };
@@ -526,8 +526,8 @@
 				EE9FF3961F3B4254003D6763 /* CharacterStateWalk.hpp */,
 				EE1E1CC91F3C8D1B007C5CD7 /* CharacterStateIdle.cpp */,
 				EE1E1CCA1F3C8D1B007C5CD7 /* CharacterStateIdle.hpp */,
-				EEED86951F41F606008CDD8B /* CharacterStateFindTarget.cpp */,
-				EEED86961F41F606008CDD8B /* CharacterStateFindTarget.hpp */,
+				EE9088DA1F55CB62007C2A06 /* CharacterFindAttackTarget.cpp */,
+				EE9088DB1F55CB62007C2A06 /* CharacterFindAttackTarget.hpp */,
 			);
 			path = character;
 			sourceTree = "<group>";
@@ -796,12 +796,12 @@
 				EE736F301F3A011200FD4EE3 /* BaseEntity.cpp in Sources */,
 				EEED86BB1F44B053008CDD8B /* CharacterConfig.cpp in Sources */,
 				EEED869E1F43313D008CDD8B /* Building.cpp in Sources */,
-				EEED86971F41F606008CDD8B /* CharacterStateFindTarget.cpp in Sources */,
 				EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */,
 				EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */,
 				EEF994F61F3C919800E28856 /* mathtool.cpp in Sources */,
 				EEED86BE1F44B0CF008CDD8B /* BuildingConfig.cpp in Sources */,
 				EE1FCC1B1F36FB2C0097B539 /* BattleGridHelper.cpp in Sources */,
+				EE9088DC1F55CB62007C2A06 /* CharacterFindAttackTarget.cpp in Sources */,
 				EE1FCC231F36FF8E0097B539 /* BattleTile.cpp in Sources */,
 				EEC09EDB1F29D2FD00DD5424 /* GameManager.cpp in Sources */,
 				EE9FF39A1F3B43C9003D6763 /* StateMachine.cpp in Sources */,

@@ -36,10 +36,12 @@ public:
     
     virtual void destory();
     
+    int getID(){ return _id; }
+    
     virtual void update(float dt) = 0;
     
-    void turnLeft() { _faceDirection = "left"; avatar->setFlippedX(false); }
-    void turnRight(){ _faceDirection = "right"; avatar->setFlippedX(true); }
+    void turnLeft() { _faceDirection = "left"; avatar->setFlippedX(true); }
+    void turnRight(){ _faceDirection = "right"; avatar->setFlippedX(false); }
     void turn();
     void turn(const std::string& direction);
 };

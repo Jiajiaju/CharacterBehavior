@@ -17,6 +17,8 @@ BattleGridHelper* GameManager::battleGridHelper = nullptr;
 CharacterHelper* GameManager::characterHelper = nullptr;
 BuildingHelper* GameManager::buildingHelper = nullptr;
 
+int GameManager::_scheduleID = 0;
+
 void GameManager::init(){
     
     srand((unsigned)time(NULL));
@@ -52,5 +54,5 @@ void GameManager::update(float dt){
 }
 
 void GameManager::scheduleOnce(const std::function<void ()> &callback, float delayTime){
-    cocos2d::Director::getInstance()->getScheduler()->schedule([callback](float dt){ callback(); }, cocos2d::Director::getInstance(), delayTime, 0, 0, false, "normal_delay");
+    cocos2d::Director::getInstance()->getScheduler()->schedule([callback](float dt){ callback(); }, cocos2d::Director::getInstance(), delayTime, 0, 0, false, "normal_delay" + intToString(++_scheduleID));
 }

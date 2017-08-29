@@ -15,10 +15,10 @@ void BaseEntity::destory(){
 void BaseEntity::turn(){
     if (_faceDirection == "left"){
         _faceDirection = "right";
-        this->avatar->setFlippedX(true);
+        this->avatar->setFlippedX(false);
     }else {
         _faceDirection = "left";
-        this->avatar->setFlippedX(false);
+        this->avatar->setFlippedX(true);
     }
 }
 

@@ -20,7 +20,7 @@ void CharacterStateIdle::execute(Character *character, float dt){
     _timeCounter += dt;
     if (character->getTargetTile().row != -1 && character->getTargetTile().column != -1 &&
         character->getTargetTile() != character->currentTile){
-        character->stateMachine->setCurrentState(CharacterStateWalk::getInstance());
+        character->stateMachine->changeState(CharacterStateWalk::getInstance());
         return;
     }
     if (_timeCounter > _turnInterval){

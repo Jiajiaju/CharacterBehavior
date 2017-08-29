@@ -24,6 +24,7 @@
 
 class GameManager: public Singleton<GameManager>{
 private:
+    static int _scheduleID;
 public:
     
     static BattleMananger*         battleMananger;

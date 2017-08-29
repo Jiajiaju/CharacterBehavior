@@ -11,6 +11,14 @@
 int EntityManager::_characterIDCounter = 1000;
 int EntityManager::_buildingIDCounter  = 3000;
 
+float EntityManager::getEntityDistanceSquare(BaseEntity *lhs, BaseEntity *rhs){
+    return getDistanceSquare(lhs->avatarNode->getPosition(), rhs->avatarNode->getPosition());
+}
+
+float EntityManager::getEntityDistance(BaseEntity *lhs, BaseEntity *rhs){
+    return getDistance(lhs->avatarNode->getPosition(), rhs->avatarNode->getPosition());
+}
+
 int EntityManager::getCharacterID(){
     return ++_characterIDCounter;
 }

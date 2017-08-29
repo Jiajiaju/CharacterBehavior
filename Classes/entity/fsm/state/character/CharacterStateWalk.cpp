@@ -12,10 +12,10 @@
 #include "GameManager.hpp"
 
 #include "CharacterStateIdle.hpp"
+#include "CharacterFindAttackTarget.hpp"
 
 void CharacterStateWalk::enter(Character *character){
     character->animationFrameCounter = character->characterConfig.animation_walk[0];
-    
 }
 
 void CharacterStateWalk::execute(Character *character, float dt){
@@ -33,14 +33,17 @@ void CharacterStateWalk::execute(Character *character, float dt){
     }
     
     // logic
+    CharacterFindAttackTarget::findAttackTargetNearest(character);
     if (character->attackTarget){
+        CCLOG("got attack target: %d -> %d", character->getID(), character->attackTarget->getID());
         return;
     }
     
+    
     if (character->getTargetTile() != character->currentTile){
-        CCLOG("current tile: (%d, %d)", character->currentTile.column, character->currentTile.row);
-        CCLOG("target tile: (%d, %d)", character->getTargetTile().column, character->getTargetTile().row);
-        CCLOG(" ");
+//        CCLOG("current tile: (%d, %d)", character->currentTile.column, character->currentTile.row);
+//        CCLOG("target tile: (%d, %d)", character->getTargetTile().column, character->getTargetTile().row);
+//        CCLOG(" ");
         
         Vector2D currentVector = BattleGridHelper::getVector2DByBattleTile(character->currentTile);
         Vector2D targetVector = character->getTargetVector2D();
@@ -51,12 +54,18 @@ void CharacterStateWalk::execute(Character *character, float dt){
         Vector2D currentPosition = character->getPosition();
         character->setPosition(currentPosition + deltaPosition);
         
-        CCLOG("delta: (%f, %f)", deltaPosition.x, deltaPosition.y);
+        if (targetVector.x > currentVector.x){
+            character->turnRight();
+        }else {
+            character->turnLeft();
+        }
+        
+//        CCLOG("delta: (%f, %f)", deltaPosition.x, deltaPosition.y);
         
         return;
     }
     
-    character->stateMachine->setCurrentState(CharacterStateIdle::getInstance());
+    character->stateMachine->changeState(CharacterStateIdle::getInstance());
     
 }
 
