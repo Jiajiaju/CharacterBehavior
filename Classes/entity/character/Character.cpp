@@ -99,3 +99,8 @@ void Character::update(float dt){
     }
     stateMachine->update(dt);
 }
+
+void Character::removeMeFromWorld(){
+    GameManagerInstance->entityManager->unregisterCharacter(this);
+    this->destory();
+}

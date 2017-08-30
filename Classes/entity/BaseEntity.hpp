@@ -28,6 +28,7 @@ protected:
     }
     virtual ~BaseEntity(){
         this->avatarNode->release();
+        this->avatarNode->removeFromParentAndCleanup(true);
     }
 public:
     

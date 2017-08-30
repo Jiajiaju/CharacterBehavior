@@ -8,12 +8,17 @@
 
 #include "CharacterStateExit.hpp"
 
+int CharacterStateExit::_exitFrameNumber = 60;
+
 void CharacterStateExit::enter(Character *character){
-    
+    character->exitCounter = 0;
 }
 
 void CharacterStateExit::execute(Character *character, float dt){
-    CCLOG("CharacterStateExit::execute");
+    character->exitCounter += 1;
+    if (character->exitCounter >= _exitFrameNumber){
+        character->removeMeFromWorld();
+    }
 }
 
 void CharacterStateExit::exit(Character *character){

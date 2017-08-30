@@ -18,7 +18,6 @@ void CharacterStateDead::enter(Character *character){
 }
 
 void CharacterStateDead::execute(Character *character, float dt){
-    CCLOG("CharacterStateDead::execute %d", character->animationFrameCounter);
     // animation
     character->animationSpeedCounter += 1;
     if (character->animationSpeedCounter > character->animationSpeed){

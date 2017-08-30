@@ -62,7 +62,7 @@ void BattleMananger::_addCharater(){
 //                CCLOG("change3");
 //                newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn / 2, MapConfig::tileRow / 2));
 //            }, 10);
-        }, 3);
+        }, 10);
     }, 3);
     
 }

@@ -16,6 +16,7 @@
 
 class CharacterStateExit: public EntityState<Character>, public Singleton<CharacterStateExit>{
 private:
+    static int _exitFrameNumber;
 public:
     virtual void enter(Character* character);
     virtual void execute(Character* character, float dt);

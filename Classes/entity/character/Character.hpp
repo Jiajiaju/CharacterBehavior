@@ -63,6 +63,7 @@ public:
     int animationFrameCounter = 0;
     int animationSpeed = 5;
     int animationSpeedCounter = 0;
+    int exitCounter = 0;
     
     BattleTile currentTile;
     Character* attackTarget;
@@ -74,7 +75,7 @@ public:
     bool isExit(){ return _isExit; }
     void dead(){ _isDead = true; }
     void exit(){ _isExit = true; }
-    
+    void removeMeFromWorld();
 };
 
 #endif
