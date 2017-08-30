@@ -13,6 +13,7 @@
 
 struct CharacterConfig{
     std::string type = "";
+    int hp = 0;
     int attack = 0;
     int defence = 0;
     int speed = 0;

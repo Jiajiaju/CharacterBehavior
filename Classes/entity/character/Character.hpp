@@ -33,6 +33,11 @@ private:
     
     BattleTile _targetTile;
     Vector2D _targetVector2D;
+    
+    int _hp = 0;
+    
+    bool _isDead = false;
+    bool _isExit = false;
 public:
     
     CharacterConfig characterConfig;
@@ -57,13 +62,18 @@ public:
     
     int animationFrameCounter = 0;
     int animationSpeed = 5;
-    int aniamtionSpeedCounter = 0;
+    int animationSpeedCounter = 0;
     
     BattleTile currentTile;
     Character* attackTarget;
     void setTargetTile(const BattleTile& tile);
     BattleTile& getTargetTile(){ return _targetTile; }
     Vector2D& getTargetVector2D(){ return _targetVector2D; }
+    
+    bool isDead(){ return _isDead; }
+    bool isExit(){ return _isExit; }
+    void dead(){ _isDead = true; }
+    void exit(){ _isExit = true; }
     
 };
 

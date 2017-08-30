@@ -11,8 +11,9 @@
 
 #include "GameManager.hpp"
 
-#include "CharacterStateIdle.hpp"
 #include "CharacterFindAttackTarget.hpp"
+#include "CharacterStateIdle.hpp"
+#include "CharacterStateDead.hpp"
 
 void CharacterStateWalk::enter(Character *character){
     character->animationFrameCounter = character->characterConfig.animation_walk[0];
@@ -20,10 +21,15 @@ void CharacterStateWalk::enter(Character *character){
 
 void CharacterStateWalk::execute(Character *character, float dt){
     
+    if (character->isDead()){
+        character->stateMachine->changeState(CharacterStateDead::getInstance());
+        return;
+    }
+    
     // animation
-    character->aniamtionSpeedCounter += 1;
-    if (character->aniamtionSpeedCounter > character->animationSpeed){
-        character->aniamtionSpeedCounter = 0;
+    character->animationSpeedCounter += 1;
+    if (character->animationSpeedCounter > character->animationSpeed){
+        character->animationSpeedCounter = 0;
         character->animationFrameCounter += 1;
         if (character->animationFrameCounter > character->characterConfig.animation_walk[1]){
             character->animationFrameCounter = character->characterConfig.animation_walk[0];

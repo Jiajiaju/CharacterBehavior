@@ -20,6 +20,7 @@ void ConfigManager::init(){
 CharacterConfig ConfigManager::_makeCharacterConfigItem(rapidjson::Value &configItem){
     CharacterConfig characterConfig;
     characterConfig.type = configItem["type"].GetString();
+    characterConfig.hp = configItem["hp"].GetInt();
     characterConfig.attack = configItem["attack"].GetInt();
     characterConfig.defence = configItem["defence"].GetInt();
     characterConfig.speed = configItem["speed"].GetInt();

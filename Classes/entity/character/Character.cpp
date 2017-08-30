@@ -27,6 +27,14 @@ Character::Character(int id, const CharacterConfig& config): BaseEntity(id), cha
     stateMachine->setCurrentState(CharacterStateIdle::getInstance());
     
     GameManagerInstance->entityManager->registerCharacter(this, _id);
+    
+    _hp = characterConfig.hp;
+    _isDead = false;
+    _isExit = false;
+    
+#ifdef DEBUG
+    UIUIHelper::getLabel(intToString(_id), 20, this->avatarNode, 0, 0);
+#endif
 }
 
 Character::~Character(){
@@ -85,5 +93,9 @@ void Character::setTargetTile(const BattleTile &tile){
 }
 
 void Character::update(float dt){
+    if (_hp <= 0 && _isDead == false){
+        _isDead = true;
+        return;
+    }
     stateMachine->update(dt);
 }

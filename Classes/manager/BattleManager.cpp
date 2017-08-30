@@ -28,9 +28,11 @@ void BattleMananger::enterBattle(){
     _battleMapDrawNode->setColor(cocos2d::Color3B(0, 0, 0));
     _battleScene->map->addChild(_battleMapDrawNode);
     
+#ifdef DEBUG
     _showMapGrid();
     _addCharater();
     _addBuilding();
+#endif
 }
 
 void BattleMananger::_showMapGrid(){
@@ -54,12 +56,13 @@ void BattleMananger::_addCharater(){
         newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn - 1, MapConfig::tileRow / 2));
         GameManagerInstance->scheduleOnce([newCharacter](){
             CCLOG("change2");
-            newCharacter->setTargetTile(BattleTile(3, MapConfig::tileRow - 5));
-            GameManagerInstance->scheduleOnce([newCharacter](){
-                CCLOG("change3");
-                newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn / 2, MapConfig::tileRow / 2));
-            }, 10);
-        }, 10);
+            newCharacter->dead();
+//            newCharacter->setTargetTile(BattleTile(3, MapConfig::tileRow - 5));
+//            GameManagerInstance->scheduleOnce([newCharacter](){
+//                CCLOG("change3");
+//                newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn / 2, MapConfig::tileRow / 2));
+//            }, 10);
+        }, 3);
     }, 3);
     
 }

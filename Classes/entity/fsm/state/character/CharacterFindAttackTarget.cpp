@@ -10,7 +10,21 @@
 
 #include "GameManager.hpp"
 
+Character* CharacterFindAttackTarget::_processCharacterCurrentAttackTarget(Character *character){
+    if (character->attackTarget == nullptr){
+        return nullptr;
+    }
+    
+    if (character->isDead()){
+        return nullptr;
+    }
+    
+    return character->attackTarget;
+    
+}
+
 Character* CharacterFindAttackTarget::findAttackTargetNearest(Character *character){
+    character->attackTarget = _processCharacterCurrentAttackTarget(character);
     if (character->attackTarget){
         return character->attackTarget;
     }

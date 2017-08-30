@@ -2,6 +2,7 @@
     "soldier": {
         "soldier_1": {
             "type": "soldier_1",
+            "hp": 100,
             "attack": 10,
             "defence": 10,
             "speed": 10,
@@ -11,6 +12,7 @@
         },
         "soldier_2": {
             "type": "soldier_2",
+            "hp": 100,
             "attack": 20,
             "defence": 20,
             "speed": 10,
@@ -20,6 +22,7 @@
         },
         "soldier_3": {
             "type": "soldier_3",
+            "hp": 100,
             "attack": 30,
             "defence": 30,
             "speed": 10,
@@ -31,6 +34,7 @@
     "enemy":{
         "enemy_1": {
             "type": "enemy_1",
+            "hp": 100,
             "attack": 10,
             "defence": 10,
             "speed": 30,
@@ -40,6 +44,7 @@
         },
         "enemy_2": {
             "type": "enemy_2",
+            "hp": 100,
             "attack": 20,
             "defence": 20,
             "speed": 10,
@@ -49,6 +54,7 @@
         },
         "enemy_3": {
             "type": "enemy_3",
+            "hp": 100,
             "attack": 30,
             "defence": 30,
             "speed": 10,

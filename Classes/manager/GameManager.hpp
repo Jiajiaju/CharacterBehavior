@@ -21,6 +21,7 @@
 #include "BattleGridHelper.hpp"
 #include "CharacterHelper.hpp"
 #include "BuildingHelper.hpp"
+#include "UIUIHelper.hpp"
 
 class GameManager: public Singleton<GameManager>{
 private:
@@ -35,6 +36,7 @@ public:
     static BattleGridHelper* battleGridHelper;
     static CharacterHelper*  characterHelper;
     static BuildingHelper*   buildingHelper;
+    static UIUIHelper*       uiuiHelper;
     
     void init();
     

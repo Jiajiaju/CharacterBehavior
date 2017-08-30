@@ -17,4 +17,7 @@
 // behavior state machine flag
 //#define BT 1
 
+// debug
+#define DEBUG 1
+
 #endif /* setting_hpp */
