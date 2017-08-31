@@ -19,6 +19,11 @@ Character::Character(int id, const CharacterConfig& config): BaseEntity(id), cha
     this->animationFrameCounter = characterConfig.animation_walk[0];
     this->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig));
     
+    cocos2d::Size avatarSize = this->avatar->getContentSize();
+    _hpBar = EntityHPBar::createEntityHPBar(EntityHPBarType::Middle);
+    _hpBar->setPosition(0, avatarSize.height - 10);
+    this->avatarOver->addChild(_hpBar);
+    
     stateMachine = new (std::nothrow) StateMachine<Character>(this);
     
     assert(avatar);
@@ -33,7 +38,7 @@ Character::Character(int id, const CharacterConfig& config): BaseEntity(id), cha
     _isExit = false;
     
 #ifdef DEBUG
-    UIUIHelper::getLabel(intToString(_id), 20, this->avatarNode, 0, 0);
+    UIUIHelper::getLabel(intToString(_id), 20, this->avatarOver, 0, avatarSize.height);
 #endif
 }
 
@@ -103,4 +108,15 @@ void Character::update(float dt){
 void Character::removeMeFromWorld(){
     GameManagerInstance->entityManager->unregisterCharacter(this);
     this->destory();
+}
+
+void Character::loseBlood(int loseValue){
+    if (loseValue > _hp){
+        loseValue = _hp;
+    }
+    _hp -= loseValue;
+    _hpBar->updateHPRatio(static_cast<float>(_hp) / static_cast<float>(characterConfig.hp));
+    if (_hp <= 0){
+        _isDead = true;
+    }
 }

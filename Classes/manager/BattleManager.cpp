@@ -56,13 +56,15 @@ void BattleMananger::_addCharater(){
         newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn - 1, MapConfig::tileRow / 2));
         GameManagerInstance->scheduleOnce([newCharacter](){
             CCLOG("change2");
-            newCharacter->dead();
+            newCharacter->loseBlood(50);
+//            newCharacter->dead();
 //            newCharacter->setTargetTile(BattleTile(3, MapConfig::tileRow - 5));
-//            GameManagerInstance->scheduleOnce([newCharacter](){
-//                CCLOG("change3");
+            GameManagerInstance->scheduleOnce([newCharacter](){
+                CCLOG("change3");
+                newCharacter->loseBlood(50);
 //                newCharacter->setTargetTile(BattleTile(MapConfig::tileColumn / 2, MapConfig::tileRow / 2));
-//            }, 10);
-        }, 10);
+            }, 5);
+        }, 5);
     }, 3);
     
 }

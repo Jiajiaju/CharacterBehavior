@@ -16,6 +16,9 @@ void CharacterStateExit::enter(Character *character){
 
 void CharacterStateExit::execute(Character *character, float dt){
     character->exitCounter += 1;
+    if (character->exitCounter >= _exitFrameNumber / 2){
+        character->avatar->setVisible(false);
+    }
     if (character->exitCounter >= _exitFrameNumber){
         character->removeMeFromWorld();
     }

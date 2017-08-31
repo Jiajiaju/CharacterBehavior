@@ -15,6 +15,10 @@
 void CharacterStateDead::enter(Character *character){
     character->animationFrameCounter = character->characterConfig.animation_dead[0];
     character->animationSpeedCounter = 0;
+    
+    auto blood = cocos2d::Sprite::createWithSpriteFrameName("character_blood_0.png");
+    blood->setAnchorPoint(cocos2d::Vec2(0.5, 0.5));
+    character->avatarNode->addChild(blood);
 }
 
 void CharacterStateDead::execute(Character *character, float dt){

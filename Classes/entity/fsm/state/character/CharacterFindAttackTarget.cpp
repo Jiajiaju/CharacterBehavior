@@ -31,9 +31,14 @@ Character* CharacterFindAttackTarget::findAttackTargetNearest(Character *charact
     std::map<int, Character*>& characters = GameManagerInstance->entityManager->getCharacters();
     Character* targetCharacter = nullptr;
     for (auto iter = characters.begin(); iter != characters.end(); ++iter){
+        
         if (iter->second == character){
             continue;
         }
+        if (iter->second->isDead() || iter->second->isExit()){
+            continue;
+        }
+        
         if (targetCharacter == nullptr){
             targetCharacter = iter->second;
         }else {

@@ -24,6 +24,8 @@
 
 #include "AllModel.hpp"
 
+#include "EntityHPBar.hpp"
+
 #ifdef FSM
 
 class Character: public BaseEntity{
@@ -35,6 +37,7 @@ private:
     Vector2D _targetVector2D;
     
     int _hp = 0;
+    EntityHPBar* _hpBar = nullptr;
     
     bool _isDead = false;
     bool _isExit = false;
@@ -76,6 +79,9 @@ public:
     void dead(){ _isDead = true; }
     void exit(){ _isExit = true; }
     void removeMeFromWorld();
+    
+    int getHP(){ return _hp; }
+    void loseBlood(int loseValue);
 };
 
 #endif

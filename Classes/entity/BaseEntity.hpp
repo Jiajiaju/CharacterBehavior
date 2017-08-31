@@ -24,7 +24,10 @@ protected:
         
         this->avatar = cocos2d::Sprite::create();
         this->avatar->setAnchorPoint(cocos2d::Vec2(0.5, 0.15));
-        this->avatarNode->addChild(this->avatar);
+        this->avatarNode->addChild(this->avatar, 1);
+        
+        this->avatarOver = cocos2d::Node::create();
+        this->avatarNode->addChild(this->avatarOver, 2);
     }
     virtual ~BaseEntity(){
         this->avatarNode->release();
@@ -34,6 +37,7 @@ public:
     
     cocos2d::Node* avatarNode = nullptr;
     cocos2d::Sprite* avatar = nullptr;
+    cocos2d::Node* avatarOver = nullptr;
     
     virtual void destory();
     
