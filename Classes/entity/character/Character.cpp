@@ -14,13 +14,12 @@
 
 USING_NS_CC;
 
-Character::Character(int id, const CharacterConfig& config): BaseEntity(id), characterConfig(config){
-    
+Character::Character(int id, const CharacterConfig& config, CharacterFaction faction): BaseEntity(id), characterConfig(config), characterFaction(faction){
     this->animationFrameCounter = characterConfig.animation_walk[0];
     this->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig));
     
     cocos2d::Size avatarSize = this->avatar->getContentSize();
-    _hpBar = EntityHPBar::createEntityHPBar(EntityHPBarType::Middle);
+    _hpBar = EntityHPBar::createEntityHPBar(EntityHPBarType::Small);
     _hpBar->setPosition(0, avatarSize.height - 10);
     this->avatarOver->addChild(_hpBar);
     
@@ -45,8 +44,8 @@ Character::Character(int id, const CharacterConfig& config): BaseEntity(id), cha
 Character::~Character(){
 }
 
-Character* Character::createCharacter(int id, const CharacterConfig &config){
-    Character* newCharacter = new (std::nothrow) Character(id, config);
+Character* Character::createCharacter(int id, const CharacterConfig &config, CharacterFaction faction){
+    Character* newCharacter = new (std::nothrow) Character(id, config, faction);
     if (newCharacter){
         return newCharacter;
     }
@@ -56,8 +55,8 @@ Character* Character::createCharacter(int id, const CharacterConfig &config){
     return nullptr;
 }
 
-Character* Character::createCharacter(int id, const std::string &typeName){
-    Character* newCharacter = new (std::nothrow) Character(id, GameManagerInstance->configManager->getCharacterConfig(typeName));
+Character* Character::createCharacter(int id, const std::string &typeName, CharacterFaction faction){
+    Character* newCharacter = new (std::nothrow) Character(id, GameManagerInstance->configManager->getCharacterConfig(typeName), faction);
     if (newCharacter){
         return newCharacter;
     }

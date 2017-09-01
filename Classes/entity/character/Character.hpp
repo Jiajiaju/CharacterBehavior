@@ -26,11 +26,16 @@
 
 #include "EntityHPBar.hpp"
 
+enum class CharacterFaction{
+    Blue,
+    Red
+};
+
 #ifdef FSM
 
 class Character: public BaseEntity{
 private:
-    Character(int id, const CharacterConfig& config);
+    Character(int id, const CharacterConfig& config, CharacterFaction faction);
     ~Character();
     
     BattleTile _targetTile;
@@ -44,9 +49,10 @@ private:
 public:
     
     CharacterConfig characterConfig;
+    CharacterFaction characterFaction = CharacterFaction::Blue;
     
-    static Character* createCharacter(int id, const CharacterConfig& config);
-    static Character* createCharacter(int id, const std::string& typeName);
+    static Character* createCharacter(int id, const CharacterConfig& config, CharacterFaction faction);
+    static Character* createCharacter(int id, const std::string& typeName, CharacterFaction faction);
     virtual void destory();
     
     StateMachine<Character>* stateMachine = nullptr;

@@ -47,7 +47,7 @@ void BattleMananger::_showMapGrid(){
 }
 
 void BattleMananger::_addCharater(){
-    Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_1");
+    Character* newCharacter = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_1", CharacterFaction::Red);
     newCharacter->setPosition(BattleTile(1, 1));
     newCharacter->addTo(_battleScene->groundLayer);
     

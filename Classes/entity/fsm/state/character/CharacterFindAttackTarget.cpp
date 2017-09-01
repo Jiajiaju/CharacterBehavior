@@ -38,6 +38,9 @@ Character* CharacterFindAttackTarget::findAttackTargetNearest(Character *charact
         if (iter->second->isDead() || iter->second->isExit()){
             continue;
         }
+        if (iter->second->characterFaction == character->characterFaction){
+            continue;
+        }
         
         if (targetCharacter == nullptr){
             targetCharacter = iter->second;
