@@ -13,5 +13,6 @@
 
 #include "CharacterConfig.hpp"
 #include "BuildingConfig.hpp"
+#include "CharacterWaveConfig.hpp"
 
 #endif /* AllModel_hpp */

@@ -13,9 +13,10 @@
 void ConfigManager::init(){
     _loadCharacterConfig();
     _loadBuildingConfig();
+    _loadCharacterWavesConfig();
 }
 
-#pragma mark - character and building
+#pragma mark - character & building
 
 CharacterConfig ConfigManager::_makeCharacterConfigItem(rapidjson::Value &configItem){
     CharacterConfig characterConfig;
@@ -101,3 +102,37 @@ const BuildingConfig& ConfigManager::getBuildingConfig(const std::string &typeNa
     assert(_buildingConfig.find(typeName) != _buildingConfig.end());
     return _buildingConfig[typeName];
 }
+
+#pragma mark - waves
+
+CharacterWaveConfig ConfigManager::_makeCharacterWaveConfigItem(rapidjson::Value &configItem){
+    assert(configItem.IsArray());
+    CharacterWaveConfig waveConfig;
+    waveConfig.delay = configItem[0].GetInt();
+    waveConfig.typeName = configItem[1].GetString();
+    waveConfig.column = configItem[2].GetInt();
+    waveConfig.row = configItem[3].GetInt();
+    return waveConfig;
+}
+
+void ConfigManager::_loadCharacterWavesConfig(){
+    std::string configData = cocos2d::FileUtils::getInstance()->getStringFromFile("res/config/character_waves_config.json");
+    rapidjson::Document configDoc;
+    configDoc.Parse<0>(configData.c_str());
+    assert(!configDoc.HasParseError());
+    
+    for (auto iter = configDoc.Begin(); iter != configDoc.End(); ++iter){
+        int waveID = (*iter)["waves_id"].GetInt();
+        rapidjson::Value& configItem = (*iter)["waves"];
+        assert(configItem.IsArray());
+        for (auto itemIter = configItem.Begin(); itemIter != configItem.End(); ++itemIter){
+            _characterWavesConfig[waveID].push_back(_makeCharacterWaveConfigItem(*itemIter));
+        }
+    }
+}
+
+const std::vector<CharacterWaveConfig>& ConfigManager::getCharacterWaves(int wavesID){
+    assert(_characterWavesConfig.find(wavesID) != _characterWavesConfig.end());
+    return _characterWavesConfig[wavesID];
+}
+

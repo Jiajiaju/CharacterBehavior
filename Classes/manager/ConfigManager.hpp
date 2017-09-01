@@ -26,8 +26,9 @@ class ConfigManager: public Singleton<ConfigManager>{
 public:
     void init();
     
-#pragma mark - character and building
 private:
+    
+#pragma mark - config & building
     CharacterConfig _makeCharacterConfigItem(rapidjson::Value& configItem);
     void _loadCharacterConfig();
     void _loadBuildingConfig();
@@ -38,6 +39,16 @@ private:
 public:
     const CharacterConfig& getCharacterConfig(const std::string& typeName);
     const BuildingConfig& getBuildingConfig(const std::string& typeName);
+    
+#pragma mark - waves
+private:
+    std::map<int, std::vector<CharacterWaveConfig>> _characterWavesConfig;
+    
+    CharacterWaveConfig _makeCharacterWaveConfigItem(rapidjson::Value& configItem);
+    void _loadCharacterWavesConfig();
+    
+public:
+    const std::vector<CharacterWaveConfig>& getCharacterWaves(int wavesID);
     
 };
 
