@@ -134,5 +134,6 @@ void ConfigManager::_loadCharacterWavesConfig(){
 const std::vector<CharacterWaveConfig>& ConfigManager::getCharacterWaves(int wavesID){
     assert(_characterWavesConfig.find(wavesID) != _characterWavesConfig.end());
     return _characterWavesConfig[wavesID];
+    
 }
 
