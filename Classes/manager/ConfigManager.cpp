@@ -129,6 +129,14 @@ void ConfigManager::_loadCharacterWavesConfig(){
             _characterWavesConfig[waveID].push_back(_makeCharacterWaveConfigItem(*itemIter));
         }
     }
+    
+//    CCLOG("%s", __func__);
+//    for (auto iter = _characterWavesConfig.begin(); iter != _characterWavesConfig.end(); ++iter){
+//        CCLOG("waves id: %d", iter->first);
+//        for (auto iteriter = iter->second.begin(); iteriter != iter->second.end(); ++iteriter){
+//            CCLOG("%s, %d, %d, %d", iteriter->typeName.c_str(), iteriter->delay, iteriter->column, iteriter->row);
+//        }
+//    }
 }
 
 const std::vector<CharacterWaveConfig>& ConfigManager::getCharacterWaves(int wavesID){

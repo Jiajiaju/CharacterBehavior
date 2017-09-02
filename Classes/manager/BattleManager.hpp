@@ -18,6 +18,8 @@
 #include "Character.hpp"
 #include "Building.hpp"
 
+#include "CharacterWavesMaker.hpp"
+
 class BattleMananger: public Singleton<BattleMananger>{
 private:
     
@@ -32,7 +34,7 @@ private:
     
 #pragma mark: character
     
-    std::vector<Character*> _characters;
+    CharacterWavesMaker* _characterWavesMaker = nullptr;
     
 #pragma mark: debug
     void _showMapGrid();
@@ -43,6 +45,8 @@ public:
     BattleScene* getBattleScene(){ return _battleScene; }
     
     void enterBattle();
+    
+    void update(float dt);
     
 };
 

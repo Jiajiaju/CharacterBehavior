@@ -53,6 +53,8 @@ void GameManager::update(float dt){
     for (auto iter = buildings.begin(); iter != buildings.end(); ++iter){
         iter->second->update(dt);
     }
+    
+    this->battleMananger->update(dt);
 }
 
 void GameManager::scheduleOnce(const std::function<void ()> &callback, float delayTime){

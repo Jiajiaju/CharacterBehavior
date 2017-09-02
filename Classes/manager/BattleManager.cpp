@@ -14,6 +14,9 @@ void BattleMananger::enterBattle(){
     GameManagerInstance->resourceManager->loadAllCharacterFrameSheets();
     GameManagerInstance->resourceManager->loadAllBuildingFrameSheets();
     
+    _characterWavesMaker = new (std::nothrow) CharacterWavesMaker(GameManagerInstance->configManager->getCharacterWaves(1));
+    assert(_characterWavesMaker);
+    
     _battleScene = BattleScene::createScene();
     cocos2d::Director::getInstance()->runWithScene(_battleScene);
     
@@ -33,6 +36,10 @@ void BattleMananger::enterBattle(){
     _addCharater();
     _addBuilding();
 #endif
+}
+
+void BattleMananger::update(float dt){
+    _characterWavesMaker->makeUpdate(dt);
 }
 
 void BattleMananger::_showMapGrid(){
