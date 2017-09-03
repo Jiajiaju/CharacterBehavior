@@ -17,6 +17,7 @@ struct CharacterConfig{
     int attack = 0;
     int defence = 0;
     int speed = 0;
+    int animation_stand[2] = {0, 0};
     int animation_walk[2] = {0, 0};
     int animation_attack[3] = {0, 0, 0};
     int animation_dead[2] = {0, 0};

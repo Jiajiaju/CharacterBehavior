@@ -26,6 +26,10 @@ CharacterConfig ConfigManager::_makeCharacterConfigItem(rapidjson::Value &config
     characterConfig.defence = configItem["defence"].GetInt();
     characterConfig.speed = configItem["speed"].GetInt();
     
+    rapidjson::Value& standConfigArray = configItem["animation_stand"];
+    characterConfig.animation_stand[0] = standConfigArray[0].GetInt();
+    characterConfig.animation_stand[1] = standConfigArray[1].GetInt();
+    
     rapidjson::Value& walkConfigArray = configItem["animation_walk"];
     characterConfig.animation_walk[0] = walkConfigArray[0].GetInt();
     characterConfig.animation_walk[1] = walkConfigArray[1].GetInt();

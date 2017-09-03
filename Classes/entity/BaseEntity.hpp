@@ -41,7 +41,7 @@ public:
     
     virtual void destory();
     
-    int getID(){ return _id; }
+    int getEntityID(){ return _id; }
     
     virtual void update(float dt) = 0;
     

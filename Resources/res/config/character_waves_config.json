@@ -2,8 +2,8 @@
      {
          "waves_id": 1,
          "waves": [
-             [1, "soldier_1", 0, 1], [3, "soldier_1", 0, 3], [3, "soldier_1", 0, 3], [3, "soldier_2", 0, 5], [3, "soldier_2", 0, 5],
-             [5, "soldier_2", 0, 5], [5, "soldier_2", 0, 5], [5, "soldier_3", 0, 5], [7, "soldier_3", 0, 7], [7, "soldier_3", 0, 7]
+             [1, "soldier_1", 0, 1], [3, "soldier_1", 0, 5], [3, "soldier_1", 0, 9], [3, "soldier_2", 0, 11], [3, "soldier_2", 0, 13],
+             [5, "soldier_2", 0, 15], [5, "soldier_2", 0, 17], [5, "soldier_3", 0, 19], [7, "soldier_3", 0, 21], [7, "soldier_3", 0, 23]
          ]
      },
      {

@@ -28,13 +28,11 @@ Character::Character(int id, const CharacterConfig& config, CharacterFaction fac
     assert(avatar);
     assert(stateMachine);
     
-    stateMachine->setCurrentState(CharacterStateIdle::getInstance());
-    
-    GameManagerInstance->entityManager->registerCharacter(this, _id);
-    
     _hp = characterConfig.hp;
     _isDead = false;
     _isExit = false;
+    
+    stateMachine->setCurrentState(CharacterStateIdle::getInstance());
     
 #ifdef DEBUG
     UIUIHelper::getLabel(intToString(_id), 20, this->avatarOver, 0, avatarSize.height);
@@ -47,6 +45,7 @@ Character::~Character(){
 Character* Character::createCharacter(int id, const CharacterConfig &config, CharacterFaction faction){
     Character* newCharacter = new (std::nothrow) Character(id, config, faction);
     if (newCharacter){
+        GameManagerInstance->entityManager->registerCharacter(newCharacter, id);
         return newCharacter;
     }
     
@@ -58,6 +57,7 @@ Character* Character::createCharacter(int id, const CharacterConfig &config, Cha
 Character* Character::createCharacter(int id, const std::string &typeName, CharacterFaction faction){
     Character* newCharacter = new (std::nothrow) Character(id, GameManagerInstance->configManager->getCharacterConfig(typeName), faction);
     if (newCharacter){
+        GameManagerInstance->entityManager->registerCharacter(newCharacter, id);
         return newCharacter;
     }
     

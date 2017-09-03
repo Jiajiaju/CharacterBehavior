@@ -18,10 +18,13 @@ private:
     std::map<int, std::vector<CharacterWaveConfig>> _wavesConfig;
     float _totalCounter = 0.0f;
     float _secondCounter = 0.0f;
+    bool _isStart = false;
 public:
     CharacterWavesMaker(const std::vector<CharacterWaveConfig> config);
     
     void makeUpdate(float dt);
+    
+    void start(){ _isStart = true; }
 };
 
 #endif /* CharacterWavesMaker_hpp */

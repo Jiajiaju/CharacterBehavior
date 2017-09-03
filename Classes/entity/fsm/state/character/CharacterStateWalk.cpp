@@ -41,7 +41,7 @@ void CharacterStateWalk::execute(Character *character, float dt){
     // logic
     CharacterFindAttackTarget::findAttackTargetNearest(character);
     if (character->attackTarget){
-        CCLOG("got attack target: %d -> %d", character->getID(), character->attackTarget->getID());
+//        CCLOG("got attack target: %d -> %d", character->getEntityID(), character->attackTarget->getEntityID());
         return;
     }
     
