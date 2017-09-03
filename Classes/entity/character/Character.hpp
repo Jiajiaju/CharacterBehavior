@@ -75,7 +75,7 @@ public:
     int exitCounter = 0;
     
     BattleTile currentTile;
-    Character* attackTarget;
+    Character* attackTarget = nullptr;
     void setTargetTile(const BattleTile& tile);
     BattleTile& getTargetTile(){ return _targetTile; }
     Vector2D& getTargetVector2D(){ return _targetVector2D; }

@@ -15,7 +15,7 @@ Character* CharacterFindAttackTarget::_processCharacterCurrentAttackTarget(Chara
         return nullptr;
     }
     
-    if (character->isDead()){
+    if (character->isDead() || character->isExit()){
         return nullptr;
     }
     
