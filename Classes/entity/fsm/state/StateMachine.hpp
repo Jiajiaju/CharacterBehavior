@@ -24,6 +24,7 @@ public:
     StateMachine(Entity* owner):_owner(owner){}
     
     void setCurrentState(EntityState<Entity>* state){ _currentState = state; }
+    EntityState<Entity>* getCurrentState(){ return _currentState; }
     void setGlobalState(EntityState<Entity>* state){ _globalState = state; }
     void setPreviousState(EntityState<Entity>* state){ _previousState = state; }
     

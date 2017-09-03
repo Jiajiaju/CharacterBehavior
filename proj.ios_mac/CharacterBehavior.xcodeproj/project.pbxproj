@@ -62,6 +62,7 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		EE0F50D41F5C477D007A62C1 /* CharacterStateWait.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0F50D21F5C477D007A62C1 /* CharacterStateWait.cpp */; };
 		EE1E1CCB1F3C8D1B007C5CD7 /* CharacterStateIdle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1E1CC91F3C8D1B007C5CD7 /* CharacterStateIdle.cpp */; };
 		EE1FCC1B1F36FB2C0097B539 /* BattleGridHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC191F36FB2C0097B539 /* BattleGridHelper.cpp */; };
 		EE1FCC1F1F36FDB90097B539 /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1FCC1D1F36FDB90097B539 /* Tile.cpp */; };
@@ -86,6 +87,7 @@
 		EECF9D561F323CEA00FA1C82 /* MapConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EECF9D551F323CEA00FA1C82 /* MapConfig.cpp */; };
 		EED009D91F58687B00826C22 /* EntityHPBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EED009D71F58687B00826C22 /* EntityHPBar.cpp */; };
 		EED009DF1F599E1700826C22 /* CharacterWavesMaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EED009DD1F599E1700826C22 /* CharacterWavesMaker.cpp */; };
+		EEDF5E0C1F5C5F1C005321AC /* CharacterStateAttack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEDF5E0A1F5C5F1C005321AC /* CharacterStateAttack.cpp */; };
 		EEED869E1F43313D008CDD8B /* Building.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED869C1F43313D008CDD8B /* Building.cpp */; };
 		EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */; };
 		EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEED86A61F434897008CDD8B /* BuildingStateProduce.cpp */; };
@@ -188,6 +190,8 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		EE0F50D21F5C477D007A62C1 /* CharacterStateWait.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateWait.cpp; sourceTree = "<group>"; };
+		EE0F50D31F5C477D007A62C1 /* CharacterStateWait.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateWait.hpp; sourceTree = "<group>"; };
 		EE1267011F33616600518BA5 /* Vector2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
 		EE1E1CC91F3C8D1B007C5CD7 /* CharacterStateIdle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateIdle.cpp; sourceTree = "<group>"; };
 		EE1E1CCA1F3C8D1B007C5CD7 /* CharacterStateIdle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateIdle.hpp; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 		EED009DD1F599E1700826C22 /* CharacterWavesMaker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterWavesMaker.cpp; sourceTree = "<group>"; };
 		EED009DE1F599E1700826C22 /* CharacterWavesMaker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterWavesMaker.hpp; sourceTree = "<group>"; };
 		EED009E51F59B57000826C22 /* CharacterWaveConfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterWaveConfig.hpp; sourceTree = "<group>"; };
+		EEDF5E0A1F5C5F1C005321AC /* CharacterStateAttack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateAttack.cpp; sourceTree = "<group>"; };
+		EEDF5E0B1F5C5F1C005321AC /* CharacterStateAttack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateAttack.hpp; sourceTree = "<group>"; };
 		EEED869C1F43313D008CDD8B /* Building.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Building.cpp; sourceTree = "<group>"; };
 		EEED869D1F43313D008CDD8B /* Building.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Building.hpp; sourceTree = "<group>"; };
 		EEED86A31F434881008CDD8B /* BuildingStateTrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingStateTrain.cpp; sourceTree = "<group>"; };
@@ -548,6 +554,10 @@
 				EE47D3DE1F571186004365B2 /* CharacterStateDead.hpp */,
 				EE47D3E11F5714C6004365B2 /* CharacterStateExit.cpp */,
 				EE47D3E21F5714C6004365B2 /* CharacterStateExit.hpp */,
+				EE0F50D21F5C477D007A62C1 /* CharacterStateWait.cpp */,
+				EE0F50D31F5C477D007A62C1 /* CharacterStateWait.hpp */,
+				EEDF5E0A1F5C5F1C005321AC /* CharacterStateAttack.cpp */,
+				EEDF5E0B1F5C5F1C005321AC /* CharacterStateAttack.hpp */,
 			);
 			path = character;
 			sourceTree = "<group>";
@@ -793,6 +803,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0F50D41F5C477D007A62C1 /* CharacterStateWait.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				EEED86A51F434881008CDD8B /* BuildingStateTrain.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -815,6 +826,7 @@
 				EE736F301F3A011200FD4EE3 /* BaseEntity.cpp in Sources */,
 				EE47D3E31F5714C6004365B2 /* CharacterStateExit.cpp in Sources */,
 				EEED869E1F43313D008CDD8B /* Building.cpp in Sources */,
+				EEDF5E0C1F5C5F1C005321AC /* CharacterStateAttack.cpp in Sources */,
 				EEED86A81F434897008CDD8B /* BuildingStateProduce.cpp in Sources */,
 				EE736F3F1F3A13EB00FD4EE3 /* EntityManager.cpp in Sources */,
 				EE47D3DF1F571186004365B2 /* CharacterStateDead.cpp in Sources */,

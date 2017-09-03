@@ -63,6 +63,8 @@ public:
     void setPosition(const BattleTile& battleTile);
     void setPosition(const Vector2D& vector2D);
     Vector2D getPosition(){ return Vector2D(this->avatarNode->getPositionX(), this->avatarNode->getPositionY()); }
+    BattleTile getFaceToTile();
+    Vector2D getAttackPoint();
     void addTo(cocos2d::Node* parent){ parent->addChild(this->avatarNode); }
     void addTo(cocos2d::Node* parent, int zOrder){ parent->addChild(this->avatarNode, zOrder); }
     
@@ -70,7 +72,7 @@ public:
 //    BattleTile lastTile;
     
     int animationFrameCounter = 0;
-    int animationSpeed = 5;
+    int animationSpeed = 10;
     int animationSpeedCounter = 0;
     int exitCounter = 0;
     

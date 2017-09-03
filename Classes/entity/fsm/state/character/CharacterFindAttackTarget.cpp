@@ -23,7 +23,11 @@ Character* CharacterFindAttackTarget::_processCharacterCurrentAttackTarget(Chara
     
 }
 
-Character* CharacterFindAttackTarget::findAttackTargetNearest(Character *character){
+Character* CharacterFindAttackTarget::findAttackTarget(Character *character){
+    return _findAttackTargetNearest(character);
+}
+
+Character* CharacterFindAttackTarget::_findAttackTargetNearest(Character *character){
     character->attackTarget = _processCharacterCurrentAttackTarget(character);
     if (character->attackTarget){
         return character->attackTarget;

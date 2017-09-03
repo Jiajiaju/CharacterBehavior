@@ -14,6 +14,8 @@
 #include "CharacterFindAttackTarget.hpp"
 #include "CharacterStateIdle.hpp"
 #include "CharacterStateDead.hpp"
+#include "CharacterStateWait.hpp"
+#include "CharacterStateAttack.hpp"
 
 void CharacterStateWalk::enter(Character *character){
     character->animationFrameCounter = character->characterConfig.animation_walk[0];
@@ -39,9 +41,44 @@ void CharacterStateWalk::execute(Character *character, float dt){
     }
     
     // logic
-    CharacterFindAttackTarget::findAttackTargetNearest(character);
+    CharacterFindAttackTarget::findAttackTarget(character);
     if (character->attackTarget){
+        if (abs(character->currentTile.row - character->attackTarget->currentTile.row) <= 1){
+            if (character->attackTarget->stateMachine->getCurrentState() != CharacterStateWait::getInstance()){
+                character->stateMachine->changeState(CharacterStateWait::getInstance());
+            }else {
+                if (character->currentTile == character->attackTarget->getFaceToTile()){
+                    character->stateMachine->changeState(CharacterStateAttack::getInstance());
+                    character->attackTarget->stateMachine->changeState(CharacterStateAttack::getInstance());
+                }else {
+                    Vector2D selfCurrentVector = character->getPosition();
+                    Vector2D targetCurrentVector = BattleGridHelper::getVector2DByBattleTile(character->attackTarget->getFaceToTile());
+                    Vector2D direction = targetCurrentVector - selfCurrentVector;
+                    direction.normalize();
+                    Vector2D deltaPosition = direction * character->characterConfig.speed * dt;
+                    character->setPosition(selfCurrentVector + deltaPosition);
+                    if (selfCurrentVector.x > targetCurrentVector.x){
+                        character->turnLeft();
+                    }else{
+                        character->turnRight();
+                    }
+                }
+            }
+            return;
+        }
 //        CCLOG("got attack target: %d -> %d", character->getEntityID(), character->attackTarget->getEntityID());
+//        CCLOG("current tile: %d, (%d, %d)", character->getEntityID(), character->currentTile.column, character->currentTile.row);
+        Vector2D selfCurrentVector = character->getPosition();
+        Vector2D targetCurrentVector = character->attackTarget->getPosition();
+        Vector2D direction = targetCurrentVector - selfCurrentVector;
+        direction.normalize();
+        Vector2D deltaPosition = direction * character->characterConfig.speed * dt;
+        character->setPosition(selfCurrentVector + deltaPosition);
+        if (selfCurrentVector.x > targetCurrentVector.x){
+            character->turnLeft();
+        }else{
+            character->turnRight();
+        }
         return;
     }
     

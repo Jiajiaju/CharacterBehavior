@@ -10,6 +10,7 @@
 #include "mathtool.hpp"
 
 #include "CharacterStateWalk.hpp"
+#include "CharacterFindAttackTarget.hpp"
 
 void CharacterStateIdle::enter(Character *character){
     _timeCounter = 0;
@@ -18,11 +19,18 @@ void CharacterStateIdle::enter(Character *character){
 
 void CharacterStateIdle::execute(Character *character, float dt){
     _timeCounter += dt;
+    
     if (character->getTargetTile().row != -1 && character->getTargetTile().column != -1 &&
         character->getTargetTile() != character->currentTile){
         character->stateMachine->changeState(CharacterStateWalk::getInstance());
         return;
     }
+    
+    CharacterFindAttackTarget::findAttackTarget(character);
+    if (character->attackTarget){
+        character->stateMachine->changeState(CharacterStateWalk::getInstance());
+    }
+    
     if (_timeCounter > _turnInterval){
         _timeCounter = _timeCounter - _turnInterval;
         _turnInterval = randomFloatRange(5, 10);

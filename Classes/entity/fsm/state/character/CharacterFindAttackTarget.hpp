@@ -19,8 +19,11 @@
 class CharacterFindAttackTarget: public Singleton<CharacterFindAttackTarget>{
 private:
     static Character* _processCharacterCurrentAttackTarget(Character* character);
+    
+    static Character* _findAttackTargetNearest(Character* character);
 public:
-    static Character* findAttackTargetNearest(Character* character);
+    
+    static Character* findAttackTarget(Character* character);
 };
 
 #endif /* CharacterFindAttackTarget_hpp */

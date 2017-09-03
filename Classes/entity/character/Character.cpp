@@ -96,6 +96,26 @@ void Character::setTargetTile(const BattleTile &tile){
     _targetVector2D = GameManagerInstance->battleGridHelper->getVector2DByBattleTile(_targetTile);
 }
 
+BattleTile Character::getFaceToTile(){
+    BattleTile faceToTile(currentTile.column, currentTile.row);
+    if (_faceDirection == "left"){
+        faceToTile.column -= 1;
+    }else {
+        faceToTile.column += 1;
+    }
+    return faceToTile;
+}
+
+Vector2D Character::getAttackPoint(){
+    Vector2D attackPoint = this->getPosition();
+    if (_faceDirection == "left"){
+        attackPoint.x -= MapConfig::tileWidth / 2;
+    }else {
+        attackPoint.x += MapConfig::tileWidth / 2;
+    }
+    return attackPoint;
+}
+
 void Character::update(float dt){
     if (_hp <= 0 && _isDead == false){
         _isDead = true;

@@ -90,23 +90,23 @@ BattleTile BattleGridHelper::getBattleTileByVector2D(const Vector2D &vector2D){
 
 int BattleGridHelper::getGroundZOrder(const Vector2D &vector2D){
     float tileWidth = static_cast<float>(MapConfig::tileWidth);
-    int offset = static_cast<int>(floorf(vector2D.y / (tileWidth / 2)));
+    int offset = MapConfig::tileRow - static_cast<int>(floorf(vector2D.y / (tileWidth / 2)));
     return _groundBaseZOrder + offset;
 }
 
 int BattleGridHelper::getGroundZOrder(const BattleTile &battleTile){
-    int offset = battleTile.row * 2;
+    int offset = MapConfig::tileRow - battleTile.row * 2;
     return _groundBaseZOrder + offset;
 }
 
 int BattleGridHelper::getSkyZOrder(const Vector2D &vector2D){
     float tileWidth = static_cast<float>(MapConfig::tileWidth);
-    int offset = static_cast<int>(floorf(vector2D.y / (tileWidth / 2)));
+    int offset = MapConfig::tileRow - static_cast<int>(floorf(vector2D.y / (tileWidth / 2)));
     return _skyBaseZOReder + offset;
 }
 
 int BattleGridHelper::getSkyZOrder(const BattleTile &battleTile){
-    int offset = battleTile.row * 2;
+    int offset = MapConfig::tileRow - battleTile.row * 2;
     return _skyBaseZOReder + offset;
 }
 
