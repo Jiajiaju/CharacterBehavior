@@ -33,6 +33,9 @@ void GameManager::init(){
     this->buildingHelper = BuildingHelper::getInstance();
     this->uiuiHelper = UIUIHelper::getInstance();
     
+    this->resourceManager->loadAllCharacterFrameSheets();
+    this->resourceManager->loadAllBuildingFrameSheets();
+    
     this->configManager->init();
     
     cocos2d::Director::getInstance()->getScheduler()->schedule(std::bind(&GameManager::update, this, std::placeholders::_1), cocos2d::Director::getInstance(), 0, false, "main_update");

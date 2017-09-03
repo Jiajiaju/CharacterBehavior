@@ -23,7 +23,7 @@ protected:
         this->avatarNode->retain();
         
         this->avatar = cocos2d::Sprite::create();
-        this->avatar->setAnchorPoint(cocos2d::Vec2(0.5, 0.15));
+        this->avatar->setAnchorPoint(cocos2d::Vec2(0.5, 0.5));
         this->avatarNode->addChild(this->avatar, 1);
         
         this->avatarOver = cocos2d::Node::create();

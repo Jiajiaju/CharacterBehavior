@@ -17,10 +17,10 @@ USING_NS_CC;
 Character::Character(int id, const CharacterConfig& config, CharacterFaction faction): BaseEntity(id), characterConfig(config), characterFaction(faction){
     this->animationFrameCounter = characterConfig.animation_walk[0];
     this->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterNormalFrameName(characterConfig));
+    this->avatar->setAnchorPoint(cocos2d::Vec2(characterConfig.anchor_point[0], characterConfig.anchor_point[1]));
     
-    cocos2d::Size avatarSize = this->avatar->getContentSize();
     _hpBar = EntityHPBar::createEntityHPBar(EntityHPBarType::Small);
-    _hpBar->setPosition(0, avatarSize.height - 10);
+    _hpBar->setPosition(0, characterConfig.real_height);
     this->avatarOver->addChild(_hpBar);
     
     stateMachine = new (std::nothrow) StateMachine<Character>(this);
@@ -35,7 +35,7 @@ Character::Character(int id, const CharacterConfig& config, CharacterFaction fac
     stateMachine->setCurrentState(CharacterStateIdle::getInstance());
     
 #ifdef DEBUG
-    UIUIHelper::getLabel(intToString(_id), 20, this->avatarOver, 0, avatarSize.height);
+    UIUIHelper::getLabel(intToString(_id), 20, this->avatarOver, 0, characterConfig.real_height + 10);
 #endif
 }
 

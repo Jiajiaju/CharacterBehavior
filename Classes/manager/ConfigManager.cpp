@@ -8,6 +8,8 @@
 
 #include "ConfigManager.hpp"
 
+#include "CharacterHelper.hpp"
+
 #pragma mark - common
 
 void ConfigManager::init(){
@@ -42,6 +44,14 @@ CharacterConfig ConfigManager::_makeCharacterConfigItem(rapidjson::Value &config
     rapidjson::Value& deadConfigArray = configItem["animation_dead"];
     characterConfig.animation_dead[0] = deadConfigArray[0].GetInt();
     characterConfig.animation_dead[1] = deadConfigArray[1].GetInt();
+    
+    cocos2d::SpriteFrame* characterSpriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(CharacterHelper::getCharacterFrameName(characterConfig.type, characterConfig.animation_stand[0]));
+    cocos2d::Size frameSize = characterSpriteFrame->getOriginalSize();
+    cocos2d::Vec2 offset = characterSpriteFrame->getOffset();
+    cocos2d::Rect rect = characterSpriteFrame->getRect();
+    characterConfig.real_height = rect.size.height;
+    characterConfig.anchor_point[0] = (frameSize.width / 2 + offset.x) / frameSize.width;
+    characterConfig.anchor_point[1] = (frameSize.height / 2 + offset.y - rect.size.height / 2) / frameSize.height;
     
     return characterConfig;
 }

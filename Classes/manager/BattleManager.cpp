@@ -10,10 +10,6 @@
 #include "GameManager.hpp"
 
 void BattleMananger::enterBattle(){
-    
-    GameManagerInstance->resourceManager->loadAllCharacterFrameSheets();
-    GameManagerInstance->resourceManager->loadAllBuildingFrameSheets();
-    
     _characterWavesMaker = new (std::nothrow) CharacterWavesMaker(GameManagerInstance->configManager->getCharacterWaves(1));
     assert(_characterWavesMaker);
     
