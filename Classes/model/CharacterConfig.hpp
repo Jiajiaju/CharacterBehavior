@@ -17,12 +17,23 @@ struct CharacterConfig{
     int attack = 0;
     int defence = 0;
     int speed = 0;
+    
+    
     int real_height = 0;
     float anchor_point[2] = {0.0, 0.0};
+    
+    
     int animation_stand[2] = {0, 0};
+    int animation_stand_speed = 0;
+    
     int animation_walk[2] = {0, 0};
+    int animation_walk_speed = 0;
+    
     int animation_attack[3] = {0, 0, 0};
+    int animation_attack_speed = 0;
+    
     int animation_dead[2] = {0, 0};
+    int animation_dead_speed = 0;
 };
 
 #endif /* CharacterConfig_hpp */

@@ -53,11 +53,11 @@ void BattleMananger::_showMapGrid(){
 
 void BattleMananger::_addCharater(){
     
-    Character* newCharacter1 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "soldier_1", CharacterFaction::Blue);
+    Character* newCharacter1 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_1", CharacterFaction::Blue);
     newCharacter1->setPosition(BattleTile(1, 1));
     newCharacter1->addTo(_battleScene->groundLayer);
     
-    Character* newCharacter2 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "enemy_1", CharacterFaction::Red);
+    Character* newCharacter2 = Character::createCharacter(GameManagerInstance->entityManager->getCharacterID(), "soldier_1", CharacterFaction::Red);
     newCharacter2->setPosition(BattleTile(30, 20));
     newCharacter2->addTo(_battleScene->groundLayer);
     

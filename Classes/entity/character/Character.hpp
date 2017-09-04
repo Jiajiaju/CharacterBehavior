@@ -72,7 +72,7 @@ public:
 //    BattleTile lastTile;
     
     int animationFrameCounter = 0;
-    int animationSpeed = 10;
+    int animationSpeed = 5;
     int animationSpeedCounter = 0;
     int exitCounter = 0;
     

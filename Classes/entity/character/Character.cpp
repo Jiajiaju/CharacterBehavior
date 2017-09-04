@@ -109,9 +109,9 @@ BattleTile Character::getFaceToTile(){
 Vector2D Character::getAttackPoint(){
     Vector2D attackPoint = this->getPosition();
     if (_faceDirection == "left"){
-        attackPoint.x -= MapConfig::tileWidth / 2;
+        attackPoint.x -= MapConfig::tileWidth;
     }else {
-        attackPoint.x += MapConfig::tileWidth / 2;
+        attackPoint.x += MapConfig::tileWidth;
     }
     return attackPoint;
 }
