@@ -72,8 +72,8 @@ public:
 //    BattleTile lastTile;
     
     int animationFrameCounter = 0;
-    int animationSpeed = 5;
     int animationSpeedCounter = 0;
+    int attackIntervalCounter = 0;
     int exitCounter = 0;
     
     BattleTile currentTile;

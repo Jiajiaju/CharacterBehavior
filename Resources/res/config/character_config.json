@@ -3,13 +3,18 @@
         "soldier_1": {
             "type": "soldier_1",
             "hp": 100,
-            "attack": 10,
-            "defence": 10,
+            "attack": 40,
+            "defence": 50,
             "speed": 30,
+            "attack_interval": 10,
             "animation_stand": [79, 79],
             "animation_walk": [80, 84],
             "animation_attack": [85, 86, 88],
-            "animation_dead": [89, 93]
+            "animation_dead": [89, 93],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5
         },
         "soldier_2": {
             "type": "soldier_2",
@@ -17,10 +22,15 @@
             "attack": 20,
             "defence": 20,
             "speed": 25,
+            "attack_interval": 5,
             "animation_stand": [94, 94],
             "animation_walk": [95, 99],
             "animation_attack": [100, 101, 102],
-            "animation_dead": [103, 107]
+            "animation_dead": [103, 107],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5
         },
         "soldier_3": {
             "type": "soldier_3",
@@ -28,23 +38,33 @@
             "attack": 30,
             "defence": 30,
             "speed": 20,
+            "attack_interval": 5,
             "animation_stand": [108, 108],
             "animation_walk": [109, 113],
             "animation_attack": [114, 115, 116],
-            "animation_dead": [117, 121]
+            "animation_dead": [117, 121],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5
         }
     },
     "enemy":{
         "enemy_1": {
             "type": "enemy_1",
             "hp": 100,
-            "attack": 10,
-            "defence": 10,
+            "attack": 50,
+            "defence": 50,
             "speed": 30,
+            "attack_interval": 5,
             "animation_stand": [69, 69],
             "animation_walk": [57, 68],
             "animation_attack": [70, 71, 72],
-            "animation_dead": [73, 78]
+            "animation_dead": [73, 78],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5
         },
         "enemy_2": {
             "type": "enemy_2",
@@ -52,10 +72,15 @@
             "attack": 20,
             "defence": 20,
             "speed": 10,
+            "attack_interval": 5,
             "animation_stand": [134, 134],
             "animation_walk": [122, 133],
             "animation_attack": [134, 139,142],
-            "animation_dead": [143, 153]
+            "animation_dead": [143, 153],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5
         },
         "enemy_3": {
             "type": "enemy_3",
@@ -63,10 +88,15 @@
             "attack": 30,
             "defence": 30,
             "speed": 10,
+            "attack_interval": 5,
             "animation_stand": [19, 19],
             "animation_walk": [1, 18],
             "animation_attack": [20, 27, 36],
-            "animation_dead": [37, 56]
+            "animation_dead": [37, 56],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5
         }
     }
 }

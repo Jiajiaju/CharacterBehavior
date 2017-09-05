@@ -24,7 +24,7 @@ void CharacterStateDead::enter(Character *character){
 void CharacterStateDead::execute(Character *character, float dt){
     // animation
     character->animationSpeedCounter += 1;
-    if (character->animationSpeedCounter > character->animationSpeed){
+    if (character->animationSpeedCounter > character->characterConfig.animation_dead_speed){
         character->animationSpeedCounter = 0;
         character->animationFrameCounter += 1;
         character->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterFrameName(character->characterConfig, character->animationFrameCounter));

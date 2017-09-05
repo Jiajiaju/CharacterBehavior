@@ -27,23 +27,28 @@ CharacterConfig ConfigManager::_makeCharacterConfigItem(rapidjson::Value &config
     characterConfig.attack = configItem["attack"].GetInt();
     characterConfig.defence = configItem["defence"].GetInt();
     characterConfig.speed = configItem["speed"].GetInt();
+    characterConfig.attack_interval = configItem["attack_interval"].GetInt();
     
     rapidjson::Value& standConfigArray = configItem["animation_stand"];
     characterConfig.animation_stand[0] = standConfigArray[0].GetInt();
     characterConfig.animation_stand[1] = standConfigArray[1].GetInt();
+    characterConfig.animation_stand_speed = configItem["animation_stand_speed"].GetInt();
     
     rapidjson::Value& walkConfigArray = configItem["animation_walk"];
     characterConfig.animation_walk[0] = walkConfigArray[0].GetInt();
     characterConfig.animation_walk[1] = walkConfigArray[1].GetInt();
+    characterConfig.animation_walk_speed = configItem["animation_walk_speed"].GetInt();
     
     rapidjson::Value& attackConfigArray = configItem["animation_attack"];
     characterConfig.animation_attack[0] = attackConfigArray[0].GetInt();
     characterConfig.animation_attack[1] = attackConfigArray[1].GetInt();
     characterConfig.animation_attack[2] = attackConfigArray[2].GetInt();
+    characterConfig.animation_attack_speed = configItem["animation_attack_speed"].GetInt();
     
     rapidjson::Value& deadConfigArray = configItem["animation_dead"];
     characterConfig.animation_dead[0] = deadConfigArray[0].GetInt();
     characterConfig.animation_dead[1] = deadConfigArray[1].GetInt();
+    characterConfig.animation_dead_speed = configItem["animation_dead_speed"].GetInt();
     
     cocos2d::SpriteFrame* characterSpriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(CharacterHelper::getCharacterFrameName(characterConfig.type, characterConfig.animation_stand[0]));
     cocos2d::Size frameSize = characterSpriteFrame->getOriginalSize();

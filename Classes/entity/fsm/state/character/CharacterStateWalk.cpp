@@ -30,7 +30,7 @@ void CharacterStateWalk::execute(Character *character, float dt){
     
     // animation
     character->animationSpeedCounter += 1;
-    if (character->animationSpeedCounter > character->animationSpeed){
+    if (character->animationSpeedCounter > character->characterConfig.animation_walk_speed){
         character->animationSpeedCounter = 0;
         character->animationFrameCounter += 1;
         if (character->animationFrameCounter > character->characterConfig.animation_walk[1]){
