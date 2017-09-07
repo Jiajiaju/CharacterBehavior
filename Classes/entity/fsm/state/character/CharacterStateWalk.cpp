@@ -40,50 +40,27 @@ void CharacterStateWalk::execute(Character *character, float dt){
         character->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterFrameName(character->characterConfig, character->animationFrameCounter));
     }
     
-    // logic
+    // attack about logic
     CharacterFindAttackTarget::findAttackTarget(character);
     if (character->attackTarget){
-//        if (character->getPosition().getDistanceSquare(character->attackTarget->getPosition()) < MapConfig::tileWidth * MapConfig::tileWidth){
-//            if (character->attackTarget->stateMachine->getCurrentState() != CharacterStateWait::getInstance()){
-//                character->stateMachine->changeState(CharacterStateWait::getInstance());
-//            }else {
-//                Vector2D selfCurrentVector = character->getPosition();
-//                Vector2D targetCurrentVector = character->attackTarget->getAttackPoint();
-//                
-//                if ((fabsf(selfCurrentVector.x - targetCurrentVector.x) < character->characterConfig.speed * dt) || (fabsf(selfCurrentVector.y - targetCurrentVector.y) < character->characterConfig.speed * dt)){
-//                    character->stateMachine->changeState(CharacterStateAttack::getInstance());
-//                    character->attackTarget->stateMachine->changeState(CharacterStateAttack::getInstance());
-//                }else {
-//                    Vector2D direction = targetCurrentVector - selfCurrentVector;
-//                    direction.normalize();
-//                    Vector2D deltaPosition = direction * character->characterConfig.speed * dt;
-//                    character->setPosition(selfCurrentVector + deltaPosition);
-//                    if (selfCurrentVector.x > targetCurrentVector.x){
-//                        character->turnLeft();
-//                    }else{
-//                        character->turnRight();
-//                    }
-//                }
-//            }
-//            return;
-//        }
         
 //        CCLOG("got attack target: %d -> %d", character->getEntityID(), character->attackTarget->getEntityID());
 //        CCLOG("current tile: %d, (%d, %d)", character->getEntityID(), character->currentTile.column, character->currentTile.row);
         
         Vector2D selfCurrentVector = character->getPosition();
-        Vector2D targetCurrentVector = character->attackTarget->getAttackPoint();
+        Vector2D targetPointVector = character->attackTarget->getAttackPoint();
+        Vector2D targetVector = character->attackTarget->getPosition();
         
-        if ((fabsf(selfCurrentVector.x - targetCurrentVector.x) < character->characterConfig.speed * dt) || (fabsf(selfCurrentVector.y - targetCurrentVector.y) < character->characterConfig.speed * dt)){
+        if ((fabsf(selfCurrentVector.x - targetPointVector.x) < character->characterConfig.speed * dt) && (fabsf(selfCurrentVector.y - targetPointVector.y) < character->characterConfig.speed * dt)){
             character->stateMachine->changeState(CharacterStateAttack::getInstance());
             character->attackTarget->stateMachine->changeState(CharacterStateAttack::getInstance());
         }
         
-        Vector2D direction = targetCurrentVector - selfCurrentVector;
+        Vector2D direction = targetPointVector - selfCurrentVector;
         direction.normalize();
         Vector2D deltaPosition = direction * character->characterConfig.speed * dt;
         character->setPosition(selfCurrentVector + deltaPosition);
-        if (selfCurrentVector.x > targetCurrentVector.x){
+        if (selfCurrentVector.x > targetVector.x){
             character->turnLeft();
         }else{
             character->turnRight();
@@ -91,7 +68,14 @@ void CharacterStateWalk::execute(Character *character, float dt){
         return;
     }
     
+    // wait about logic
+    Vector2D& targetVector2D = character->getTargetVector2D();
+    if (targetVector2D.x < 0.01f || targetVector2D.x >= MapConfig::tileColumn * MapConfig::tileWidth || targetVector2D.y < 0.01f || targetVector2D.y >= MapConfig::tileRow * MapConfig::tileWidth){
+        character->stateMachine->changeState(CharacterStateWait::getInstance());
+        return;
+    }
     
+    // walk to target about logic
     if (character->getTargetTile() != character->currentTile){
 //        CCLOG("current tile: (%d, %d)", character->currentTile.column, character->currentTile.row);
 //        CCLOG("target tile: (%d, %d)", character->getTargetTile().column, character->getTargetTile().row);
