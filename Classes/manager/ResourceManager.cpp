@@ -10,7 +10,7 @@
 
 #include "utility.hpp"
 
-std::size_t ResourceManager::characterFrameSheetNumber = 1;
+std::size_t ResourceManager::characterFrameSheetNumber = 2;
 std::size_t ResourceManager::buildingFrameSheetNumber = 1;
 
 void ResourceManager::loadAllCharacterFrameSheets(){
