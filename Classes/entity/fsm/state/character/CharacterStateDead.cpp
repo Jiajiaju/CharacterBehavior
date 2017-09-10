@@ -24,7 +24,7 @@ void CharacterStateDead::enter(Character *character){
     for (auto iter = characters.begin(); iter != characters.end(); ++iter){
         if (character == iter->second->attackTarget){
             iter->second->attackTarget = nullptr;
-        }   
+        }
     }
 }
 

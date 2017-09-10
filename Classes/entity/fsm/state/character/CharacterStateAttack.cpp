@@ -27,6 +27,7 @@ void CharacterStateAttack::execute(Character *character, float dt){
     if (character->animationFrameCounter == character->characterConfig.animation_attack[2]){
         character->attackIntervalCounter += 1;
         if (character->attackIntervalCounter <= character->characterConfig.attack_interval){
+            character->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterFrameName(character->characterConfig, character->characterConfig.animation_stand[0]));
             return;
         }
         character->attackIntervalCounter = 0;

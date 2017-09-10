@@ -132,7 +132,6 @@ void Character::removeMeFromWorld(){
 }
 
 void Character::loseBlood(int loseValue){
-    std::cout << _isDead << std::endl;
     if (_isDead || _isExit){
         return;
     }
