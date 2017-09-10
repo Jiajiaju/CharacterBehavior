@@ -34,6 +34,14 @@ struct CharacterConfig{
     
     int animation_dead[2] = {0, 0};
     int animation_dead_speed = 0;
+    
+    int can_remote_attack = 0;
+    int animation_remote_attack[3] = {0, 0, 0};
+    std::string bullet = "";
+    
+    int can_range_attack = 0;
+    int animation_range_attack[3] = {0, 0, 0};
+    
 };
 
 #endif /* CharacterConfig_hpp */

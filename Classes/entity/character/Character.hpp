@@ -44,8 +44,8 @@ private:
     int _hp = 0;
     EntityHPBar* _hpBar = nullptr;
     
-    bool _isDead = false;
-    bool _isExit = false;
+    bool _isDead = true;
+    bool _isExit = true;
 public:
     
     CharacterConfig characterConfig;

@@ -50,6 +50,19 @@ CharacterConfig ConfigManager::_makeCharacterConfigItem(rapidjson::Value &config
     characterConfig.animation_dead[1] = deadConfigArray[1].GetInt();
     characterConfig.animation_dead_speed = configItem["animation_dead_speed"].GetInt();
     
+    characterConfig.can_remote_attack = configItem["can_remote_attack"].GetInt();
+    characterConfig.bullet = configItem["bullet"].GetString();
+    rapidjson::Value& remoteAttackConfigArray = configItem["animation_remote_attack"];
+    characterConfig.animation_remote_attack[0] = remoteAttackConfigArray[0].GetInt();
+    characterConfig.animation_remote_attack[1] = remoteAttackConfigArray[1].GetInt();
+    characterConfig.animation_remote_attack[2] = remoteAttackConfigArray[2].GetInt();
+
+    characterConfig.can_range_attack = configItem["can_range_attack"].GetInt();
+    rapidjson::Value& rangeAttackConfigArray = configItem["animation_range_attack"];
+    characterConfig.animation_range_attack[0] = rangeAttackConfigArray[0].GetInt();
+    characterConfig.animation_range_attack[1] = rangeAttackConfigArray[1].GetInt();
+    characterConfig.animation_range_attack[2] = rangeAttackConfigArray[2].GetInt();
+    
     cocos2d::SpriteFrame* characterSpriteFrame = cocos2d::SpriteFrameCache::getInstance()->getSpriteFrameByName(CharacterHelper::getCharacterFrameName(characterConfig.type, characterConfig.animation_stand[0]));
     cocos2d::Size frameSize = characterSpriteFrame->getOriginalSize();
     cocos2d::Vec2 offset = characterSpriteFrame->getOffset();

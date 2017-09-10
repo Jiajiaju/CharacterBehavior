@@ -12,6 +12,8 @@
 
 #include "CharacterStateIdle.hpp"
 
+#include <iostream>
+
 USING_NS_CC;
 
 Character::Character(int id, const CharacterConfig& config, CharacterFaction faction): BaseEntity(id), characterConfig(config), characterFaction(faction){
@@ -130,6 +132,13 @@ void Character::removeMeFromWorld(){
 }
 
 void Character::loseBlood(int loseValue){
+    std::cout << _isDead << std::endl;
+    if (_isDead || _isExit){
+        return;
+    }
+    if (_hp <= 0 || _hp > characterConfig.hp ){
+        return;
+    }
     if (loseValue > _hp){
         loseValue = _hp;
     }

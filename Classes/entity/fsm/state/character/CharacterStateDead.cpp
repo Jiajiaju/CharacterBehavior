@@ -19,6 +19,13 @@ void CharacterStateDead::enter(Character *character){
     auto blood = cocos2d::Sprite::createWithSpriteFrameName("character_blood_0.png");
     blood->setAnchorPoint(cocos2d::Vec2(0.5, 0.5));
     character->avatarNode->addChild(blood);
+    
+    auto characters = GameManagerInstance->entityManager->getCharacters();
+    for (auto iter = characters.begin(); iter != characters.end(); ++iter){
+        if (character == iter->second->attackTarget){
+            iter->second->attackTarget = nullptr;
+        }   
+    }
 }
 
 void CharacterStateDead::execute(Character *character, float dt){

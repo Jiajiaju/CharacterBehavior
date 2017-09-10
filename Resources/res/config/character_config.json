@@ -14,7 +14,12 @@
             "animation_stand_speed": 5,
             "animation_walk_speed": 5,
             "animation_attack_speed": 10,
-            "animation_dead_speed": 5
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
         },
         "soldier_2": {
             "type": "soldier_2",
@@ -30,7 +35,12 @@
             "animation_stand_speed": 5,
             "animation_walk_speed": 5,
             "animation_attack_speed": 10,
-            "animation_dead_speed": 5
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
         },
         "soldier_3": {
             "type": "soldier_3",
@@ -46,7 +56,33 @@
             "animation_stand_speed": 5,
             "animation_walk_speed": 5,
             "animation_attack_speed": 10,
-            "animation_dead_speed": 5
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
+        },
+        "soldier_4": {
+            "type": "soldier_4",
+            "hp": 100,
+            "attack": 30,
+            "defence": 30,
+            "speed": 20,
+            "attack_interval": 5,
+            "animation_stand": [154, 154],
+            "animation_walk": [155, 159],
+            "animation_attack": [166, 169, 176],
+            "animation_dead": [177, 182],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
         }
     },
     "enemy":{
@@ -64,7 +100,12 @@
             "animation_stand_speed": 5,
             "animation_walk_speed": 5,
             "animation_attack_speed": 10,
-            "animation_dead_speed": 5
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
         },
         "enemy_2": {
             "type": "enemy_2",
@@ -80,7 +121,12 @@
             "animation_stand_speed": 5,
             "animation_walk_speed": 5,
             "animation_attack_speed": 10,
-            "animation_dead_speed": 5
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
         },
         "enemy_3": {
             "type": "enemy_3",
@@ -96,7 +142,33 @@
             "animation_stand_speed": 5,
             "animation_walk_speed": 5,
             "animation_attack_speed": 10,
-            "animation_dead_speed": 5
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
+        },
+        "enemy_4": {
+            "type": "enemy_4",
+            "hp": 100,
+            "attack": 30,
+            "defence": 30,
+            "speed": 10,
+            "attack_interval": 5,
+            "animation_stand": [195, 195],
+            "animation_walk": [183, 194],
+            "animation_attack": [196, 199, 202],
+            "animation_dead": [211, 216],
+            "animation_stand_speed": 5,
+            "animation_walk_speed": 5,
+            "animation_attack_speed": 10,
+            "animation_dead_speed": 5,
+            "can_remote_attack": 0,
+            "animation_remote_attack": [0, 0, 0],
+            "bullet": "normal",
+            "can_range_attack": 0,
+            "animation_range_attack": [0, 0, 0]
         }
     }
 }

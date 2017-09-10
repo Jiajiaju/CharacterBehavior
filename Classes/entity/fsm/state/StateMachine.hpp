@@ -30,6 +30,9 @@ public:
     
     void changeState(EntityState<Entity>* state){
         assert(state != nullptr);
+        if (state == _currentState){
+            return;
+        }
         if (_currentState != nullptr){
             _currentState->exit(_owner);
         }

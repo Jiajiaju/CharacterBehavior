@@ -42,15 +42,26 @@ void CharacterStateAttack::execute(Character *character, float dt){
         character->avatar->setSpriteFrame(GameManagerInstance->characterHelper->getCharacterFrameName(character->characterConfig, character->animationFrameCounter));
         
         if (character->animationFrameCounter == character->characterConfig.animation_attack[1]){
+            if (character->attackTarget == nullptr){
+                character->stateMachine->changeState(CharacterStateWalk::getInstance());
+                return;
+            }
             int attack = CharacterHelper::getCharacterAttack(character, character->attackTarget);
+            if (character->attackTarget->isDead()){
+                character->attackTarget->stateMachine->changeState(CharacterStateDead::getInstance());
+                character->attackTarget = nullptr;
+                character->stateMachine->changeState(CharacterStateWalk::getInstance());
+                return;
+            }
             character->attackTarget->loseBlood(attack);
             if (character->isDead()){
                 character->stateMachine->changeState(CharacterStateDead::getInstance());
             }
-            if (character->attackTarget->isDead()){
-                character->attackTarget->stateMachine->changeState(CharacterStateDead::getInstance());
-                character->stateMachine->changeState(CharacterStateWalk::getInstance());
-            }
+//            if (character->attackTarget->isDead()){
+//                character->attackTarget->stateMachine->changeState(CharacterStateDead::getInstance());
+//                character->attackTarget = nullptr;
+//                character->stateMachine->changeState(CharacterStateWalk::getInstance());
+//            }
         }
     }
 }
